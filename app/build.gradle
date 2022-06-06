@@ -1,0 +1,251 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'org.greenrobot.greendao' // apply plugin
+
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        applicationId "com.zhaorenwan.social"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 28
+        versionName "1.8.8"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a', 'x86'  ,"arm64-v8a","x86_64"
+
+        }
+        resConfigs "en", "zh-rCN"
+        manifestPlaceholders = [
+                qqappid : "1111823028"
+        ]
+    }
+    signingConfigs {
+        debugSign {
+            storeFile file('/Users/vincent/Desktop/zhaorenwan_social.jks')
+            keyAlias 'social'
+            keyPassword 'xiandjssocial'
+            storePassword 'bjzmfxzrwsocial'
+        }
+        release {
+
+            // 华为移动服务配置
+            storeFile file('/Users/vincent/Desktop/zhaorenwan_social.jks')
+            keyAlias 'social'
+            keyPassword 'xiandjssocial'
+            storePassword 'bjzmfxzrwsocial'
+        }
+    }
+    buildTypes {
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debugSign
+        }
+        release {
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    greendao {
+        schemaVersion 19
+        daoPackage 'com.eggplant.qiezisocial.greendao.gen'
+        targetGenDir 'src/main/java'
+    }
+}
+ext {
+    supportLibVersion = '27.1.1'
+}
+//解决支持库版本兼容问题,(引用的第三方库的支持库版本低于（或者不一致）app build.gradle中的支持库版本)
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '27.1.1'
+            }
+        }
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:${supportLibVersion}"
+    implementation "com.android.support:recyclerview-v7:27.1.1"
+        implementation "com.android.support:design:${supportLibVersion}"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'io.pristine:libjingle:9636@aar'
+    implementation 'com.neovisionaries:nv-websocket-client:2.3'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'org.greenrobot:greendao-generator:3.2.2'
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'com.google.code.gson:gson:2.8.0'
+
+    //协程
+//    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'
+    //app消息提示
+    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
+
+    //权限申请
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+
+    //recycler adapter
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
+    //refreshLayout
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-19'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14'
+
+    implementation 'com.google.zxing:core:3.3.0'
+    //图片选择
+
+    //表情-键盘
+    implementation 'com.github.w446108264:XhsEmoticonsKeyboard:2.0.4'
+
+    //图片浏览
+//    implementation 'com.github.chrisbanes.photoview:library:1.2.4'
+//    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+    //组合头像
+    implementation 'com.github.Othershe:CombineBitmap:1.0.5'
+
+    //标尺view
+    implementation 'com.zjun:rule-view:0.0.1'
+
+    //粒子爆炸特效
+    implementation 'me.samlss:bloom:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //表情
+    implementation project(':jianxiexpression')
+
+    //获取拼音
+    implementation files('libs/pinyin4j-2.5.0.jar')
+
+    //音频录制
+    implementation project(':mp3Recorder')
+
+    //视频播放
+    implementation project(':nicevideoplayer')
+
+    //视频压缩
+    implementation project(':videocompressor')
+
+    //    implementation project(':silicompressorr')
+
+    //横向滚动选择器
+    implementation 'com.github.385841539:HorizontalScrollSelectedView:1.0.0'
+
+    //    implementation 'com.iceteck.silicompressorr:silicompressor:2.2.1'
+
+    //毛玻璃
+
+    //    implementation 'io.alterac.blurkit:blurkit:1.1.1'
+
+    //    implementation 'com.lmxjw3.media:videoplay:1.0.0'
+
+    //友盟
+    implementation 'com.umeng.umsdk:common:9.4.4'
+
+    // 必选
+    implementation 'com.umeng.umsdk:asms:1.4.1'
+    //友盟Push依赖
+    api 'com.umeng.umsdk:push:6.4.3'
+//    implementation 'com.umeng.umsdk:xiaomi-umengaccs:1.2.7'
+//    implementation 'com.umeng.umsdk:xiaomi-push:4.9.0'
+
+    // 必选
+    compile 'com.umeng.umsdk:share-core:7.1.7'
+
+    //分享核心库，必选
+    compile 'com.umeng.umsdk:share-qq:7.1.7'
+    compile 'com.tencent.tauth:qqopensdk:3.51.2'
+    implementation  'com.umeng.umsdk:share-wx:7.1.7'//微信完整版
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.8.0'//微信官方依赖库，必选
+//    implementation  'com.umeng.umsdk:share-sina:7.1.7'//新浪微博完整版
+//    implementation 'io.github.sinaweibosdk:core:11.11.1@aar'//新浪微博官方SDK依赖库，必选
+
+    //3D地图so及jar
+    implementation 'com.amap.api:3dmap:5.0.0'
+
+    //定位功能
+    implementation 'com.amap.api:location:4.7.2'
+
+    //搜索功能
+    implementation 'com.amap.api:search:5.0.0'
+    implementation 'com.aliyun.sdk.android:AliyunPlayer:5.3.0-full'
+    implementation "com.github.bumptech.glide:glide:4.5.0"
+
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    //    implementation'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+
+    //QQ官方SDK依赖库
+
+    //    compile  'com.umeng.umsdk:share-wx:7.1.4'
+
+    //    compile  'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.6.5'//微信官方SDK依赖库
+
+        compile  'com.umeng.umsdk:share-sina:7.1.4'
+
+//     compile  'com.sina.weibo.sdk:core:10.10.0:openDefaultRelease@aar'//新浪微博官方SDK依赖库，如在线集成失败请本地下载
+    implementation files('libs/openDefault-10.9.0.aar')
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation project(':camera')
+    api 'com.billy.android:smart-swipe:1.0.8'
+    api 'com.billy.android:smart-swipe-support:1.0.0'
+
+    //    implementation project(':silicompressor')
+
+    //    implementation project(':picture_library')
+    implementation project(':picture_library')
+
+    compile 'github.hellocsl:GalleryLayoutManager:1.0.6'
+
+}
+apply plugin: 'com.huawei.agconnect'
+//华为厂商通道
+dependencies {
+    api 'com.umeng.umsdk:huawei-umengaccs:1.3.6'
+    api 'com.huawei.hms:push:5.0.4.302'
+//    implementation 'com.huawei.android.hms:push:2.6.3.301'
+}
+
+//魅族厂商通道
+//dependencies {
+//    api 'com.umeng.umsdk:meizu-umengaccs:1.1.5'
+//    api 'com.umeng.umsdk:meizu-push:4.1.4'
+//}
+
+//OPPO厂商通道
+dependencies {
+    api 'com.umeng.umsdk:oppo-umengaccs:1.0.7-fix'
+    api 'com.umeng.umsdk:oppo-push:2.1.0'
+}
+
+//vivo厂商通道
+//dependencies {
+//    api 'com.umeng.umsdk:vivo-umengaccs:1.1.6'
+//    api 'com.umeng.umsdk:vivo-push:3.0.0.4'
+//}
+
+//小米厂商通道
+dependencies {
+    api 'com.umeng.umsdk:xiaomi-umengaccs:1.2.7'
+    api 'com.umeng.umsdk:xiaomi-push:4.8.1'
+}
