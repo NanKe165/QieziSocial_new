@@ -29,7 +29,8 @@ android {
     }
     signingConfigs {
         debugSign {
-            storeFile file('/Users/vincent/Desktop/zhaorenwan_social.jks')
+            ///Users/vincent/Desktop/zhaorenwan_social.jks
+            storeFile file('D:/project/project/zhaorenwan_social.jks')
             keyAlias 'social'
             keyPassword 'xiandjssocial'
             storePassword 'bjzmfxzrwsocial'
@@ -37,7 +38,7 @@ android {
         release {
 
             // 华为移动服务配置
-            storeFile file('/Users/vincent/Desktop/zhaorenwan_social.jks')
+            storeFile file('D:/project/project/zhaorenwan_social.jks')
             keyAlias 'social'
             keyPassword 'xiandjssocial'
             storePassword 'bjzmfxzrwsocial'

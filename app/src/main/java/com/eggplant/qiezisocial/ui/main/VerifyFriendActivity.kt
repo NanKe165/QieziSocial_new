@@ -12,7 +12,6 @@ import com.eggplant.qiezisocial.base.BaseActivity
 import com.eggplant.qiezisocial.entry.BaseEntry
 import com.eggplant.qiezisocial.entry.ChatMultiEntry
 import com.eggplant.qiezisocial.entry.UserEntry
-import com.eggplant.qiezisocial.event.SmallTxtEvent
 import com.eggplant.qiezisocial.event.SocketMsgEvent
 import com.eggplant.qiezisocial.greendao.entry.ChatEntry
 import com.eggplant.qiezisocial.greendao.entry.MainInfoBean
@@ -47,8 +46,6 @@ class VerifyFriendActivity : BaseActivity() {
     }
 
     override fun initView() {
-        //test1
-        from=null
         from = intent.getStringExtra("from")
         user = intent.getSerializableExtra("user") as UserEntry?
         bean = intent.getSerializableExtra("bean") as MainInfoBean?
