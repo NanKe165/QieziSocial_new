@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/qb_px_90">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/f_gchat_ry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.eggplant.qiezisocial.widget.keyboard.FloatEmojiKeyBoard
+        android:id="@+id/f_gchat_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/f_gchat_lightmsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_marginBottom="@dimen/qb_px_156"
+                android:layout_marginRight="@dimen/qb_px_20"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_marginLeft="@dimen/qb_px_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/qb_px_17"
+                    android:src="@mipmap/icon_gcht_msg2" />
+
+                <com.eggplant.qiezisocial.widget.QzTextView
+                    android:id="@+id/f_gchat_msg_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/new_msg_hint"
+                    android:gravity="center_horizontal"
+                    android:maxLength="2"
+                    android:paddingTop="@dimen/qb_px_1"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/f_gchat_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_marginBottom="@dimen/qb_px_96"
+                android:layout_marginRight="@dimen/qb_px_20"
+                android:src="@mipmap/icon_gchat_share2" />
+
+            <FrameLayout
+                android:id="@+id/f_gchat_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/qb_px_20"
+                android:background="#00000000"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/f_gchat_audio_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/chat_audio_top" />
+
+                <ImageView
+                    android:id="@+id/f_gchat_voice"
+                    android:layout_width="@dimen/qb_px_32"
+                    android:layout_height="@dimen/qb_px_80"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/chat_audio_anim" />
+
+                <ImageView
+                    android:id="@+id/f_gchat_audio_top_cancle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/chat_audio_top_cancle"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </FrameLayout>
+    </com.eggplant.qiezisocial.widget.keyboard.FloatEmojiKeyBoard>
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/f_gchat_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:text=""
+        android:textColor="@color/tv_gray4"
+        android:background="@drawable/gcjat_title_bg"
+        android:padding="@dimen/qb_px_10"
+        android:textSize="13sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/f_gchat_topiccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_60"
+        android:drawableLeft="@mipmap/icon_topiccount_gray"
+        android:drawablePadding="@dimen/qb_px_5"
+        android:text="1654"
+        android:textColor="@color/tv_gray8"
+        android:textSize="12sp"
+        android:visibility="gone" />
+</FrameLayout>

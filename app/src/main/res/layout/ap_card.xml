@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/qb_px_500"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="-10dp"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <RelativeLayout
+        android:id="@+id/ap_card_gp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_bg"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:padding="@dimen/qb_px_10">
+
+        <com.eggplant.qiezisocial.widget.image.CircleImageView
+            android:id="@+id/ap_card_img"
+            android:layout_width="@dimen/qb_px_35"
+            android:layout_height="@dimen/qb_px_35"
+            android:layout_marginTop="@dimen/qb_px_3"
+            android:src="@mipmap/normal_head" />
+
+        <ImageView
+            android:id="@+id/ap_card_sex"
+            android:layout_width="@dimen/qb_px_11"
+            android:layout_height="@dimen/qb_px_11"
+            android:layout_alignBottom="@id/ap_card_img"
+            android:layout_alignRight="@id/ap_card_img"
+            android:src="@mipmap/sex_girl" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_card_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_3"
+            android:layout_toRightOf="@id/ap_card_img"
+            android:paddingLeft="@dimen/qb_px_5"
+            android:maxLines="1"
+            android:text="天空之城"
+            android:textColor="@color/tv_gray3"
+            android:textSize="12sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_card_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/ap_card_nick"
+            android:layout_marginLeft="@dimen/qb_px_5"
+            android:layout_toRightOf="@id/ap_card_nick"
+            android:background="@drawable/label_state_green_bg"
+            android:maxLines="1"
+            android:drawablePadding="@dimen/qb_px_1"
+            android:paddingBottom="@dimen/qb_px_2"
+            android:paddingLeft="@dimen/qb_px_7"
+            android:paddingRight="@dimen/qb_px_7"
+            android:paddingTop="@dimen/qb_px_2"
+            android:text="开心"
+            android:textColor="@color/white"
+            android:textSize="9sp"
+            android:visibility="visible" />
+
+        <com.eggplant.qiezisocial.widget.QzHttpTextView
+            android:id="@+id/ap_card_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/ap_card_nick"
+            android:layout_below="@id/ap_card_nick"
+            android:maxLines="4"
+            android:paddingBottom="@dimen/qb_px_5"
+            android:paddingLeft="@dimen/qb_px_5"
+            android:paddingRight="@dimen/qb_px_5"
+            android:paddingTop="@dimen/qb_px_5"
+            android:text="分享一下你在考试中作弊的最有创意 的手法"
+            android:textColor="@color/tv_black2"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+</FrameLayout>

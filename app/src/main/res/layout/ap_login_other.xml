@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/qb_px_5"
+    android:paddingLeft="@dimen/qb_px_14"
+    android:paddingTop="@dimen/qb_px_15">
+
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:layout_marginTop="@dimen/qb_px_2"
+        android:layout_width="@dimen/qb_px_45"
+        android:layout_height="@dimen/qb_px_45"
+        android:src="@mipmap/kefu_icon" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_6"
+        android:background="@drawable/login_msg_other_bg"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_gravity="center"
+            android:id="@+id/ap_login_other_txt"
+            android:layout_width="wrap_content"
+            android:lineSpacingExtra="@dimen/qb_px_5"
+            android:layout_height="wrap_content"
+            android:maxWidth="@dimen/qb_px_200"
+            android:text=""
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp" />
+    </FrameLayout>
+</LinearLayout>

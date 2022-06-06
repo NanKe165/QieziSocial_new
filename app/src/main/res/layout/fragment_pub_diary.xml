@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ft_diary_rootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.eggplant.qiezisocial.widget.topbar.Topbar
+        android:id="@+id/pub_diary_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightTxtBg="@drawable/tv_yellow_bg"
+        app:tbRightTxt="发布"
+        app:tbTitle="发布日志" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_1"
+        android:layout_marginTop="@dimen/qb_px_45"
+        android:background="@color/line_color" />
+
+    <com.eggplant.qiezisocial.widget.keyboard.EmojiKeyBoard
+        android:id="@+id/pub_diary_emojikeyboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/qb_px_45">
+
+        <RelativeLayout
+            android:paddingRight="@dimen/qb_px_15"
+            android:paddingLeft="@dimen/qb_px_15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.eggplant.qiezisocial.widget.QzEdittext
+                android:id="@+id/pub_diary_content"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_130"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/qb_px_15"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="在此你想说"
+                android:letterSpacing="0.0"
+                android:lineSpacingMultiplier="1.0"
+                android:maxHeight="@dimen/qb_px_126"
+                android:maxLines="6"
+                android:minHeight="@dimen/qb_px_60"
+                android:paddingBottom="@dimen/qb_px_5"
+                android:text=""
+                android:textColor="@color/tv_black"
+                android:textColorHint="@color/tv_gray"
+                android:textSize="16sp" />
+
+            <com.eggplant.qiezisocial.widget.WrapLayout
+                android:id="@+id/pub_diary_mediagp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pub_diary_content" />
+
+        </RelativeLayout>
+
+    </com.eggplant.qiezisocial.widget.keyboard.EmojiKeyBoard>
+
+
+</FrameLayout>

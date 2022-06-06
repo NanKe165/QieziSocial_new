@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_17"
+        android:text="设置我的场景"
+        android:textColor="@color/tv_black2"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/myscene_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_12"
+        android:paddingBottom="@dimen/qb_px_5"
+        android:paddingRight="@dimen/qb_px_5"
+        android:paddingTop="@dimen/qb_px_5"
+        android:src="@mipmap/tb_left_return"
+
+        />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_83">
+
+        <FrameLayout
+            android:id="@+id/myscene_set_college_gp"
+            android:layout_width="@dimen/qb_px_133"
+            android:layout_height="@dimen/qb_px_70"
+            android:layout_margin="@dimen/qb_px_10"
+            android:background="@drawable/icon_select_myscene">
+
+            <ImageView
+                android:id="@+id/myscene_set_college_img"
+                android:layout_width="@dimen/qb_px_70"
+                android:layout_height="@dimen/qb_px_70"
+                android:layout_gravity="right|bottom"
+                android:src="@mipmap/icon_myscene_college" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/myscene_set_college_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/qb_px_11"
+                android:layout_marginRight="@dimen/qb_px_11"
+                android:text="设置我的学校"
+                android:textColor="@color/bottom_hint_color"
+                android:textSize="13sp" />
+        </FrameLayout>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/myscene_college_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="@dimen/qb_px_5"
+            android:src="@mipmap/icon_scene_delect" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_183">
+        <FrameLayout
+            android:id="@+id/myscene_set_star_gp"
+            android:layout_width="@dimen/qb_px_133"
+            android:layout_height="@dimen/qb_px_70"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/qb_px_10"
+            android:background="@drawable/icon_select_myscene">
+
+            <ImageView
+                android:id="@+id/myscene_set_star_img"
+                android:layout_width="@dimen/qb_px_70"
+                android:layout_height="@dimen/qb_px_70"
+                android:layout_gravity="right|bottom"
+                android:src="@mipmap/icon_myscene_star" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/myscene_set_star_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/qb_px_11"
+                android:text="设置我喜欢的明星"
+                android:textColor="@color/bottom_hint_color"
+                android:textSize="13sp" />
+        </FrameLayout>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/myscene_star_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="@dimen/qb_px_5"
+            android:src="@mipmap/icon_scene_delect" />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_283">
+        <FrameLayout
+            android:id="@+id/myscene_set_factory_gp"
+            android:layout_width="@dimen/qb_px_133"
+            android:layout_height="@dimen/qb_px_70"
+            android:layout_margin="@dimen/qb_px_10"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/icon_select_myscene">
+
+            <ImageView
+                android:id="@+id/myscene_set_factory_img"
+                android:layout_width="@dimen/qb_px_70"
+                android:layout_height="@dimen/qb_px_70"
+                android:layout_gravity="right|bottom"
+                android:src="@mipmap/icon_myscene_factory" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/myscene_set_factory_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/qb_px_11"
+                android:text="设置我喜欢的大厂"
+                android:textColor="@color/bottom_hint_color"
+                android:textSize="13sp" />
+        </FrameLayout>
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/myscene_factory_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="@dimen/qb_px_5"
+            android:src="@mipmap/icon_scene_delect" />
+    </FrameLayout>
+
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_413"
+        android:lineSpacingExtra="3.5dp"
+        android:text="@string/set_scenen_rule"
+        android:textColor="@color/tv_gray9"
+        android:textSize="11sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/myscene_sure"
+        android:layout_width="@dimen/qb_px_60"
+        android:layout_height="@dimen/qb_px_26"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="@dimen/qb_px_20"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:background="@drawable/tv_yellow_bg"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/tv_black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+</FrameLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/qb_px_90">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ft_diary_ry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.eggplant.qiezisocial.widget.flow.ExplosiveView
+        android:id="@+id/ft_diary_animview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+    </com.eggplant.qiezisocial.widget.flow.ExplosiveView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/edit_bg" />
+
+    <ImageView
+        android:id="@+id/ft_diary_pub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="@dimen/qb_px_50"
+        android:layout_marginRight="@dimen/qb_px_5"
+        android:src="@mipmap/icon_pub_diary" />
+</FrameLayout>

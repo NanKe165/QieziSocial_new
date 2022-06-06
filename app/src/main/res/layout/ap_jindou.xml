@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/qb_px_5"
+    android:paddingLeft="@dimen/qb_px_13"
+    android:paddingRight="@dimen/qb_px_13"
+
+    android:paddingTop="@dimen/qb_px_5">
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:layout_width="@dimen/qb_px_26"
+        android:layout_height="@dimen/qb_px_26"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/ap_jd_img"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_jd_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_gravity="center_vertical"
+        android:text="13"
+        android:layout_marginLeft="@dimen/qb_px_36"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_jd_jdcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_gravity="center_vertical|right"
+        android:text="+0金豆"
+        android:textColor="@color/jd_color"
+        android:layout_marginLeft="@dimen/qb_px_36"
+        />
+</FrameLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/msg_head_gp"
+    android:layout_width="match_parent"
+    android:background="@color/msg_head_bg"
+    android:layout_height="@dimen/qb_px_100">
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/tv_black"
+        android:text="好友"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_8"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/msg_head_ry"
+        android:layout_marginTop="@dimen/qb_px_35"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/msg_head_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全部好友 >"
+        android:textColor="@color/tv_gray"
+        android:textSize="12sp"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_10"
+        />
+    <FrameLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color6" />
+</FrameLayout>

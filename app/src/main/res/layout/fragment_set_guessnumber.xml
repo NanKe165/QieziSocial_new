@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tv_yellow"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_27"
+        android:layout_marginRight="@dimen/qb_px_27"
+        android:layout_marginTop="@dimen/qb_px_50"
+        android:background="@drawable/pub_dialog_bg"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/qb_px_37"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15"
+        android:paddingTop="@dimen/qb_px_40">
+
+        <FrameLayout
+            android:id="@+id/set_qs_num"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_50"
+            android:background="@drawable/gray_line_bg">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/qb_px_16"
+                android:text="问题个数"
+                android:textColor="@color/tv_black2"
+                android:textSize="17sp" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/qs_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="@dimen/qb_px_16"
+                android:text="选择个数"
+                android:textColor="@color/tv_gray"
+                android:textSize="15sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/set_eligible_qs_num"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_50"
+            android:layout_marginTop="@dimen/qb_px_20"
+            android:background="@drawable/gray_line_bg">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/qb_px_16"
+                android:text="合格题数"
+                android:textColor="@color/tv_black2"
+                android:textSize="17sp" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/eligible_qs_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="@dimen/qb_px_16"
+                android:text="选择个数"
+                android:textColor="@color/tv_gray"
+                android:textSize="15sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/set_pattern"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_50"
+            android:layout_marginTop="@dimen/qb_px_20"
+            android:background="@drawable/gray_line_bg">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/qb_px_16"
+                android:text="奖励模式"
+                android:textColor="@color/tv_black2"
+                android:textSize="17sp" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/pattern"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="@dimen/qb_px_16"
+                android:text="选择模式"
+                android:textColor="@color/tv_gray"
+                android:textSize="15sp" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/up_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/qb_px_25"
+            android:src="@mipmap/up_pic" />
+
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/set_guess_pic"
+            android:layout_width="@dimen/qb_px_60"
+            android:layout_height="@dimen/qb_px_60"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/qb_px_20">
+
+            <ImageView
+                android:id="@+id/guessnumb_pic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/qb_px_5"
+                android:scaleType="centerCrop"
+                />
+            <ImageView
+                android:id="@+id/guessnumb_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/video_delete"
+                android:layout_gravity="right"
+                />
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/set_guessnum_next"
+        android:layout_width="@dimen/qb_px_166"
+        android:layout_height="@dimen/qb_px_53"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_55"
+        android:background="@drawable/pub_dialog_bg"
+        android:gravity="center"
+        android:text="下一步"
+        android:textColor="@color/tv_black"
+        android:textSize="14sp" />
+</LinearLayout>

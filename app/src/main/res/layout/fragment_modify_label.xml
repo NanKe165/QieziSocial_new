@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color2" />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_70"
+        android:layout_marginLeft="@dimen/qb_px_14"
+        android:layout_marginRight="@dimen/qb_px_14"
+        android:textSize="20sp"
+        android:textColor="@color/tv_black2"
+        android:text="选择属于自己的标签最多4个哦"
+        />
+    <android.support.v7.widget.RecyclerView
+
+        android:id="@+id/modify_label_ry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_24" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/modify_label_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/qb_px_14"
+        android:layout_marginTop="@dimen/qb_px_20"
+        android:text="(0/4)"
+        android:textColor="@color/tv_gray4"
+        android:textSize="13sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/modify_label_sure"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_53"
+        android:layout_marginLeft="@dimen/qb_px_14"
+        android:layout_marginRight="@dimen/qb_px_14"
+        android:layout_marginTop="@dimen/qb_px_45"
+        android:background="@drawable/tv_yellow_bg"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/tv_black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+</LinearLayout>

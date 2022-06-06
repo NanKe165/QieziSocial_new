@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/qb_px_35">
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ft_select_object_sure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/qb_px_5"
+        android:layout_marginTop="@dimen/qb_px_5"
+        android:padding="@dimen/qb_px_5"
+        android:text="确定"
+
+        android:textColor="@color/tv_black"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_1"
+        android:layout_marginTop="@dimen/qb_px_35"
+        android:background="@color/line_color2" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_185"
+        android:layout_marginTop="@dimen/qb_px_36"
+        android:background="@color/login_ft_bg">
+
+        <com.eggplant.qiezisocial.widget.scrollPicker.view.ScrollPickerView
+            android:id="@+id/ft_select_object_scrollPicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+
+</FrameLayout>

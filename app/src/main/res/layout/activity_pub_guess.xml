@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tv_yellow">
+
+    <com.eggplant.qiezisocial.widget.topbar.Topbar
+        android:id="@+id/pub_guess_bar"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:returnDrawable="@mipmap/black_left_return"
+        app:bgColor="@color/translate"
+        app:tbTitle="发布" />
+    <FrameLayout
+        android:id="@+id/pub_guess_ft"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:layout_width="@dimen/qb_px_27"
+        android:layout_height="@dimen/qb_px_27"
+       android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/qb_px_17"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:src="@mipmap/normal_head"
+        android:id="@+id/ap_lchat_head"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="9sp"
+        android:textColor="@color/tv_black4"
+        android:layout_marginTop="@dimen/qb_px_16"
+        android:layout_toLeftOf="@id/ap_lchat_head"
+        android:layout_marginRight="@dimen/qb_px_2"
+        android:id="@+id/ap_lchat_nick"
+        android:text="晚来风急"
+        android:gravity="right"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_toLeftOf="@id/ap_lchat_head"
+        android:layout_marginRight="@dimen/qb_px_2"
+        android:gravity="right"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:textSize="12sp"
+        android:textColor="@color/tv_gray2"
+        android:text="照片拍得很不错哦"
+        android:id="@+id/ap_lchat_txt"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_lchat_hint"
+        android:layout_marginTop="@dimen/qb_px_20"
+        android:text=""
+        android:layout_marginLeft="@dimen/qb_px_29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11sp"
+        android:textColor="@color/tv_black4"
+        />
+</RelativeLayout>

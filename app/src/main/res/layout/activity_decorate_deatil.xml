@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+        android:id="@+id/dector_detail_img"
+        android:src="@drawable/decorate_detail1"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/qb_px_80"
+        android:layout_height="wrap_content"
+        />
+
+
+
+    <com.eggplant.qiezisocial.widget.topbar.Topbar
+        android:id="@+id/dector_detail_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_35"
+        app:bgColor="@color/translate"
+        app:returnDrawable="@drawable/return_white"
+        app:tbTitle="装扮详情"
+        app:tbTitleColor="@color/white" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/dector_detail_sure"
+        android:layout_width="@dimen/qb_px_288"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="@dimen/qb_px_10"
+        android:background="@drawable/tv_yellow_bg4"
+        android:gravity="center"
+        android:text="立即使用"
+        android:textColor="@color/tv_black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+</FrameLayout>

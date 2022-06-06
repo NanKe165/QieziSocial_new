@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/qb_px_90">
+
+    <View
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color" />
+
+    <FrameLayout
+        android:visibility="visible"
+        android:id="@+id/ft_extend_caicaicai"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@mipmap/caicaicai_icon"
+            android:drawablePadding="@dimen/qb_px_6"
+            android:gravity="center_vertical"
+            android:text="附近的人"
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:src="@mipmap/sp_icon" />
+    </FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color" />
+
+    <FrameLayout
+        android:id="@+id/ft_extend_vcr"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@mipmap/vcr_icon"
+            android:drawablePadding="@dimen/qb_px_6"
+            android:gravity="center_vertical"
+            android:text="丑照"
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:src="@mipmap/sp_icon" />
+    </FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color" />
+
+    <FrameLayout
+        android:id="@+id/ft_extend_diary"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@mipmap/diary_icon"
+            android:drawablePadding="@dimen/qb_px_6"
+            android:gravity="center_vertical"
+            android:text="小问"
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:src="@mipmap/sp_icon" />
+    </FrameLayout>
+</LinearLayout>

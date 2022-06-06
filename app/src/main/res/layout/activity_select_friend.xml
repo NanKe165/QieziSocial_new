@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <com.eggplant.qiezisocial.widget.topbar.Topbar
+        android:id="@+id/select_friend_bar"
+        android:layout_width="match_parent"
+        app:tbTitle="选择一个好友"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/select_friend_ry"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <com.eggplant.qiezisocial.widget.azlist.AZWaveSideBarView
+            android:id="@+id/select_friend_azview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:hintCircleColor="@color/tv_yellow"
+            app:hintTextColor="@color/tv_black2"
+            app:selectTextColor="@color/tv_black2"
+            app:waveColor="@color/tv_yellow" />
+
+    </FrameLayout>
+</LinearLayout>

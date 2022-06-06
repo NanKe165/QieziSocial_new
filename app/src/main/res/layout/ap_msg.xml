@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/qb_px_13"
+    android:paddingRight="@dimen/qb_px_13">
+
+    <com.eggplant.qiezisocial.widget.QzHttpTextView
+        android:id="@+id/ap_msg_qstxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_18"
+        android:maxLines="1"
+        android:textColor="@color/tv_blue"
+        android:drawableLeft="@mipmap/icon_msg_title"
+        android:drawablePadding="@dimen/qb_px_5"
+        android:textSize="12sp" />
+
+
+    <RelativeLayout
+        android:id="@+id/ap_msg_centv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/qb_px_11"
+        android:layout_weight="1">
+
+
+        <com.eggplant.qiezisocial.widget.image.CircleImageView
+            android:id="@+id/ap_msg_head"
+            android:layout_marginTop="@dimen/qb_px_1"
+            android:layout_width="@dimen/qb_px_13"
+            android:layout_height="@dimen/qb_px_13"
+            android:src="@mipmap/normal_head" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_msg_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_5"
+            android:layout_toRightOf="@id/ap_msg_head"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/tv_black2"
+            android:textSize="12sp" />
+
+        <com.eggplant.qiezisocial.widget.QzHttpTextView
+            android:id="@+id/ap_msg_reply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ap_msg_nick"
+            android:layout_marginRight="@dimen/qb_px_50"
+            android:layout_marginTop="@dimen/qb_px_7"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/empty_hint_color"
+            android:textSize="13sp"
+            android:visibility="visible" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_msg_mood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_6"
+            android:layout_marginRight="@dimen/qb_px_5"
+            android:layout_toRightOf="@id/ap_msg_nick"
+            android:drawablePadding="@dimen/qb_px_1"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/qb_px_2"
+            android:paddingLeft="@dimen/qb_px_7"
+            android:paddingRight="@dimen/qb_px_7"
+            android:paddingTop="@dimen/qb_px_2"
+            android:text=""
+            android:textColor="@color/tv_gray2"
+            android:textSize="9sp"
+            android:visibility="gone" />
+
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_msg_hint"
+            android:layout_width="@dimen/qb_px_7"
+            android:layout_height="@dimen/qb_px_7"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/ap_msg_reply"
+            android:layout_marginTop="@dimen/qb_px_4"
+            android:background="@drawable/msg_hint2"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_msg_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/qb_px_2"
+        android:text=""
+        android:textColor="@color/tv_gray4"
+        android:textSize="12sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/qb_px_5"
+        android:background="@color/line_color6" />
+
+</LinearLayout>

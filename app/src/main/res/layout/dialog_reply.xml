@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_dlg_reply"
+            android:id="@+id/dlg_reply_bg"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="安慰安慰你"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/qb_px_3"
+            android:textSize="12sp"
+            android:textColor="@color/tv_black2"
+            android:gravity="center_vertical"
+            android:id="@+id/dlg_reply_txt"
+            android:drawableRight="@mipmap/icon_reply_right_comfort"
+            android:drawablePadding="@dimen/qb_px_1"
+            />
+    </FrameLayout>
+
+</FrameLayout>

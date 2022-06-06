@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vplayer_rootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/qb_px_85"
+        android:background="@drawable/vplayer_bg"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_35">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/vplayer_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="一起看电影"
+                android:textColor="@color/tv_gray2"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/vplayer_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="@dimen/qb_px_15"
+                android:padding="@dimen/qb_px_8"
+                android:src="@mipmap/close_black_smail" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_190"
+            android:clickable="true">
+
+            <SurfaceView
+                android:id="@+id/vplayer_surfaceview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:id="@+id/vplayer_shadow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:visibility="gone" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/vplayer_buffering"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="正在缓冲..."
+                android:textColor="@color/tv_white2"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <FrameLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_38"
+
+                android:background="@drawable/gradual_back_bg2">
+
+
+                <com.eggplant.qiezisocial.widget.QzTextView
+                    android:id="@+id/vplayer_nick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="@dimen/qb_px_15"
+                    android:text=""
+                    android:textColor="@color/tv_white2"
+                    android:textSize="11sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/vplayer_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_38"
+                android:layout_gravity="bottom"
+                android:background="@drawable/gradual_back_bg"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/vplayer_func"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/qb_px_5"
+                    android:padding="@dimen/qb_px_5"
+                    android:src="@mipmap/icon_vplayer_start" />
+
+                <com.eggplant.qiezisocial.widget.QzTextView
+                    android:id="@+id/vplayer_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/qb_px_40"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/vplayer_ft"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_110">
+                <com.eggplant.qiezisocial.widget.QzTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_20"
+                    android:drawablePadding="@dimen/qb_px_6"
+                    android:textSize="13sp"
+                    android:textColor="@color/tv_gray2"
+                    android:text="剧情问答"
+                    android:drawableLeft="@mipmap/icon_horn"
+                    />
+                <FrameLayout
+                    android:id="@+id/vplayer_qs_gp"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/qb_px_7"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginRight="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_7"
+                    android:background="@drawable/msg_gchat_mine_bg"
+                    android:clipChildren="false"
+                    android:clipToPadding="false">
+
+                    <com.eggplant.qiezisocial.widget.QzTextView
+                        android:id="@+id/vplayer_qs"
+                        android:maxLines="2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="我想说..."
+                        android:textColor="@color/tv_gray2"
+                        android:textSize="13sp" />
+                </FrameLayout>
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

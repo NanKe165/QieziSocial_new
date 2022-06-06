@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/home_bg"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.eggplant.qiezisocial.widget.topbar.Topbar
+        android:id="@+id/friend_bar"
+        app:tbTitle="全部好友"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <FrameLayout
+        android:id="@+id/friend_ft"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

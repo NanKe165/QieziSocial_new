@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tv_black2">
+
+
+    <com.eggplant.qiezisocial.widget.ninegridImage.preview.HackyViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/tv_pager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="@dimen/qb_px_20"
+        android:text="1/4"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+    <FrameLayout
+        android:id="@+id/preview_bottom"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        >
+        <com.eggplant.qiezisocial.widget.image.CircleImageView
+            android:layout_width="@dimen/qb_px_40"
+            android:layout_height="@dimen/qb_px_40"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="1px"
+            android:id="@+id/user_head"
+            android:layout_marginBottom="@dimen/qb_px_88"
+            android:layout_marginLeft="@dimen/qb_px_18"
+            android:layout_marginTop="@dimen/qb_px_6"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/user_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:layout_marginLeft="@dimen/qb_px_70"
+            android:text=""
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/user_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_70"
+            android:layout_marginTop="@dimen/qb_px_25"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:text=""
+            android:maxLines="1"
+            />
+        <com.eggplant.qiezisocial.widget.QzEdittext
+            android:id="@+id/preview_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lchat_ry"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/qb_px_8"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:layout_marginRight="@dimen/qb_px_15"
+            android:background="@drawable/verify_chat_edit_bg"
+            android:hint="评论最多10个字哦"
+            android:imeOptions="actionSend"
+            android:inputType="textImeMultiLine"
+            android:maxLength="10"
+            android:paddingBottom="@dimen/qb_px_16"
+            android:paddingLeft="@dimen/qb_px_25"
+            android:paddingRight="@dimen/qb_px_25"
+            android:paddingTop="@dimen/qb_px_16"
+            android:textColorHint="@color/bottom_hint_color"
+            android:textSize="14sp"
+            android:visibility="visible" />
+    </FrameLayout>
+
+
+    <com.eggplant.qiezisocial.widget.keyboard.EmojiKeyBoard
+        android:id="@+id/preview_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+    </com.eggplant.qiezisocial.widget.keyboard.EmojiKeyBoard>
+
+
+
+</FrameLayout>

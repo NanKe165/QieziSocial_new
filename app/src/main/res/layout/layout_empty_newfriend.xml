@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/home_bg"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/empty_msg_icon"
+        android:layout_marginTop="@dimen/qb_px_173"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="您当前还没有收到好友邀请"
+        android:textSize="15sp"
+        android:textColor="@color/empty_hint_color"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_300"
+        />
+</FrameLayout>

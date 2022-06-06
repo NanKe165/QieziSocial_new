@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_126"
+        android:layout_marginLeft="@dimen/qb_px_32"
+        android:layout_marginRight="@dimen/qb_px_32"
+        android:background="@drawable/dialog_shadow">
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/dlg_pub_vcr_record"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/tv_black"
+            android:textSize="15sp"
+            android:text="拍摄照片或视频"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/qb_px_25"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/login_edit_color"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/dlg_pub_vcr_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/tv_black"
+            android:textSize="15sp"
+            android:text="从相册选择"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/qb_px_25"
+            />
+    </LinearLayout>
+
+</FrameLayout>

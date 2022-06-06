@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.eggplant.qiezisocial.widget.topbar.Topbar
+        app:bgColor="@color/translate"
+        android:id="@+id/ft_setinfo_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_30" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_73"
+        android:text="完善信息"
+        android:textColor="@color/tv_black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:id="@+id/ft_setinfo_head"
+        android:layout_width="@dimen/qb_px_83"
+        android:layout_height="@dimen/qb_px_83"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_134"
+        android:src="@mipmap/login_normal_head" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_40"
+        android:layout_marginTop="@dimen/qb_px_273"
+        android:text="昵称"
+        android:textColor="@color/tv_gray"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/ft_setinfo_nick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_40"
+        android:layout_marginRight="@dimen/qb_px_40"
+        android:layout_marginTop="@dimen/qb_px_302"
+        android:background="@null"
+        android:textColor="@color/tv_black"
+        android:textSize="27sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_1"
+        android:layout_marginLeft="@dimen/qb_px_40"
+        android:layout_marginRight="@dimen/qb_px_40"
+        android:layout_marginTop="@dimen/qb_px_340"
+        android:background="@color/line_color" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_40"
+        android:layout_marginTop="@dimen/qb_px_370"
+        android:text="性别"
+        android:textColor="@color/tv_gray"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_53"
+        android:layout_marginLeft="@dimen/qb_px_30"
+        android:layout_marginRight="@dimen/qb_px_30"
+        android:layout_marginTop="@dimen/qb_px_403"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/ft_setinfo_boy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            android:background="@drawable/login_boy_bg">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@mipmap/icon_filter_boy"
+                android:drawablePadding="@dimen/qb_px_8"
+                android:gravity="center_vertical"
+                android:text="帅哥"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="@dimen/qb_px_23"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:id="@+id/ft_setinfo_girl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/login_girl_bg">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@mipmap/icon_filter_girl"
+                android:drawablePadding="@dimen/qb_px_8"
+                android:gravity="center_vertical"
+                android:text="美女"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ft_setinfo_sure"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_515"
+        android:background="@drawable/tv_yellow_bg4"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/tv_black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+</FrameLayout>

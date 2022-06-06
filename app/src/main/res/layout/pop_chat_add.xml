@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:paddingLeft="@dimen/qb_px_25"
+        android:paddingRight="@dimen/qb_px_25"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_95"
+        android:background="@mipmap/chat_add_bg"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/pop_chat_add_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_marginTop="@dimen/qb_px_25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/chat_sendimg" />
+            <TextView
+                android:layout_marginTop="@dimen/qb_px_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="相册"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/tv_black3"
+                android:textSize="11sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pop_chat_add_takephoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_marginTop="@dimen/qb_px_25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/chat_takephoto" />
+            <TextView
+                android:layout_marginTop="@dimen/qb_px_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拍照"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/tv_black3"
+                android:textSize="11sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pop_chat_add_recordvideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_marginTop="@dimen/qb_px_25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/chat_record_video" />
+            <TextView
+                android:layout_marginTop="@dimen/qb_px_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="摄像"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/tv_black3"
+                android:textSize="11sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pop_chat_add_call"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_marginTop="@dimen/qb_px_25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/chat_call" />
+            <TextView
+                android:layout_marginTop="@dimen/qb_px_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="语音通话"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/tv_black3"
+                android:textSize="11sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pop_chat_add_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_marginTop="@dimen/qb_px_25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/chat_video" />
+            <TextView
+                android:layout_marginTop="@dimen/qb_px_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="视频通话"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/tv_black3"
+                android:textSize="11sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

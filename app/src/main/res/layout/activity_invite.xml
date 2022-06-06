@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/invite_root"
+        android:background="@drawable/homebg1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/invite_ry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qb_px_47" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="@dimen/qb_px_22"
+            android:text="扫一扫下载"
+            android:textColor="@color/tv_gray2"
+            android:textSize="13sp" />
+
+        <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+            android:id="@+id/invite_img"
+            android:layout_width="@dimen/qb_px_96"
+            android:layout_height="@dimen/qb_px_96"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="@dimen/qb_px_45" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="@dimen/qb_px_162"
+            android:text="-  开启社交新纪元  -"
+            android:textColor="@color/tv_black"
+            android:textSize="20sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="@dimen/qb_px_196"
+            android:drawableLeft="@mipmap/icon_box_invite"
+            android:drawablePadding="@dimen/qb_px_5"
+            android:text="交个朋友"
+            android:textColor="@color/tv_black"
+            android:textSize="23sp" />
+    </FrameLayout>
+
+</FrameLayout>

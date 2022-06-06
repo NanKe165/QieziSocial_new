@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/qb_px_15"
+    android:paddingRight="@dimen/qb_px_15">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pub_dialog_bg">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/qb_px_21"
+            android:text="退出登录"
+            android:textColor="@color/tv_black2"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/dlg_logout_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:layout_marginTop="@dimen/qb_px_18"
+            android:padding="@dimen/qb_px_5"
+            android:src="@mipmap/close_black" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/qb_px_97"
+            android:text="退出登录后无法收到别人的信息是否继续？"
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/dlg_logout_sure"
+            android:background="@drawable/logout_bg"
+            android:layout_width="@dimen/qb_px_120"
+            android:layout_height="@dimen/qb_px_50"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/qb_px_32"
+            android:layout_marginTop="@dimen/qb_px_170"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/tv_black"
+            android:textSize="14sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/dlg_logout_cancel"
+            android:background="@drawable/logout_bg"
+            android:layout_width="@dimen/qb_px_120"
+            android:layout_height="@dimen/qb_px_50"
+            android:layout_marginBottom="@dimen/qb_px_38"
+            android:layout_marginLeft="@dimen/qb_px_32"
+            android:layout_marginTop="@dimen/qb_px_170"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/tv_black"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</FrameLayout>

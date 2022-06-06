@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/select_state_bg"
+    android:paddingTop="@dimen/qb_px_30"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.eggplant.qiezisocial.widget.topbar.Topbar
+        android:id="@+id/state_bar"
+        app:tbTitle="选择心情"
+        app:tbTitleColor="@color/white"
+        app:rightTxtBg="@drawable/tv_yellow_bg"
+        app:tbRightTxt="确定"
+        app:bgColor="@color/translate"
+        android:layout_width="match_parent"
+        app:returnDrawable="@mipmap/close_white"
+        android:layout_height="wrap_content"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginLeft="@dimen/qb_px_20"
+        android:layout_marginRight="@dimen/qb_px_20"
+        android:id="@+id/state_ry"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</FrameLayout>

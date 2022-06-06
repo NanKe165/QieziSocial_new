@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/mdy_rootView"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/qb_px_85"
+        android:background="@drawable/dynamic_bg"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_35">
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/mdy_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="附近动态"
+                android:textSize="13sp"
+                android:textColor="@color/tv_gray2"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                />
+            <ImageView
+                android:id="@+id/mdy_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/qb_px_8"
+                android:src="@mipmap/close_black_smail"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="@dimen/qb_px_15"
+                />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.amap.api.maps.MapView
+                android:id="@+id/mdy_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/qb_px_60"
+                />
+            <FrameLayout
+                android:visibility="gone"
+                android:id="@+id/mdy_shadown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/home_bg"
+                />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <com.eggplant.qiezisocial.widget.keyboard.EmojiKeyBoard
+        android:id="@+id/mdy_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <FrameLayout
+            android:clickable="true"
+            android:id="@+id/mdy_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_60"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/qb_px_7"
+            android:paddingLeft="@dimen/qb_px_15"
+            android:paddingRight="@dimen/qb_px_15"
+            android:paddingTop="@dimen/qb_px_7">
+
+            <com.eggplant.qiezisocial.widget.QzEdittext
+                android:id="@+id/mdy_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/qb_px_65"
+                android:background="@drawable/dynamic_edit_bg"
+                android:gravity="top"
+                android:hint="编辑文本"
+                android:paddingBottom="@dimen/qb_px_8"
+                android:paddingLeft="@dimen/qb_px_13"
+                android:paddingRight="@dimen/qb_px_13"
+                android:paddingTop="@dimen/qb_px_8"
+                android:textColorHint="@color/tv_hint2"
+                android:textColor="@color/tv_black5"
+                android:textSize="13sp" />
+
+            <FrameLayout
+                android:visibility="gone"
+                android:id="@+id/mdy_sel_meida"
+                android:layout_width="@dimen/qb_px_46"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/qb_px_56"
+                android:background="@drawable/dynamic_edit_bg">
+
+                <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+                    android:id="@+id/mdy_media_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/icon_dynamic_upload" />
+
+                <ImageView
+                    android:id="@+id/mdy_media_play"
+                    android:layout_width="@dimen/qb_px_15"
+                    android:layout_height="@dimen/qb_px_15"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/vcr_play"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/mdy_media_delete"
+                    android:layout_width="@dimen/qb_px_15"
+                    android:layout_height="@dimen/qb_px_15"
+                    android:layout_gravity="right"
+                    android:src="@mipmap/video_delete"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/mdy_pub"
+                android:layout_width="@dimen/qb_px_46"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@drawable/dy_pub_selc_bg"
+                android:gravity="center"
+                android:text="发布"
+                android:clickable="false"
+                android:textColor="@color/tv_gray2"
+                android:textSize="13sp" />
+        </FrameLayout>
+    </com.eggplant.qiezisocial.widget.keyboard.EmojiKeyBoard>
+
+</FrameLayout>

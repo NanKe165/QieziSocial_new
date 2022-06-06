@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.zjun:rule-view-0.0.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/rule-view-0.0.1.aar/c160259ef7b06e1115bc478c86c9ebc7/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/rule-view-0.0.1.aar/c160259ef7b06e1115bc478c86c9ebc7/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zjun/rule-view/0.0.1/106bcb9f5a9a0c7bc8420769f4383fbec21291df/rule-view-0.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

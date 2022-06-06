@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/scene_blackbg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/translate_black" />
+
+    <FrameLayout
+        android:id="@+id/scene_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:layout_marginRight="@dimen/qb_px_15"
+            android:background="@drawable/pub_dialog_bg"
+            android:paddingBottom="@dimen/qb_px_10"
+            >
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/qb_px_17"
+                android:text="找朋友"
+                android:textColor="@color/tv_black2"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:layout_marginLeft="@dimen/qb_px_15"
+                android:layout_marginRight="@dimen/qb_px_15"
+                android:id="@+id/scene_tab"
+                android:layout_width="@dimen/qb_px_150"
+                android:layout_height="@dimen/qb_px_35"
+                android:layout_marginTop="@dimen/qb_px_45"
+                android:background="@color/white"
+                app:tl_indicator_color="@color/tv_yellow"
+                app:tl_indicator_height="4dp"
+                app:tl_indicator_width="10dp"
+                app:tl_tab_space_equal="true"
+                app:tl_textSelectColor="@color/tv_black2"
+                app:tl_textUnselectColor="@color/tv_black2"
+                app:tl_textsize="15sp" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/scene_vp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_422"
+                android:layout_marginTop="@dimen/qb_px_90" />
+
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:visibility="invisible"
+                android:layout_marginLeft="@dimen/qb_px_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/scene_vp"
+                android:layout_marginTop="18dp"
+                android:text="* 自建场景功能即将开放..."
+                android:textColor="@color/tv_gray4"
+                android:textSize="10sp"
+                app:font_format="@string/font_format_regular" />
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:visibility="visible"
+                android:layout_marginRight="@dimen/qb_px_15"
+                android:id="@+id/scene_sure"
+                android:layout_width="@dimen/qb_px_60"
+                android:layout_height="@dimen/qb_px_26"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/scene_vp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/qb_px_10"
+                android:background="@drawable/tv_yellow_bg"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/tv_black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:layout_marginRight="@dimen/qb_px_15"
+            android:background="@drawable/pub_dialog_bg"
+            android:paddingLeft="@dimen/qb_px_15"
+            android:paddingRight="@dimen/qb_px_15"
+            android:visibility="gone"
+            android:id="@+id/scene_set_mys"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_548"
+            />
+    </FrameLayout>
+
+
+</FrameLayout>

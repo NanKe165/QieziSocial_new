@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/share_bg"
+    android:orientation="horizontal">
+
+
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/dlg_share_wechat"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:drawableTop="@drawable/share_wechat"
+        android:drawablePadding="@dimen/qb_px_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text="微信"
+        android:textColor="@color/tv_gray2"
+        android:textSize="10sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/dlg_share_pyq"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:drawableTop="@drawable/share_pyq"
+        android:drawablePadding="@dimen/qb_px_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text="朋友圈"
+        android:textColor="@color/tv_gray2"
+        android:textSize="10sp" />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/dlg_share_qq"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:drawableTop="@drawable/share_qq"
+        android:drawablePadding="@dimen/qb_px_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text="QQ"
+        android:textColor="@color/tv_gray2"
+        android:textSize="10sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/dlg_share_sina"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:drawableTop="@drawable/share_sina"
+        android:drawablePadding="@dimen/qb_px_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text="微博"
+        android:textColor="@color/tv_gray2"
+        android:textSize="10sp" />
+</LinearLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:jianxi="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/translate"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@drawable/float_emoji_keyboard_bg"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/qb_px_15"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/qb_px_7"
+        android:paddingTop="@dimen/qb_px_7">
+
+        <FrameLayout
+            android:layout_marginRight="@dimen/qb_px_8"
+            android:layout_width="@dimen/qb_px_33"
+            android:layout_height="@dimen/qb_px_33"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/qb_px_5"
+            android:background="@drawable/tv_yellow_bg">
+
+            <ImageView
+                android:id="@+id/emoji_audio"
+                android:layout_width="@dimen/qb_px_33"
+                android:layout_height="@dimen/qb_px_33"
+                android:padding="@dimen/qb_px_7"
+                android:src="@mipmap/emoji_audio" />
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.eggplant.qiezisocial.widget.QzEdittext
+                android:id="@+id/emoji_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/keyboard_bg2"
+                android:maxLines="5"
+                android:minHeight="@dimen/qb_px_32"
+                android:paddingLeft="@dimen/qb_px_12"
+                android:paddingRight="@dimen/qb_px_12"
+                android:textColor="@color/tv_black2"
+                android:textSize="14sp"
+                jianxi:expressionSize="@dimen/qb_px_18" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/emoji_face"
+            android:layout_width="@dimen/qb_px_35"
+            android:layout_height="@dimen/qb_px_35"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/qb_px_3"
+            android:padding="@dimen/qb_px_5"
+            android:src="@mipmap/emoji_face" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/qb_px_5">
+
+            <FrameLayout
+                android:id="@+id/emoji_add_gp"
+                android:layout_width="@dimen/qb_px_33"
+                android:layout_height="@dimen/qb_px_33"
+                android:layout_gravity="center"
+                android:background="@drawable/tv_yellow_bg">
+
+                <ImageView
+                    android:id="@+id/emoji_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/qb_px_7"
+                    android:src="@mipmap/emoji_add" />
+            </FrameLayout>
+
+
+            <TextView
+                android:id="@+id/emoji_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/qb_px_6"
+                android:paddingBottom="@dimen/qb_px_3"
+                android:paddingLeft="@dimen/qb_px_5"
+                android:paddingRight="@dimen/qb_px_5"
+                android:paddingTop="@dimen/qb_px_3"
+                android:text="发送"
+                android:textColor="@color/tv_black"
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <sj.keyboard.widget.FuncLayout
+        android:id="@+id/ly_kvml"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:visibility="gone" />
+</LinearLayout>

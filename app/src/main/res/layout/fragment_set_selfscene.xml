@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/set_selfscene_gp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:text="发起场景"
+        android:textColor="@color/tv_black2"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/set_selfscene_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:padding="@dimen/qb_px_5"
+        android:src="@mipmap/close_black" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_58"
+        android:text="主标题"
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_55"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_80">
+
+        <com.eggplant.qiezisocial.widget.QzEdittext
+            android:id="@+id/set_selfscene_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_55"
+            android:background="@drawable/edit_bg"
+            android:gravity="center_vertical"
+            android:maxLength="5"
+            android:paddingLeft="@dimen/qb_px_17"
+            android:text=""
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/set_selfscene_title_numb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/qb_px_20"
+            android:text="(0/5)"
+            android:textColor="@color/tv_gray2"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_160"
+
+        android:text="副标题"
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_55"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_180">
+
+        <com.eggplant.qiezisocial.widget.QzEdittext
+            android:id="@+id/set_selfscene_des"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_55"
+            android:background="@drawable/edit_bg"
+            android:gravity="center_vertical"
+            android:maxLength="10"
+            android:paddingLeft="@dimen/qb_px_17"
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/set_selfscene_des_numb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/qb_px_20"
+            android:text="(0/10)"
+            android:textColor="@color/tv_gray2"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_260"
+        android:text="插图"
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/set_selfscene_ry"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginTop="@dimen/qb_px_290" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_365"
+        android:text="权限"
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/set_selfscene_state_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_395"
+        android:drawableRight="@mipmap/ic_select_state"
+        android:text="所有人可见"
+        android:textColor="@color/tv_gray4"
+        android:textSize="14sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/set_selfscene_state_invite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_425"
+        android:drawableRight="@mipmap/ic_unselect_state"
+        android:text="邀请码可进"
+        android:textColor="@color/tv_gray4"
+        android:textSize="14sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/set_selfscene_setcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_82"
+        android:layout_marginTop="@dimen/qb_px_427"
+        android:text="（点击设置邀请码）"
+        android:textColor="#FFA30C"
+        android:textSize="11sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/set_selfscene_sure"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_53"
+        android:layout_marginLeft="@dimen/qb_px_55"
+        android:layout_marginRight="@dimen/qb_px_55"
+        android:layout_marginTop="@dimen/qb_px_475"
+        android:background="@drawable/tv_yellow_bg"
+        android:gravity="center"
+        android:text="自建"
+        android:textColor="@color/tv_black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+
+        />
+
+    <FrameLayout
+        android:id="@+id/set_selfscene_sub_success"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/qb_px_58"
+        android:background="@color/white"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/qb_px_60"
+            android:drawablePadding="@dimen/qb_px_20"
+            android:drawableTop="@mipmap/icon_sub_success"
+            android:gravity="center_horizontal"
+            android:text="提交成功"
+            android:textColor="@color/tv_black2"
+            android:textSize="23sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/qb_px_200"
+            android:text="审核通过后将开放此场景"
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/set_selfscene_ok"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_53"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/qb_px_50"
+            android:layout_marginLeft="@dimen/qb_px_55"
+            android:layout_marginRight="@dimen/qb_px_55"
+            android:background="@drawable/tv_yellow_bg"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/tv_black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/set_selfscene_setcode_gp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:visibility="gone">
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/qb_px_15"
+            android:text="设置邀请码"
+            android:textColor="@color/tv_black2"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <com.eggplant.qiezisocial.widget.QzEdittext
+            android:id="@+id/set_selfscene_setcode_code"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:layout_marginRight="@dimen/qb_px_15"
+            android:background="@drawable/edit_bg"
+            android:gravity="center"
+            android:maxLength="6"
+            android:paddingLeft="@dimen/qb_px_17"
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:hint="请输入6位数邀请码"
+            android:layout_height="@dimen/qb_px_55"
+            android:layout_marginTop="@dimen/qb_px_125" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/set_selfscene_setcode_ok"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_53"
+
+
+            android:layout_marginLeft="@dimen/qb_px_55"
+            android:layout_marginRight="@dimen/qb_px_55"
+            android:layout_marginTop="@dimen/qb_px_265"
+            android:background="@drawable/tv_yellow_bg"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/tv_black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</FrameLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_62">
+    <FrameLayout
+        android:background="@color/line_color"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+    <LinearLayout
+
+        android:layout_marginLeft="@dimen/qb_px_13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        >
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_mx_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tv_black"
+            android:text="****"
+            android:textSize="15sp"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_mx_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="@color/tv_gray2"
+            android:layout_marginTop="10dp"
+            android:text="2022.11.21 16:21"
+            />
+    </LinearLayout>
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_mx_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="@dimen/qb_px_13"
+        android:text="+50"
+        android:textColor="@color/jd_color"
+        android:textSize="14sp"
+
+        />
+</FrameLayout>

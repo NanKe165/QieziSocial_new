@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ft_msg_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    >
+    <LinearLayout
+        android:paddingTop="@dimen/qb_px_90"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line_color6" />
+        <include layout="@layout/view_msg_head"  android:visibility="gone"/>
+        <android.support.v7.widget.RecyclerView
+            android:background="@color/home_bg"
+            android:id="@+id/ft_msg_ry"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+    </LinearLayout>
+
+
+
+
+
+</FrameLayout>

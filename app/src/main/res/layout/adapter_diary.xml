@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/qb_px_15"
+    android:paddingLeft="@dimen/qb_px_14"
+    android:paddingRight="@dimen/qb_px_14">
+
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:id="@+id/ap_diary_head"
+        android:layout_width="@dimen/qb_px_33"
+        android:layout_height="@dimen/qb_px_33"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:src="@mipmap/normal_head" />
+    <ImageView
+        android:layout_width="@dimen/qb_px_13"
+        android:layout_height="@dimen/qb_px_13"
+        android:layout_alignRight="@id/ap_diary_head"
+        android:layout_alignBottom="@id/ap_diary_head"
+        android:id="@+id/ap_diary_sex"
+
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_diary_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_10"
+        android:layout_marginTop="@dimen/qb_px_22"
+        android:layout_toRightOf="@id/ap_diary_head"
+        android:text=""
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_diary_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ap_diary_head"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:textColor="@color/tv_black5"
+        android:textSize="13sp" />
+
+    <com.eggplant.qiezisocial.widget.MultMediaView
+        android:id="@+id/ap_diary_mulmedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ap_diary_txt"
+        android:layout_marginTop="@dimen/qb_px_12" />
+
+    <LinearLayout
+        android:id="@+id/ap_diary_func"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ap_diary_mulmedia"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/qb_px_10"
+        android:paddingTop="@dimen/qb_px_10">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_diary_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/tv_gray2"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/ap_diary_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/qb_px_5"
+            android:src="@mipmap/report"
+            android:visibility="gone" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_diary_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:drawableLeft="@mipmap/like_unselect"
+            android:gravity="bottom"
+            android:padding="@dimen/qb_px_5"
+            android:text="0"
+            android:textColor="@color/tv_gray2"
+            android:textSize="10sp"
+            android:visibility="visible" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_diary_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:drawableLeft="@mipmap/comment"
+            android:gravity="bottom"
+            android:padding="@dimen/qb_px_5"
+            android:text="0"
+            android:textColor="@color/tv_gray2"
+            android:textSize="10sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_diary_burst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/burst"
+            android:gravity="bottom"
+            android:padding="@dimen/qb_px_5"
+            android:text="炸"
+            android:textColor="@color/tv_gray2"
+            android:textSize="10sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <com.eggplant.qiezisocial.widget.CommentListView
+        android:id="@+id/ap_diary_commentlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ap_diary_func"
+        android:orientation="vertical"
+        app:item_color_content="@color/tv_black2"
+        app:item_color_name="@color/text_00376A" />
+
+    <FrameLayout
+        android:id="@+id/ap_diary_shade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ap_diary_commentlist"
+        android:background="@mipmap/icon_shade"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/icon_comment_loadmore" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/ap_diary_packup_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ap_diary_commentlist"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:padding="@dimen/qb_px_5"
+        android:src="@mipmap/icon_comment_packup"
+        android:visibility="gone" />
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingTop="@dimen/qb_px_30"
+    android:layout_height="wrap_content">
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ft_select_birth_sure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/qb_px_5"
+        android:layout_gravity="right"
+        android:textSize="13sp"
+        android:textColor="@color/tv_black"
+        android:text="确定"
+        android:layout_marginTop="@dimen/qb_px_5"
+        android:layout_marginRight="@dimen/qb_px_5"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:background="@color/line_color2"
+        android:layout_marginTop="@dimen/qb_px_35"
+        android:layout_height="@dimen/qb_px_1"/>
+    <DatePicker
+        android:background="@color/login_ft_bg"
+        android:id="@+id/ft_select_birth_datepicker"
+        android:datePickerMode="spinner"
+        android:layout_marginTop="@dimen/qb_px_36"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnersShown="true"
+        android:calendarViewShown="false"
+        />
+</FrameLayout>

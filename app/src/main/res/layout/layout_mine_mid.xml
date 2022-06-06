@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        android:background="@color/line_color2" />
+
+    <LinearLayout
+        android:id="@+id/setinfo_head_gp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_67"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="头像"
+            android:textColor="@color/tv_black3"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+            android:id="@+id/setinfo_head"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/normal_head"
+            android:layout_width="@dimen/qb_px_40"
+            android:layout_height="@dimen/qb_px_40"
+            android:layout_marginRight="@dimen/qb_px_10" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/sp_icon" />
+    </LinearLayout>
+
+    <View
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        android:background="@color/line_color2" />
+
+    <LinearLayout
+        android:visibility="visible"
+        android:id="@+id/setinfo_nick_gp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="昵称"
+            android:textColor="@color/tv_black3"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/setinfo_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:text=""
+            android:textColor="@color/tv_black3"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/sp_icon" />
+    </LinearLayout>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        android:background="@color/line_color2" />
+
+    <LinearLayout
+        android:id="@+id/setinfo_career_gp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="职业"
+            android:textColor="@color/tv_black3"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/setinfo_career"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:text=""
+            android:textColor="@color/tv_black3"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/sp_icon" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        android:background="@color/line_color2" />
+
+    <LinearLayout
+        android:id="@+id/setinfo_sign_gp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="签名"
+            android:textColor="@color/tv_black3"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/setinfo_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:text=""
+            android:textColor="@color/tv_black3"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/sp_icon" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        android:background="@color/line_color2" />
+
+    <LinearLayout
+        android:id="@+id/setinfo_height_gp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="身高"
+            android:textColor="@color/tv_black3"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/setinfo_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:text=""
+            android:textColor="@color/tv_black3"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/sp_icon" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        android:background="@color/line_color2" />
+
+    <LinearLayout
+        android:id="@+id/setinfo_weight_gp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="体重"
+            android:textColor="@color/tv_black3"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/setinfo_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:text=""
+            android:textColor="@color/tv_black3"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/sp_icon" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        android:background="@color/line_color2" />
+
+    <LinearLayout
+        android:id="@+id/setinfo_edu_gp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="学历"
+            android:textColor="@color/tv_black3"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/setinfo_edu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:text=""
+            android:textColor="@color/tv_black3"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/sp_icon" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        android:background="@color/line_color2" />
+
+    <LinearLayout
+        android:id="@+id/setinfo_insterest_gp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="兴趣"
+            android:textColor="@color/tv_black3"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/setinfo_insterest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:maxLines="2"
+            android:maxWidth="@dimen/qb_px_240"
+            android:text=""
+            android:textColor="@color/tv_black3"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/sp_icon" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        android:background="@color/line_color2" />
+
+    <LinearLayout
+        android:id="@+id/setinfo_object_gp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="交友目的"
+            android:textColor="@color/tv_black3"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/setinfo_object"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:maxLines="2"
+            android:maxWidth="@dimen/qb_px_240"
+            android:text=""
+            android:textColor="@color/tv_black3"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/sp_icon" />
+    </LinearLayout>
+
+    <View
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        android:background="@color/line_color2" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:orientation="horizontal">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/sp_album_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qb_px_23"
+            android:text="相册"
+            android:textColor="@color/tv_black3"
+            android:textSize="13sp" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/setinfo_album_ry"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/qb_px_75"
+            android:layout_marginBottom="@dimen/qb_px_10"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:layout_marginTop="@dimen/qb_px_10" />
+
+    </LinearLayout>
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/setinfo_add_pic"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/setinfo_add_pic"
+        android:layout_gravity="right"
+        />
+
+</LinearLayout>

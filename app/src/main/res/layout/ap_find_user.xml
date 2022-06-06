@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_60">
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:layout_width="@dimen/qb_px_53"
+        android:layout_height="@dimen/qb_px_53"
+        android:src="@mipmap/normal_head"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:id="@+id/ap_find_user_head"
+        android:layout_marginRight="@dimen/qb_px_15"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/qb_px_80"
+        android:layout_gravity="center_vertical"
+        >
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_find_user_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:textColor="@color/tv_black"
+            android:textSize="15sp"
+            android:text="sss"
+
+            />
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="朋友号："
+                android:textSize="12sp"
+                android:textColor="@color/tv_gray4"
+                />
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/ap_find_user_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_50"
+                android:textSize="12sp"
+                android:text="111"
+                android:textColor="@color/home_refresh_hint_color"
+                />
+        </FrameLayout>
+
+    </LinearLayout>
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="@dimen/qb_px_70"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:text="查看"
+        android:textColor="@color/tv_black"
+        android:gravity="center"
+        android:background="@drawable/tv_yellow_bg"
+        android:textSize="10sp"
+        android:layout_height="@dimen/qb_px_26"
+
+        />
+</FrameLayout>

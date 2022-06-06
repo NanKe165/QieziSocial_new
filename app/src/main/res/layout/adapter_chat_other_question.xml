@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:jianxi="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingTop="2dp">
+
+    <TextView
+        android:id="@+id/chat_hint_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/qb_px_10"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:paddingBottom="@dimen/qb_px_3"
+        android:paddingLeft="@dimen/qb_px_5"
+        android:paddingRight="@dimen/qb_px_5"
+        android:paddingTop="@dimen/qb_px_3"
+        android:text="昨天 20:04"
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp"
+        android:visibility="gone" />
+    <!-- headview-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.eggplant.qiezisocial.widget.image.CircleImageView
+            android:id="@+id/adapter_chat_head"
+            android:layout_width="@dimen/qb_px_40"
+            android:layout_height="@dimen/qb_px_40"
+            android:layout_marginBottom="@dimen/qb_px_8"
+           android:layout_marginLeft="@dimen/qb_px_10"
+            android:layout_marginTop="@dimen/qb_px_11"
+            android:src="@mipmap/normal_head" />
+
+
+        <RelativeLayout
+            android:id="@+id/center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/qb_px_7"
+            android:layout_marginLeft="@dimen/qb_px_7"
+            android:layout_marginTop="@dimen/qb_px_12"
+            android:layout_toRightOf="@id/adapter_chat_head"
+            android:background="@drawable/msg_chat_other_bg"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/adapter_chat_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/qb_px_5"
+                android:layout_marginRight="@dimen/qb_px_5"
+                android:maxWidth="@dimen/qb_px_200"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                jianxi:expressionSize="@dimen/qb_px_18" />
+
+            <FrameLayout
+                android:id="@+id/adapter_chat_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/adapter_chat_content"
+                android:layout_marginTop="@dimen/qb_px_17"
+                android:visibility="gone">
+
+                <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+                    android:id="@+id/adapter_chat_cImg"
+                    android:layout_width="@dimen/qb_px_93"
+                    android:layout_height="@dimen/qb_px_60"
+                    android:scaleType="centerCrop"
+                    android:src="@color/color_orange" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/ic_home_video_play" />
+
+            </FrameLayout>
+
+            <com.eggplant.qiezisocial.widget.ChatMediaView
+                android:id="@+id/adapter_chat_mediaview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/adapter_chat_content"
+                android:layout_marginTop="@dimen/qb_px_10" />
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/adapter_chat_ununited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/qb_px_30"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:layout_marginTop="@dimen/qb_px_5"
+            android:layout_toLeftOf="@id/center_gp"
+            android:src="@mipmap/chat_ununited"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

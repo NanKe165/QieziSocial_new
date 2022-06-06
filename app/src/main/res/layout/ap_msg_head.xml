@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:id="@+id/ap_msg_head_img"
+        android:layout_width="@dimen/qb_px_50"
+        android:layout_height="@dimen/qb_px_50"
+        android:src="@mipmap/normal_head" />
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/ap_msg_head_online"
+        android:layout_alignRight="@id/ap_msg_head_img"
+        android:layout_alignBottom="@id/ap_msg_head_img"
+        android:background="@drawable/green_circle"
+        android:layout_margin="@dimen/qb_px_4"
+        android:layout_width="@dimen/qb_px_8"
+        android:layout_height="@dimen/qb_px_8"/>
+    <com.eggplant.qiezisocial.widget.QzTextView
+
+        android:id="@+id/ap_msg_head_hint"
+        android:layout_width="@dimen/qb_px_17"
+        android:layout_height="@dimen/qb_px_17"
+        android:background="@drawable/msg_hint3"
+        android:layout_marginLeft="@dimen/qb_px_35"
+        android:layout_marginTop="@dimen/qb_px_2"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

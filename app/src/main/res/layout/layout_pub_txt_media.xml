@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    <ImageView
+        android:visibility="gone"
+        android:layout_margin="@dimen/qb_px_6"
+        android:id="@+id/ly_media_add"
+        android:layout_width="@dimen/qb_px_50"
+        android:layout_height="@dimen/qb_px_50"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        android:src="@mipmap/icon_media_add" />
+    <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+        android:layout_margin="@dimen/qb_px_6"
+        android:id="@+id/ly_media_img"
+        android:layout_width="@dimen/qb_px_50"
+        android:layout_height="@dimen/qb_px_50"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        android:src="@color/color_orange" />
+
+    <ImageView
+        android:id="@+id/ly_media_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:padding="@dimen/qb_px_3"
+        android:src="@mipmap/icon_delete" />
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/ly_media_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_home_video_play" />
+</FrameLayout>

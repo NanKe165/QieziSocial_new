@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ft_scene_verify_bg"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_17"
+        android:text="输入邀请码进入场景"
+        android:textColor="@color/tv_black2"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <include
+        layout="@layout/ap_fresh_select_object"
+        android:layout_width="@dimen/qb_px_133"
+        android:layout_height="@dimen/qb_px_70"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_125" />
+
+    <com.eggplant.qiezisocial.widget.QzEdittext
+        android:id="@+id/ft_scene_verify_code"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_55"
+        android:layout_marginLeft="@dimen/qb_px_20"
+        android:layout_marginRight="@dimen/qb_px_20"
+        android:layout_marginTop="@dimen/qb_px_245"
+        android:background="@drawable/edit_bg"
+        android:gravity="center"
+        android:hint="请输入邀请码"
+        android:textColor="@color/tv_black2"
+        android:textColorHint="@color/tv_gray"
+        android:maxLength="6"
+        android:inputType="number"
+        android:textSize="16sp" />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ft_scene_verify_error"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_310"
+        android:text="邀请码错误请重新输入"
+        android:textColor="#FC4631"
+        android:textSize="12sp"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ft_scene_verify_sure"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_53"
+        android:layout_marginLeft="@dimen/qb_px_55"
+        android:layout_marginRight="@dimen/qb_px_55"
+        android:layout_marginTop="@dimen/qb_px_425"
+        android:background="@drawable/tv_yellow_bg"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/tv_black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+
+</FrameLayout>

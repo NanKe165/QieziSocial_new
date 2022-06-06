@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/modify_sign_bg">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/qb_px_35"
+            android:text="签名:"
+            android:textColor="@color/tv_black"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/modify_sign"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/qb_px_85"
+            android:layout_marginRight="@dimen/qb_px_85"
+            android:maxLines="2"
+            android:maxLength="18"
+            android:background="@null"
+            android:hint="我的地盘我做主"
+            android:textColor="@color/tv_black"
+            android:textColorHint="@color/tv_hint"
+            android:textSize="17sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/modify_sign_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="@dimen/qb_px_35"
+            android:layout_marginRight="@dimen/qb_px_35"
+            android:text="(0/18)"
+            android:textColor="@color/tv_gray4"
+            android:textSize="13sp" />
+    </FrameLayout>
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/modify_sign_sure"
+        android:layout_marginTop="@dimen/qb_px_20"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:background="@drawable/tv_yellow_bg"
+        android:gravity="center"
+        android:text="确认"
+        android:textColor="@color/tv_black"
+        android:textSize="14sp" />
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingRight="@dimen/qb_px_10"
+    >
+
+    <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+        android:id="@+id/ap_album"
+        android:layout_width="@dimen/qb_px_67"
+        android:layout_height="@dimen/qb_px_67"
+        android:scaleType="centerCrop"
+        />
+</android.support.constraint.ConstraintLayout>

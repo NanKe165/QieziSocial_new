@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_115"
+    android:paddingTop="@dimen/qb_px_50"
+    android:paddingLeft="@dimen/qb_px_14"
+    android:paddingRight="@dimen/qb_px_14">
+    <com.eggplant.qiezisocial.widget.QzTextView
+
+        android:layout_weight="1"
+        android:id="@+id/ft_resend_phone_error"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:text="手机号错了"
+        android:gravity="center"
+        android:background="@drawable/phone_error_bg"
+        android:textColor="@color/tv_black"
+        android:textSize="15sp"
+        />
+    <View
+        android:layout_width="@dimen/qb_px_30"
+        android:layout_height="wrap_content"/>
+    <com.eggplant.qiezisocial.widget.QzTextView
+
+        android:layout_weight="1"
+        android:id="@+id/ft_resend_code"
+        android:layout_width="@dimen/qb_px_150"
+        android:layout_height="@dimen/qb_px_45"
+        android:text="重新发送(60s)"
+        android:gravity="center"
+        android:background="@drawable/resend_code_bg"
+        android:layout_gravity="right"
+        android:textColor="@color/tv_black"
+        android:textSize="15sp"
+        />
+</LinearLayout>

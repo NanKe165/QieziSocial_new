@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="40dp"
+        android:text="Copyright © 2022 场景互动. All rights reserved."
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/qb_px_70"
+        android:drawablePadding="@dimen/qb_px_1"
+        android:drawableTop="@mipmap/welcome_icon"
+        android:text="交个朋友"
+        android:gravity="center"
+        android:textColor="@color/tv_black"
+        android:textSize="@dimen/qb_px_27"
+        android:textStyle="bold" />
+
+</FrameLayout>

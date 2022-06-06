@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/qb_px_90">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ft_fdpark_ry"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:scrollbars="none" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/ap_fmsg_head"
+        android:layout_toRightOf="@id/ap_fmsg_head"
+        android:background="@color/line_color6" />
+
+    <FrameLayout
+        android:id="@+id/ft_fdpark_world"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="@dimen/qb_px_80"
+        android:layout_marginRight="@dimen/qb_px_25"
+       >
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="@dimen/qb_px_3"
+            android:drawableTop="@mipmap/icon_world"
+            android:gravity="center"
+            android:text="世界"
+            android:textColor="@color/tv_gray"
+            android:textSize="10sp" />
+    </FrameLayout>
+</FrameLayout>

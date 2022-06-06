@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/verify_scene_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/translate_black" />
+    <FrameLayout
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:background="@drawable/pub_dialog_bg"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15"
+        android:id="@+id/verify_scene_ft"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_548"/>
+
+</FrameLayout>

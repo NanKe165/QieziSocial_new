@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/qb_px_15"
+    android:paddingLeft="@dimen/qb_px_58"
+    android:paddingRight="@dimen/qb_px_15"
+    android:paddingTop="@dimen/qb_px_15">
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_ag_as_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/login_msg_mine_bg"
+        android:gravity="center_vertical"
+        android:text="你喜欢个子高的苗条女孩"
+        android:textColor="@color/tv_black4"
+        android:textSize="13sp" />
+
+    <ImageView
+
+        android:id="@+id/ap_ag_as_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/qb_px_10"
+        android:layout_marginTop="@dimen/qb_px_12"
+        android:layout_toLeftOf="@id/ap_ag_as_content"
+        android:src="@mipmap/answer_right" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_ag_as_correct"
+        android:layout_below="@id/ap_ag_as_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/qb_px_5"
+        android:background="@drawable/answguess_hinttv_bg"
+        android:drawableLeft="@mipmap/answer_right_option"
+        android:drawablePadding="@dimen/qb_px_4"
+        android:paddingBottom="@dimen/qb_px_5"
+        android:paddingLeft="@dimen/qb_px_8"
+        android:paddingRight="@dimen/qb_px_8"
+        android:paddingTop="@dimen/qb_px_5"
+        android:text="不我不喜欢"
+        android:textColor="@color/tv_black"
+        android:textSize="10sp" />
+
+</RelativeLayout>

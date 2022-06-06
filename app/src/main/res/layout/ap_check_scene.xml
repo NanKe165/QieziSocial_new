@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/qb_px_15"
+    android:paddingLeft="@dimen/qb_px_13"
+    android:paddingRight="@dimen/qb_px_13">
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_check_scene_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_20"
+        android:text="00:00"
+        android:textColor="@color/tv_gray2"
+        android:textSize="13sp" />
+
+    <FrameLayout
+        android:layout_width="@dimen/qb_px_133"
+        android:layout_height="@dimen/qb_px_70"
+        android:layout_marginTop="@dimen/qb_px_48"
+        android:background="@drawable/filter_objitem_bg7">
+
+        <ImageView
+            android:id="@+id/ap_check_scene_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@drawable/filter_obj_bg1" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:text="上地篮球部"
+            android:id="@+id/ap_check_scene_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_12"
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:textColor="@color/tv_black2"
+            android:textSize="13sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_check_scene_des"
+            android:text="上地篮球部"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_12"
+            android:layout_marginTop="@dimen/qb_px_37"
+            android:textColor="@color/tv_gray2"
+            android:textSize="8sp" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/ap_check_scene_stat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/qb_px_55"
+        android:src="@mipmap/icon_check_stat1" />
+
+    <FrameLayout
+        android:id="@+id/ap_check_scene_cause_gp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_125">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_check_scene_cause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="未通过原因："
+            android:textColor="@color/tv_gray4"
+            android:textSize="13sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_check_scene_modify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/tv_yellow_bg"
+            android:paddingBottom="@dimen/qb_px_8"
+            android:paddingLeft="@dimen/qb_px_11"
+            android:paddingRight="@dimen/qb_px_11"
+            android:paddingTop="@dimen/qb_px_8"
+            android:text="立即更改"
+            android:textColor="@color/tv_black2"
+            android:textSize="10sp" />
+    </FrameLayout>
+
+</FrameLayout>

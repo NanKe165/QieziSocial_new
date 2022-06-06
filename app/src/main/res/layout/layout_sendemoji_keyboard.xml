@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:jianxi="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_40"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.eggplant.qiezisocial.widget.QzEdittext
+            android:id="@+id/sdemoji_edit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_30"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:layout_marginRight="@dimen/qb_px_15"
+            android:layout_weight="1"
+            android:background="@drawable/login_edit_bg"
+            android:paddingBottom="@dimen/qb_px_5"
+            android:paddingTop="@dimen/qb_px_5"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/qb_px_15"
+            android:paddingRight="@dimen/qb_px_15"
+            android:textSize="12sp"
+            android:textColor="@color/tv_black"
+            android:textColorHint="@color/tv_hint2"
+            android:hint="评论"
+            android:text=""
+            />
+
+        <ImageView
+
+            android:id="@+id/sdemoji_face"
+            android:layout_width="@dimen/qb_px_30"
+            android:layout_height="@dimen/qb_px_30"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:padding="@dimen/qb_px_5"
+            android:src="@mipmap/emoji_face"
+            android:visibility="visible" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/sdemoji_sned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/qb_px_5"
+            android:paddingLeft="@dimen/qb_px_5"
+            android:paddingRight="@dimen/qb_px_15"
+            android:paddingTop="@dimen/qb_px_5"
+            android:text="发布"
+            android:textColor="@color/tv_black"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+
+
+    <sj.keyboard.widget.FuncLayout
+        android:id="@+id/ly_kvml"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:visibility="gone" />
+</LinearLayout>

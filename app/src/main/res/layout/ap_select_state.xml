@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ap_select_state_bg"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_93"
+    android:background="@drawable/ap_state_unselect_bg">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ap_select_state_img"
+            android:layout_width="@dimen/qb_px_32"
+            android:layout_height="@dimen/qb_px_32" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_select_state_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/qb_px_7"
+            android:textColor="@color/item_state"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</FrameLayout>

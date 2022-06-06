@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.eggplant.qiezisocial.widget.topbar.Topbar
+        android:id="@+id/set_mys_bar"
+        app:tbTitle="选择我的学校"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/set_mys_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_40"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_55"
+        android:background="@drawable/edit_bg"
+        android:drawableLeft="@mipmap/search_college"
+        android:drawablePadding="@dimen/qb_px_5"
+        android:hint="搜索我的学校"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_10"
+        android:singleLine="true"
+        android:textSize="14sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color"
+        android:layout_marginTop="@dimen/qb_px_55"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/set_mys_ry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/qb_px_105" />
+    <com.eggplant.qiezisocial.widget.azlist.AZWaveSideBarView
+        android:id="@+id/set_mys_azview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/qb_px_105"
+        app:hintCircleColor="@color/tv_yellow"
+        app:hintTextColor="@color/tv_black2"
+        app:selectTextColor="@color/tv_black2"
+        app:waveColor="@color/tv_yellow"
+        />
+</FrameLayout>

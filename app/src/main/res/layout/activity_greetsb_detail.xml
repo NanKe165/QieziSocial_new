@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/home_bg"
+    android:layout_height="match_parent">
+
+    <com.eggplant.qiezisocial.widget.flow.EmojiFlowView
+        android:id="@+id/greetsb_detail_flow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:id="@+id/greetsb_detail_head"
+        android:layout_width="@dimen/qb_px_116"
+        android:layout_height="@dimen/qb_px_116"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_200"
+        android:src="@mipmap/normal_head" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/greetsb_detail_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_323"
+        android:textColor="@color/tv_black2"
+        android:textSize="20sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/greetsb_detail_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_355"
+        android:textColor="@color/tv_black2"
+        android:drawablePadding="@dimen/qb_px_5"
+        android:textSize="30sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/greetsb_detail_reply"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_60"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/qb_px_87"
+        android:layout_marginLeft="@dimen/qb_px_65"
+        android:layout_marginRight="@dimen/qb_px_65"
+        android:background="@drawable/tv_yellow_bg4"
+        android:textSize="20sp"
+        android:textColor="@color/tv_black"
+        android:textStyle="bold"
+        android:gravity="center" />
+</FrameLayout>

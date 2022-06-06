@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/txt_prev_rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_white2">
+
+    <com.eggplant.qiezisocial.widget.round.RoundLayout
+        android:id="@+id/txt_prev_gp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:attr_round_corner="@dimen/qb_px_0"
+
+        >
+
+        <FrameLayout
+            android:id="@+id/txt_prev_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_label4">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/txt_prev_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/qb_px_30"
+                android:textColor="@color/tv_black"
+                android:textSize="16sp" />
+        </FrameLayout>
+    </com.eggplant.qiezisocial.widget.round.RoundLayout>
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/txt_prev_ltxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="@dimen/qb_px_35"
+        android:background="@drawable/pub_dialog_bg"
+        android:drawableLeft="@mipmap/icon_txt_chat"
+        android:drawablePadding="@dimen/qb_px_8"
+        android:paddingBottom="@dimen/qb_px_13"
+        android:paddingLeft="@dimen/qb_px_45"
+        android:paddingRight="@dimen/qb_px_45"
+        android:paddingTop="@dimen/qb_px_13"
+        android:text="小纸条回复对方"
+        android:textColor="@color/tv_gray2"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <com.eggplant.qiezisocial.widget.keyboard.EmojiKeyBoard
+        android:id="@+id/txt_prev_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/txt_prev_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_170"
+            android:layout_marginBottom="@dimen/qb_px_13">
+
+            <com.eggplant.qiezisocial.widget.QzEdittext
+                android:id="@+id/txt_prev_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_170"
+                android:layout_marginLeft="@dimen/qb_px_15"
+                android:layout_marginRight="@dimen/qb_px_15"
+                android:background="@drawable/lchat_txt_bg"
+                android:gravity="center"
+                android:hint="用小纸条撩一下对方吧~"
+                android:maxLength="30"
+                android:paddingLeft="@dimen/qb_px_30"
+                android:paddingRight="@dimen/qb_px_30"
+                android:text=""
+                android:imeOptions="actionSend"
+                android:textColor="@color/tv_black"
+                android:textColorHint="@color/bottom_hint_color"
+                android:textSize="13sp"
+                android:visibility="visible" />
+            <ImageView
+                android:id="@+id/txt_prev_bclose"
+                android:layout_width="@dimen/qb_px_25"
+                android:layout_height="@dimen/qb_px_25"
+                android:src="@mipmap/close_black"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/qb_px_40"
+                android:layout_marginTop="@dimen/qb_px_20"
+                android:padding="@dimen/qb_px_5"
+                />
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_marginRight="@dimen/qb_px_45"
+                android:layout_marginBottom="@dimen/qb_px_20"
+                android:text="(0/30)"
+                android:textSize="10sp"
+                />
+        </FrameLayout>
+
+
+    </com.eggplant.qiezisocial.widget.keyboard.EmojiKeyBoard>
+</FrameLayout>

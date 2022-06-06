@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:jianxi="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="2dp">
+
+    <TextView
+        android:id="@+id/chat_hint_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/qb_px_10"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:paddingBottom="@dimen/qb_px_3"
+        android:paddingLeft="@dimen/qb_px_5"
+        android:paddingRight="@dimen/qb_px_5"
+        android:paddingTop="@dimen/qb_px_3"
+        android:text="昨天 20:04"
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="horizontal">
+
+        <com.eggplant.qiezisocial.widget.image.CircleImageView
+            android:id="@+id/adapter_chat_head"
+            android:layout_width="@dimen/qb_px_40"
+            android:layout_height="@dimen/qb_px_40"
+            android:layout_marginBottom="@dimen/qb_px_5"
+            android:layout_marginLeft="@dimen/qb_px_10"
+            android:layout_marginTop="@dimen/qb_px_7"
+            android:src="@mipmap/normal_head" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/adapter_chat_nick"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/tv_gray2"
+                android:text="1346546"
+                android:textSize="10sp"
+                android:layout_marginLeft="@dimen/qb_px_7"
+                android:layout_marginTop="@dimen/qb_px_7"
+                />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+                    android:id="@+id/adapter_chat_cImg"
+                    android:scaleType="centerCrop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/qb_px_5"
+                    android:layout_marginLeft="@dimen/qb_px_5"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:minHeight="80dp"
+                    android:minWidth="80dp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="@dimen/qb_px_7"
+                android:layout_marginLeft="@dimen/qb_px_7"
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:layout_marginTop="@dimen/qb_px_7"
+                android:background="@drawable/msg_chat_other_bg"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <com.eggplant.qiezisocial.widget.QzHttpTextView
+                    android:id="@+id/adapter_chat_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/qb_px_5"
+                    android:layout_marginRight="@dimen/qb_px_5"
+                    android:maxWidth="@dimen/qb_px_200"
+                    android:text=""
+                    android:textColor="@color/tv_black4"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/adapter_chat_content_emoji"
+                    android:layout_width="@dimen/qb_px_26"
+                    android:layout_height="@dimen/qb_px_26"
+                    android:layout_marginLeft="@dimen/qb_px_5"
+                    android:layout_marginRight="@dimen/qb_px_5"
+                    android:visibility="gone" />
+                <com.eggplant.qiezisocial.widget.ChatMediaView
+                    android:visibility="gone"
+                    android:id="@+id/adapter_chat_mediaview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/adapter_chat_content"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:layout_marginLeft="@dimen/qb_px_5"
+                    android:layout_marginRight="@dimen/qb_px_5"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+        <ImageView
+            android:id="@+id/adapter_chat_ununited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/qb_px_30"
+            android:src="@mipmap/chat_ununited"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/adapter_chat_emojiview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_30"
+        android:layout_marginBottom="@dimen/qb_px_7"
+        android:layout_marginLeft="@dimen/qb_px_57"
+        android:layout_marginRight="@dimen/qb_px_70"
+        android:layout_marginTop="@dimen/qb_px_7"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.eggplant.qiezisocial.widget.flow.EmojiFlowView
+        android:background="@color/color_white"
+        android:id="@+id/login_flowview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_45"
+        android:src="@mipmap/login_top" />
+
+    <com.eggplant.qiezisocial.widget.keyboard.AutoHeightKeyBoard
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/qb_px_100">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/login_ry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <FrameLayout
+                android:id="@+id/login_ft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@+id/login_edit_gp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_45"
+                android:layout_marginBottom="@dimen/qb_px_15"
+                android:layout_marginLeft="@dimen/qb_px_15"
+                android:layout_marginRight="@dimen/qb_px_15"
+                android:background="@drawable/login_edit_bg">
+
+                <com.eggplant.qiezisocial.widget.QzEdittext
+                    android:id="@+id/login_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginRight="@dimen/qb_px_60"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:paddingBottom="@dimen/qb_px_2"
+                    android:paddingTop="@dimen/qb_px_2"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textSize="14sp" />
+
+                <com.eggplant.qiezisocial.widget.QzTextView
+                    android:id="@+id/login_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="@dimen/qb_px_10"
+                    android:padding="@dimen/qb_px_5"
+                    android:text="发送"
+                    android:textColor="@color/tv_black"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+        </LinearLayout>
+    </com.eggplant.qiezisocial.widget.keyboard.AutoHeightKeyBoard>
+
+
+</FrameLayout>

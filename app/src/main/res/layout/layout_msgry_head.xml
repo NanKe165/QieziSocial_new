@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <FrameLayout
+        android:id="@+id/msg_head_apply_gp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_66">
+        <com.eggplant.qiezisocial.widget.image.CircleImageView
+            android:layout_width="@dimen/qb_px_36"
+            android:layout_height="@dimen/qb_px_36"
+            android:src="@mipmap/icon_msg_apply"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="好友申请"
+            android:textSize="13sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/qb_px_60"
+            android:textColor="@color/tv_black2"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+
+            android:id="@+id/msg_head_apply_numb"
+            android:layout_width="@dimen/qb_px_17"
+            android:layout_height="@dimen/qb_px_17"
+            android:background="@drawable/msg_hint"
+            android:layout_marginLeft="@dimen/qb_px_35"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/qb_px_30"
+
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:visibility="gone" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="@dimen/qb_px_15"
+            android:src="@mipmap/icon_space_arrows"
+            android:visibility="visible" />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color6" />
+    <FrameLayout
+        android:id="@+id/msg_head_system_gp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_66">
+        <com.eggplant.qiezisocial.widget.image.CircleImageView
+            android:layout_width="@dimen/qb_px_36"
+            android:layout_height="@dimen/qb_px_36"
+            android:src="@mipmap/icon_msg_system"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="系统消息"
+            android:textSize="13sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/qb_px_60"
+            android:textColor="@color/tv_black2"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+
+            android:id="@+id/msg_head_system_numb"
+            android:layout_width="@dimen/qb_px_17"
+            android:layout_height="@dimen/qb_px_17"
+            android:background="@drawable/msg_hint"
+            android:layout_marginLeft="@dimen/qb_px_35"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/qb_px_30"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:visibility="gone" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="@dimen/qb_px_15"
+            android:src="@mipmap/icon_space_arrows"
+            android:visibility="visible" />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color6" />
+</LinearLayout>

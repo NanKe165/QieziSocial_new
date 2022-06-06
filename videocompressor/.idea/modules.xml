@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../QieZiDrawLot.iml" filepath="$PROJECT_DIR$/../QieZiDrawLot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../app/app.iml" filepath="$PROJECT_DIR$/../app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../citypicker/citypicker.iml" filepath="$PROJECT_DIR$/../citypicker/citypicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../common/common.iml" filepath="$PROJECT_DIR$/../common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../jianxiexpression/jianxiexpression.iml" filepath="$PROJECT_DIR$/../jianxiexpression/jianxiexpression.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../matisse/matisse.iml" filepath="$PROJECT_DIR$/../matisse/matisse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../nicevideoplayer/nicevideoplayer.iml" filepath="$PROJECT_DIR$/../nicevideoplayer/nicevideoplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/videocompressor.iml" filepath="$PROJECT_DIR$/videocompressor.iml" />
+    </modules>
+  </component>
+</project>

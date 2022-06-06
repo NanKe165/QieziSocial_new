@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    <FrameLayout
+        android:background="@mipmap/dlg_delete_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/dlg_dynamic_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/tv_gray4"
+            android:drawableLeft="@mipmap/icon_dustbin"
+            android:gravity="center"
+            android:drawablePadding="@dimen/qb_px_5"
+            android:textSize="14sp"
+            android:text="删除"
+
+            />
+    </FrameLayout>
+
+</FrameLayout>

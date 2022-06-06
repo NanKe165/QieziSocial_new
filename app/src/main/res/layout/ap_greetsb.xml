@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_87">
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:layout_width="@dimen/qb_px_57"
+        android:layout_height="@dimen/qb_px_57"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/normal_head"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:id="@+id/ap_greetsb_head"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/tv_black"
+        android:textSize="@dimen/qb_px_16"
+        android:layout_marginLeft="@dimen/qb_px_80"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:id="@+id/ap_greetsb_nick"
+        android:text="nli"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_80"
+        android:layout_marginTop="@dimen/qb_px_42"
+        android:textSize="11sp"
+        android:textColor="@color/tv_gray7"
+        android:text="给你打个招呼"
+        android:id="@+id/ap_greetsb_txt"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/tv_gray3"
+        android:textSize="12sp"
+        android:layout_marginLeft="@dimen/qb_px_80"
+        android:layout_marginTop="@dimen/qb_px_60"
+        android:text="00:00"
+        android:id="@+id/ap_greetsb_time"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginLeft="@dimen/qb_px_80"
+        android:background="@color/line_color6"
+        android:layout_gravity="bottom"
+        />
+
+    <ImageView
+        android:id="@+id/ap_greetsb_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:src="@mipmap/icon_hello"
+        android:layout_marginRight="@dimen/qb_px_25"
+        />
+</FrameLayout>

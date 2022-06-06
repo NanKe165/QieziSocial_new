@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingTop="2dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:visibility="gone"
+        android:paddingBottom="@dimen/qb_px_3"
+        android:id="@+id/chat_hint_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/qb_px_10"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:paddingLeft="@dimen/qb_px_5"
+        android:paddingRight="@dimen/qb_px_5"
+        android:paddingTop="@dimen/qb_px_3"
+        android:text="昨天 20:04"
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.eggplant.qiezisocial.widget.image.CircleImageView
+            android:id="@+id/adapter_chat_head"
+            android:layout_width="@dimen/qb_px_40"
+            android:layout_height="@dimen/qb_px_40"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/qb_px_5"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:src="@mipmap/normal_head"
+            />
+        <!-- contentTv-->
+
+        <FrameLayout
+            android:id="@+id/center"
+            android:layout_width="@dimen/qb_px_105"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/qb_px_5"
+            android:layout_marginRight="@dimen/qb_px_5"
+            android:layout_marginTop="@dimen/qb_px_17"
+            android:layout_toLeftOf="@id/adapter_chat_head"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+                android:id="@+id/ap_chat_album"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_160"
+                android:scaleType="centerCrop"
+                />
+
+            <TextView
+                android:id="@+id/ap_chat_videotime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_margin="@dimen/qb_px_10"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/ap_chat_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+            <ProgressBar
+                android:id="@+id/ap_chat_pBar"
+                android:layout_width="@dimen/qb_px_30"
+                android:layout_height="@dimen/qb_px_30"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/white"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/adapter_chat_ununited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/qb_px_30"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:layout_toLeftOf="@id/center"
+            android:src="@mipmap/chat_ununited"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

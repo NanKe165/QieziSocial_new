@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:visibility="invisible"
+        android:id="@+id/fdpark_head_newmsg_gp"
+        android:layout_marginTop="@dimen/qb_px_16"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:paddingLeft="@dimen/qb_px_17"
+        android:paddingRight="@dimen/qb_px_17"
+        android:layout_gravity="center_horizontal|bottom"
+        android:background="@drawable/new_msg_bg"
+        android:layout_height="@dimen/qb_px_35">
+        <com.eggplant.qiezisocial.widget.image.CircleImageView
+            android:layout_width="@dimen/qb_px_22"
+            android:layout_height="@dimen/qb_px_22"
+            android:src="@mipmap/normal_head"
+            android:id="@+id/fdpark_head_img"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_6"
+            android:textSize="13sp"
+            android:textColor="@color/state_select"
+            android:text="15条新消息"
+            android:id="@+id/fdpark_head_newmsg"
+            />
+    </LinearLayout>
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/qb_px_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/tv_hint2"
+        android:text="规则"
+        android:drawableLeft="@mipmap/icon_fd_rule"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:drawablePadding="@dimen/qb_px_3"
+        android:layout_marginRight="@dimen/qb_px_8"
+        />
+    <ImageView
+        android:id="@+id/fdpark_head_voice"
+        android:layout_marginTop="@dimen/qb_px_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_8"
+        android:src="@mipmap/icon_voice_open"
+        />
+</FrameLayout>

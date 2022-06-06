@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/qb_px_15"
+    android:layout_marginBottom="@dimen/qb_px_20"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_107">
+
+    <RelativeLayout
+        android:id="@+id/adapter_chat_qs_rootview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/qb_px_12"
+        android:layout_marginRight="@dimen/qb_px_12"
+        android:background="@drawable/home_item_bg"
+        android:paddingBottom="@dimen/qb_px_6"
+        android:paddingLeft="@dimen/qb_px_23"
+        android:paddingRight="@dimen/qb_px_14">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_marginTop="@dimen/qb_px_15"
+            android:id="@+id/adapter_chat_qs_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:paddingBottom="@dimen/qb_px_5"
+            android:paddingLeft="@dimen/qb_px_5"
+            android:paddingRight="@dimen/qb_px_5"
+            android:paddingTop="@dimen/qb_px_5"
+            android:text="分享一下你在考试中作弊的最有创意 的手法"
+            android:textColor="@color/tv_gray4"
+            android:textSize="15sp" />
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_below="@id/adapter_chat_qs_content"
+            android:layout_marginTop="@dimen/qb_px_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/adapter_chat_qs_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/label_state_green_bg"
+                android:drawableLeft="@mipmap/home_state_kaixin"
+                android:drawablePadding="@dimen/qb_px_1"
+                android:paddingBottom="@dimen/qb_px_2"
+                android:paddingLeft="@dimen/qb_px_7"
+                android:paddingRight="@dimen/qb_px_7"
+                android:paddingTop="@dimen/qb_px_2"
+                android:text="开心"
+                android:textColor="@color/color_green"
+                android:textSize="9sp"
+                android:visibility="visible" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                />
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:id="@+id/adapter_chat_qs_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:drawablePadding="@dimen/qb_px_10"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/qb_px_5"
+                android:paddingRight="@dimen/qb_px_5"
+                android:text=""
+                android:textColor="@color/tv_gray3"
+                android:textSize="13sp" />
+            <RelativeLayout
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.eggplant.qiezisocial.widget.image.CircleImageView
+                    android:id="@+id/adapter_chat_qs_head"
+                    android:layout_width="@dimen/qb_px_33"
+                    android:layout_height="@dimen/qb_px_33"
+                    android:src="@mipmap/normal_head"
+                    app:civ_border_color="@color/tv_yellow"
+                    app:civ_border_width="@dimen/qb_px_1" />
+
+                <ImageView
+                    android:id="@+id/adapter_chat_qs_sex"
+                    android:layout_width="@dimen/qb_px_10"
+                    android:layout_height="@dimen/qb_px_10"
+                    android:layout_alignBottom="@id/adapter_chat_qs_head"
+                    android:layout_alignRight="@id/adapter_chat_qs_head"
+                    android:src="@mipmap/sex_girl" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

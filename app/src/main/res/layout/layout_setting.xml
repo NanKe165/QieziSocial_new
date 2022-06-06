@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/dialog_setting_bg">
+
+  <com.eggplant.qiezisocial.widget.topbar.Topbar
+      app:bgColor="@color/home_bg"
+      android:id="@+id/setting_bar"
+      app:tbTitle="设置"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_50"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15">
+
+        <FrameLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="我的邀请码"
+                android:textColor="@color/tv_black3"
+                android:textSize="14sp" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/setting_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:text=""
+                android:textColor="@color/tv_black3"
+                android:textSize="14sp" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/home_keyboard" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="手机号码"
+                android:textColor="@color/tv_black3"
+                android:textSize="14sp" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/setting_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:text=""
+                android:textColor="@color/tv_black3"
+                android:textSize="14sp" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/home_keyboard" />
+
+        <FrameLayout
+            android:id="@+id/setting_blacklist"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="黑名单"
+                android:textColor="@color/tv_black3"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:src="@mipmap/sp_icon" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/home_keyboard" />
+
+        <FrameLayout
+            android:id="@+id/setting_clear"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="清除聊天记录"
+                android:textColor="@color/tv_black3"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:src="@mipmap/sp_icon" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/home_keyboard" />
+
+        <FrameLayout
+            android:id="@+id/setting_check_version"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="检查新版本"
+                android:textColor="@color/tv_black3"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:src="@mipmap/sp_icon" />
+        </FrameLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/home_keyboard" />
+
+        <FrameLayout
+            android:id="@+id/setting_agreement"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="用户协议"
+                android:textColor="@color/tv_black3"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:src="@mipmap/sp_icon" />
+        </FrameLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/home_keyboard" />
+
+        <FrameLayout
+            android:id="@+id/setting_privacy"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="隐私政策"
+                android:textColor="@color/tv_black3"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:src="@mipmap/sp_icon" />
+        </FrameLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/home_keyboard" />
+
+        <FrameLayout
+            android:id="@+id/setting_about"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="关于我们"
+                android:textColor="@color/tv_black3"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:src="@mipmap/sp_icon" />
+        </FrameLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/home_keyboard" />
+
+        <FrameLayout
+            android:id="@+id/setting_close_account"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="注销账号"
+                android:textColor="@color/tv_black3"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:src="@mipmap/sp_icon" />
+        </FrameLayout>
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/setting_logout"
+            android:layout_width="@dimen/qb_px_166"
+            android:layout_height="@dimen/qb_px_53"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/qb_px_85"
+            android:gravity="center"
+            android:text="退出登录"
+            android:textColor="@color/tv_gray4"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="@drawable/logout_bg"
+            android:layout_marginBottom="@dimen/qb_px_70"
+            />
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ap_select_object_gp"
+    android:background="@drawable/tv_gray_bg3"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_33">
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_select_object_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="交朋友"
+        android:textSize="13sp"
+        android:textColor="@color/tv_black"
+        android:layout_gravity="center"
+        />
+</FrameLayout>

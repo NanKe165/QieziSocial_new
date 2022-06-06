@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ft_fmsg_ry"
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color6"
+        android:layout_toRightOf="@id/ap_fmsg_head"
+        android:layout_below="@id/ap_fmsg_head"
+        />
+    <FrameLayout
+        android:id="@+id/ft_fmsg_shadown"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>

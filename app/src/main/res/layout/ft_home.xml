@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home2_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/homebg1"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/home2_decorate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:visibility="invisible" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/home2_ry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/qb_px_30"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:background="@color/transparent"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="120dp"
+        android:overScrollMode="never"
+        android:requiresFadingEdge="vertical" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/qb_px_20"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <FrameLayout
+            android:id="@+id/home2_pub"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_60"
+            android:layout_gravity="bottom"
+            android:background="@drawable/home_pub_bg"
+            android:visibility="visible">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:visibility="invisible"
+                android:id="@+id/home2_topictxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/qb_px_12"
+                android:text="点击发布新消息"
+                android:textColor="@color/tv_gray4"
+                android:textSize="11sp" />
+            <TextSwitcher
+                android:id="@+id/home2_text_swicher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/qb_px_12"
+                android:layout_marginRight="@dimen/qb_px_80"
+                android:inAnimation="@anim/message_in_anim"
+                android:outAnimation="@anim/message_out_anim" />
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="@dimen/qb_px_12"
+                android:src="@mipmap/home_pub_icon2" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/home2_decorate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/qb_px_55"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/qb_px_45"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="@dimen/qb_px_20"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/home2_dt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/home_share_bg">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <com.eggplant.qiezisocial.widget.QzTextView
+                    android:id="@+id/home2_dt_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/icon_home_dynamic7"
+                    android:drawablePadding="@dimen/qb_px_5"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="话题"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <com.eggplant.qiezisocial.widget.image.CircleImageView
+                    android:id="@+id/home2_dt_hint"
+                    android:layout_width="@dimen/qb_px_5"
+                    android:layout_height="@dimen/qb_px_5"
+                    android:layout_marginLeft="@dimen/qb_px_5"
+                    android:src="@color/home_refresh_hint_color"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="@dimen/qb_px_5"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/home2_collect"
+            android:layout_width="@dimen/qb_px_45"
+            android:layout_height="match_parent"
+            android:background="@drawable/home_share_bg">
+
+            <ImageView
+                android:id="@+id/home2_collect_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/icon_home_collect_white" />
+
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="@dimen/qb_px_10"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/home2_share"
+            android:layout_width="@dimen/qb_px_45"
+            android:layout_height="match_parent"
+            android:background="@drawable/home_share_bg">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/icon_home_share" />
+        </FrameLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/home2_jd"
+        android:visibility="gone"
+        android:layout_width="@dimen/qb_px_70"
+        android:layout_height="@dimen/qb_px_70"
+        android:background="@mipmap/home_jd_bg"
+        android:layout_gravity="right|bottom"
+        android:layout_marginRight="@dimen/qb_px_10"
+        android:layout_marginBottom="@dimen/qb_px_150"
+        >
+
+        <com.eggplant.qiezisocial.widget.progress.WaveProgressView
+            android:id="@+id/home2_progress"
+            android:layout_width="@dimen/qb_px_45"
+            app:wave_angle="@dimen/qb_px_13"
+            app:wave_bg_color="@color/white"
+            app:wave_color="@color/tv_yellow"
+            app:second_wave_color="@color/tv_yellow"
+            android:layout_height="@dimen/qb_px_45"
+            android:layout_gravity="center" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_home_jindou"
+            android:layout_marginBottom="@dimen/qb_px_5"
+            android:layout_gravity="center"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/home2_jd_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:textSize="9sp"
+            android:textColor="@color/tv_gray2"
+            android:text="00:00"
+            />
+    </FrameLayout>
+
+</FrameLayout>

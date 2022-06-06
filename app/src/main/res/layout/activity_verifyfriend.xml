@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.eggplant.qiezisocial.widget.topbar.Topbar
+        app:bgColor="@color/transparent"
+        android:id="@+id/vfriend_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tbTitle="申请添加好友" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/vfriend_bar"
+        android:background="@color/line_color" />
+
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:id="@+id/vfriend_head"
+        android:layout_width="@dimen/qb_px_73"
+        android:layout_height="@dimen/qb_px_73"
+        android:layout_below="@id/vfriend_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/qb_px_50"
+        android:src="@mipmap/normal_head" />
+
+    <ImageView
+        android:id="@+id/vfriend_sex"
+        android:layout_width="@dimen/qb_px_20"
+        android:layout_height="@dimen/qb_px_20"
+        android:layout_alignBottom="@id/vfriend_head"
+        android:layout_alignRight="@id/vfriend_head"
+        android:src="@mipmap/sex_boy_big" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/vfriend_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vfriend_head"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/qb_px_12"
+        android:textStyle="bold"
+        android:textColor="@color/tv_black2"
+        android:textSize="23sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/vfriend_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vfriend_nick"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/qb_px_11"
+        android:textColor="@color/tv_gray2"
+        android:textSize="13sp" />
+
+    <FrameLayout
+        android:id="@+id/vfriend_state"
+        android:layout_width="@dimen/qb_px_100"
+        android:layout_height="@dimen/qb_px_33"
+        android:layout_below="@id/vfriend_sign"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:background="@drawable/state_bg_select">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/vfriend_state_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@mipmap/state_select_icon"
+            android:drawablePadding="@dimen/qb_px_7"
+            android:text="心情"
+            android:textColor="@color/tv_state"
+            android:textSize="14sp" />
+    </FrameLayout>
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/vfriend_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vfriend_state"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_54"
+        android:text="发送添加朋友申请"
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp" />
+
+    <com.eggplant.qiezisocial.widget.QzEdittext
+        android:id="@+id/vfriend_edit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_90"
+        android:layout_below="@id/vfriend_hint"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:gravity="top"
+        android:padding="@dimen/qb_px_10"
+        android:textSize="13sp"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_12"
+        android:background="@drawable/edit_bg" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/qb_px_100"
+        android:layout_below="@id/vfriend_edit"
+        >
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/vfriend_refuse"
+            android:layout_width="@dimen/qb_px_141"
+            android:layout_height="@dimen/qb_px_53"
+            android:background="@drawable/tv_gray_bg"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:text="拒绝"
+            android:textColor="@color/tv_black"
+            android:visibility="gone"
+            android:layout_marginRight="@dimen/qb_px_26"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/vfriend_sure"
+            android:layout_width="@dimen/qb_px_141"
+            android:layout_height="@dimen/qb_px_53"
+            android:background="@drawable/tv_yellow_bg"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/tv_black"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

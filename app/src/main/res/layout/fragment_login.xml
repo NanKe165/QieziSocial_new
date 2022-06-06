@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_83"
+        android:text="登录"
+        android:textColor="@color/tv_black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:id="@+id/ft_login_head"
+        android:layout_width="@dimen/qb_px_56"
+        android:layout_height="@dimen/qb_px_56"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_67"
+        android:src="@mipmap/normal_head"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_132"
+        android:background="@mipmap/login_edit_bg">
+
+        <com.eggplant.qiezisocial.widget.QzEdittext
+            android:id="@+id/ft_login_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:hint="输入手机号"
+            android:inputType="number"
+            android:maxLength="11"
+            android:paddingLeft="@dimen/qb_px_80"
+            android:text=""
+            android:textColor="@color/tv_black"
+            android:textColorHint="@color/tv_gray"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/qb_px_40"
+            android:text="+86"
+            android:textColor="@color/tv_black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+
+    <com.eggplant.qiezisocial.widget.QzEdittext
+        android:id="@+id/ft_login_vcode"
+        android:layout_width="@dimen/qb_px_200"
+        android:layout_height="@dimen/qb_px_56"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_233"
+        android:background="@drawable/edit_bg"
+        android:gravity="center_vertical"
+        android:hint="输入验证码"
+        android:inputType="number"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/qb_px_27"
+        android:textColor="@color/tv_black"
+        android:textColorHint="@color/tv_gray"
+        android:textStyle="bold" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ft_login_get_vcode"
+        android:layout_width="@dimen/qb_px_120"
+        android:layout_height="@dimen/qb_px_56"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_233"
+        android:background="@drawable/tv_yellow_bg"
+        android:gravity="center"
+        android:text="获取验证码"
+        android:textColor="@color/tv_black"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ft_login_sure"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_325"
+        android:background="@drawable/tv_yellow_bg3"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/tv_black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ft_login_rule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_409"
+        android:drawableLeft="@mipmap/login_rule_unread"
+        android:drawablePadding="@dimen/qb_px_5"
+        android:text="@string/login_rule"
+        android:textSize="13sp" />
+</FrameLayout>

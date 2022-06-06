@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/qb_px_15"
+    android:paddingRight="@dimen/qb_px_15"
+    android:id="@+id/ap_gchat_rootview"
+    >
+
+    <com.eggplant.qiezisocial.widget.round.RoundLayout
+        android:id="@+id/ap_gchat_view1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/qb_px_108"
+
+        app:attr_round_corner="@dimen/qb_px_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/gchat_line1"
+        app:layout_constraintTop_toTopOf="parent">
+        <FrameLayout
+            android:background="@color/color_label1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.eggplant.qiezisocial.widget.AuVideoTxtView
+                android:id="@+id/ap_gchat_avt1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+    </com.eggplant.qiezisocial.widget.round.RoundLayout>
+
+    <View
+        android:id="@+id/gchat_line1"
+        android:layout_width="@dimen/qb_px_17"
+        android:layout_height="@dimen/qb_px_1"
+        app:layout_constraintLeft_toRightOf="@id/ap_gchat_view1"
+        app:layout_constraintRight_toLeftOf="@+id/ap_gchat_view2" />
+
+    <com.eggplant.qiezisocial.widget.round.RoundLayout
+        android:id="@+id/ap_gchat_view2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/qb_px_108"
+
+        app:attr_round_corner="@dimen/qb_px_14"
+        app:layout_constraintLeft_toRightOf="@id/gchat_line1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <FrameLayout
+            android:background="@color/gchat_label1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.eggplant.qiezisocial.widget.AuVideoTxtView
+                android:id="@+id/ap_gchat_avt2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+    </com.eggplant.qiezisocial.widget.round.RoundLayout>
+
+    <com.eggplant.qiezisocial.widget.round.RoundLayout
+        android:id="@+id/ap_gchat_view3"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/qb_px_233"
+        android:layout_marginTop="@dimen/qb_px_17"
+
+        app:attr_round_corner="@dimen/qb_px_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/gchat_line2"
+        app:layout_constraintTop_toBottomOf="@id/ap_gchat_view1">
+        <FrameLayout
+            android:background="@color/gchat_label2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.eggplant.qiezisocial.widget.AuVideoTxtView
+                android:id="@+id/ap_gchat_avt3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+    </com.eggplant.qiezisocial.widget.round.RoundLayout>
+
+    <View
+        android:id="@+id/gchat_line2"
+        android:layout_width="@dimen/qb_px_17"
+        android:layout_height="@dimen/qb_px_1"
+        app:layout_constraintLeft_toRightOf="@id/ap_gchat_view3"
+        app:layout_constraintRight_toLeftOf="@+id/ap_gchat_view4" />
+
+    <com.eggplant.qiezisocial.widget.round.RoundLayout
+        android:id="@+id/ap_gchat_view4"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/qb_px_108"
+        android:layout_marginTop="@dimen/qb_px_17"
+        app:attr_round_corner="@dimen/qb_px_14"
+        app:layout_constraintBottom_toTopOf="@+id/ap_gchat_view5"
+        app:layout_constraintLeft_toRightOf="@id/gchat_line2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ap_gchat_view2">
+        <FrameLayout
+            android:background="@color/color_label4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.eggplant.qiezisocial.widget.AuVideoTxtView
+                android:id="@+id/ap_gchat_avt4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+    </com.eggplant.qiezisocial.widget.round.RoundLayout>
+
+    <com.eggplant.qiezisocial.widget.round.RoundLayout
+        android:id="@+id/ap_gchat_view5"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/qb_px_108"
+        android:layout_marginTop="@dimen/qb_px_17"
+        app:attr_round_corner="@dimen/qb_px_14"
+        app:layout_constraintLeft_toRightOf="@id/gchat_line2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ap_gchat_view4">
+        <FrameLayout
+            android:background="@color/gchat_label3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.eggplant.qiezisocial.widget.AuVideoTxtView
+                android:id="@+id/ap_gchat_avt5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+    </com.eggplant.qiezisocial.widget.round.RoundLayout>
+
+    <com.eggplant.qiezisocial.widget.round.RoundLayout
+        android:id="@+id/ap_gchat_view6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_108"
+        android:layout_marginTop="@dimen/qb_px_17"
+        android:layout_marginBottom="@dimen/qb_px_17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:attr_round_corner="@dimen/qb_px_14"
+        app:layout_constraintTop_toBottomOf="@id/ap_gchat_view3">
+        <FrameLayout
+            android:background="@color/gchat_label4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.eggplant.qiezisocial.widget.AuVideoTxtView
+                android:id="@+id/ap_gchat_avt6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+    </com.eggplant.qiezisocial.widget.round.RoundLayout>
+</android.support.constraint.ConstraintLayout>

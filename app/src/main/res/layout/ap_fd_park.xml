@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/qb_px_15"
+    android:paddingBottom="@dimen/qb_px_5"
+    android:paddingLeft="@dimen/qb_px_20"
+    android:paddingRight="@dimen/qb_px_20"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:id="@+id/ap_fd_park_head"
+        android:layout_width="@dimen/qb_px_63"
+        android:layout_height="@dimen/qb_px_63"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/normal_head"
+        app:civ_border_color="@color/fpark"
+        app:civ_border_width="2px" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:maxLength="6"
+        android:maxLines="1"
+        android:text=""
+        android:id="@+id/ap_fd_park_nick"
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp" />
+</LinearLayout>

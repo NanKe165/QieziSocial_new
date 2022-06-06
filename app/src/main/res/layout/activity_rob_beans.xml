@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/rob_bg"
+        android:background="@color/translate_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.eggplant.qiezisocial.widget.flow.BeansFlowView
+        android:id="@+id/rob_flow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rob_img"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/qb_px_50"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/jd_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="+1"
+        android:visibility="invisible"
+        android:id="@+id/rob_numb"
+        />
+</FrameLayout>

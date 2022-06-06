@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/aplayer_rootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/qb_px_85"
+        android:background="@drawable/aplayer_bg"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_35">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/aplayer_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="一起听音乐"
+                android:textColor="@color/tv_gray2"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/aplayer_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="@dimen/qb_px_15"
+                android:padding="@dimen/qb_px_8"
+                android:src="@mipmap/close_black_smail" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_120"
+            android:clickable="true">
+
+            <SurfaceView
+                android:id="@+id/aplayer_surfaceview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:id="@+id/aplayer_shadow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/vplayer_bg"
+                android:visibility="visible" />
+
+            <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+                android:id="@+id/aplyer_cover"
+                android:layout_width="@dimen/qb_px_60"
+                android:layout_height="@dimen/qb_px_60"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/icon_music"
+                android:layout_marginLeft="@dimen/qb_px_15"
+                android:scaleType="centerCrop" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/qb_px_85">
+
+                <com.eggplant.qiezisocial.widget.QzTextView
+                    android:id="@+id/aplayer_songname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="19sp" />
+
+                <com.eggplant.qiezisocial.widget.QzTextView
+                    android:id="@+id/aplayer_singer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/aplayer_songname"
+                    android:layout_marginTop="@dimen/qb_px_5"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="@color/tv_gray2"
+                    android:textSize="12sp" />
+                <SeekBar
+                    android:id="@+id/aplayer_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/qb_px_2"
+                    android:layout_below="@id/aplayer_singer"
+                    android:layout_marginTop="@dimen/qb_px_15"
+                    android:layout_marginRight="@dimen/qb_px_60"
+                    android:paddingStart="0dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:secondaryProgress="0"
+                    style="@style/CustomSeekbarStyle"
+                    android:thumb="@null"
+                    />
+                <com.eggplant.qiezisocial.widget.QzTextView
+                    android:id="@+id/aplayer_time"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/aplayer_singer"
+                    android:layout_marginRight="@dimen/qb_px_30"
+                    android:layout_marginTop="@dimen/qb_px_5"
+                    android:textSize="11sp"
+                    android:textColor="@color/white"
+                    android:text="00:00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/aplayer_buffering"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="正在缓冲..."
+                android:textColor="@color/tv_white2"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/aplayer_ft"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

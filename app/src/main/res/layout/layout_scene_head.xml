@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_45">
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/qb_px_45"
+        android:gravity="center_vertical"
+        android:text="我的自建"
+        android:layout_gravity="center_vertical"
+        android:textSize="12sp"
+        android:textColor="@color/tv_gray"
+        android:id="@+id/layout_scene_tv"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/qb_px_10"
+        android:background="@color/tv_gray"
+        android:layout_gravity="center_vertical"
+        />
+
+
+</LinearLayout>

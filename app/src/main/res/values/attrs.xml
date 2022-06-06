@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Topbar">
+        <attr name="returnToright" format="boolean" />
+        <attr name="returnDrawable" format="reference" />
+        <attr name="tbTitle" format="string" />
+        <attr name="tbTitleColor" format="color" />
+        <attr name="tbTitleSize" format="dimension" />
+        <attr name="tbRightTxt" format="string" />
+        <attr name="rightTxtBg" format="reference" />
+        <attr name="rightTxtColor" format="color" />
+        <attr name="bgColor" format="color" />
+        <attr name="showLine" format="boolean" />
+        <attr name="rightDrawablePadding" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_inside_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_inside_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <!-- {@deprecated Use civ_circlebackground_color instead.} -->
+        <attr name="civ_fill_color" format="color" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="AudioPlayView">
+        <attr name="displayStatus" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="CircularProgressView">
+        <attr name="backWidth" format="dimension" />    <!--背景圆环宽度-->
+        <attr name="progWidth" format="dimension" />    <!--进度圆环宽度-->
+        <attr name="backColor" format="color" />        <!--背景圆环颜色-->
+        <attr name="progColor" format="color" />        <!--进度圆环颜色-->
+        <attr name="progStartColor" format="color" />   <!--进度圆环开始颜色-->
+        <attr name="progFirstColor" format="color" />   <!--进度圆环结束颜色-->
+        <attr name="progress" format="integer" />       <!--圆环进度-->
+    </declare-styleable>
+    <declare-styleable name="RoundLayout">
+        <attr name="attr_stroke_color" format="color" />
+        <attr name="attr_stroke_width" format="dimension" />
+        <attr name="attr_clip_background" format="boolean" />
+        <attr name="attr_round_corner" format="dimension" />
+        <attr name="attr_round_corner_top_left" format="dimension" />
+        <attr name="attr_round_corner_top_right" format="dimension" />
+        <attr name="attr_round_corner_bottom_left" format="dimension" />
+        <attr name="attr_round_corner_bottom_right" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="NineGridView">
+        <attr name="ngv_singleImageSize" format="dimension" />
+        <attr name="ngv_singleImageRatio" format="float" />
+        <attr name="ngv_gridSpacing" format="dimension" />
+        <attr name="ngv_maxSize" format="integer" />
+        <attr name="ngv_mode" format="enum">
+            <enum name="fill" value="0" />
+            <enum name="grid" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="RoundRectImageView">
+        <attr name="round_radian" format="integer" />
+        <attr name="uesTop" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="PraiseListView">
+        <attr name="item_color_name" format="color" />
+        <attr name="item_color_content" format="color" />
+        <attr name="item_selector_color" format="color" />
+        <attr name="item_color_reply" format="color" />
+    </declare-styleable>
+
+    <!-- slide bar 有效内容背景 -->
+    <attr name="backgroundColor" format="color|reference" />
+    <!-- slide bar　描边 -->
+    <attr name="strokeColor" format="color|reference" />
+    <!-- slide bar 文字颜色 -->
+    <attr name="textColor" format="color|reference" />
+    <!-- slide bar　文字大小 -->
+    <attr name="textSize" format="dimension" />
+    <!-- slide bar 选中文字颜色 -->
+    <attr name="selectTextColor" format="color|reference" />
+    <!-- slide bar 选中文字大小 -->
+    <attr name="selectTextSize" format="dimension" />
+    <!-- slide bar　选中时候提示文字颜色 -->
+    <attr name="hintTextColor" format="color|reference" />
+    <!-- slide bar　选中时候提示文字大小 -->
+    <attr name="hintTextSize" format="dimension" />
+    <!-- slide bar　选中时候提示圆形半径 -->
+    <attr name="hintCircleRadius" format="dimension" />
+    <!-- slide bar　选中时候提示圆形颜色 -->
+    <attr name="hintCircleColor" format="color|reference" />
+    <!-- slide bar　选中时候提示背景形状 -->
+    <attr name="hintShape" format="enum">
+        <enum name="circle" value="0" />
+        <enum name="rectangle" value="1" />
+    </attr>
+    <!-- slide bar　选中时候波浪颜色 -->
+    <attr name="waveColor" format="color|reference" />
+    <!-- slide bar　选中时候波浪半径 -->
+    <attr name="waveRadius" format="dimension" />
+    <!-- slide bar　里面文字上＋下padding -->
+    <attr name="contentPadding" format="dimension" />
+    <!-- slide bar　上+下+右padding -->
+    <attr name="barPadding" format="dimension" />
+    <!-- slide bar　宽度 -->
+    <attr name="barWidth" format="dimension" />
+    <declare-styleable name="AZSideBarView">
+        <!-- slide bar 有效内容背景 -->
+        <attr name="backgroundColor" />
+        <!-- slide bar　描边 -->
+        <attr name="strokeColor" />
+        <!-- slide bar 文字颜色 -->
+        <attr name="textColor" />
+        <!-- slide bar　文字大小 -->
+        <attr name="textSize" />
+        <!-- slide bar 选中文字颜色 -->
+        <attr name="selectTextColor" />
+        <!-- slide bar 选中文字大小 -->
+        <attr name="selectTextSize" />
+        <!-- slide bar　选中时候提示文字颜色 -->
+        <attr name="hintTextColor" />
+        <!-- slide bar　选中时候提示文字大小 -->
+        <attr name="hintTextSize" />
+        <!-- slide bar　选中时候提示圆形半径 -->
+        <attr name="hintCircleRadius" />
+        <attr name="hintShape" />
+        <!-- slide bar　选中时候提示圆形颜色 -->
+        <attr name="hintCircleColor" />
+        <!-- slide bar　里面文字上＋下padding -->
+        <attr name="contentPadding" />
+        <!-- slide bar　上+下+右padding -->
+        <attr name="barPadding" />
+        <!-- slide bar　宽度 -->
+        <attr name="barWidth" />
+    </declare-styleable>
+    <declare-styleable name="AZWaveSideBarView">
+        <!-- slide bar 有效内容背景 -->
+        <attr name="backgroundColor" />
+        <!-- slide bar　描边 -->
+        <attr name="strokeColor" />
+        <!-- slide bar 文字颜色 -->
+        <attr name="textColor" />
+        <!-- slide bar　文字大小 -->
+        <attr name="textSize" />
+        <!-- slide bar 选中文字颜色 -->
+        <attr name="selectTextColor" />
+        <!-- slide bar 选中文字大小 -->
+        <attr name="selectTextSize" />
+        <!-- slide bar　选中时候提示文字颜色 -->
+        <attr name="hintTextColor" />
+        <!-- slide bar　选中时候提示文字大小 -->
+        <attr name="hintTextSize" />
+        <!-- slide bar　选中时候提示圆形半径 -->
+        <attr name="hintCircleRadius" />
+        <!-- slide bar　选中时候提示圆形颜色 -->
+        <attr name="hintCircleColor" />
+        <!-- slide bar　选中时候波浪颜色 -->
+        <attr name="waveColor" />
+        <!-- slide bar　选中时候波浪半径 -->
+        <attr name="waveRadius" />
+        <!-- slide bar　里面文字上＋下padding -->
+        <attr name="contentPadding" />
+        <!-- slide bar　上+下+右padding -->
+        <attr name="barPadding" />
+        <!-- slide bar　宽度 -->
+        <attr name="barWidth" />
+    </declare-styleable>
+    <declare-styleable name="QzTextView">
+        <attr name="font_format" format="string" />
+    </declare-styleable>
+    <declare-styleable name="BubbleLayout">
+        <attr name="buble_bg_color" format="color" />
+        <attr name="triangle_visiable" format="boolean" />
+        <attr name="shadow_color" format="color" />
+        <attr name="shadow_size" format="dimension" />
+        <attr name="radius" format="dimension" />
+        <attr name="direction" format="enum">
+            <enum name="left" value="1" />
+            <enum name="top" value="2" />
+            <enum name="right" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
+        <attr name="offset" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="MultMediaView">
+        <attr name="empty_src" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="WaveProgressView">
+        <attr name="wave_color" format="color"></attr>
+        <attr name="second_wave_color" format="color"></attr>
+        <attr name="wave_bg_color" format="color"></attr>
+        <attr name="wave_angle" format="dimension"></attr>
+
+        <attr name="wave_width" format="dimension"></attr>
+        <attr name="wave_height" format="dimension"></attr>
+    </declare-styleable>
+    <declare-styleable name="EmojiFlowView">
+        <attr name="background_emoji_type" format="integer"></attr>
+    </declare-styleable>
+</resources>

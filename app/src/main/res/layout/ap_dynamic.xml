@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/qb_px_15">
+
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:id="@+id/ap_dy_head"
+        android:layout_width="@dimen/qb_px_33"
+        android:layout_height="@dimen/qb_px_33"
+        android:src="@mipmap/normal_head" />
+
+    <ImageView
+        android:id="@+id/ap_dy_sex"
+        android:layout_width="@dimen/qb_px_13"
+        android:layout_height="@dimen/qb_px_13"
+        android:layout_alignBottom="@id/ap_dy_head"
+        android:layout_alignRight="@id/ap_dy_head"
+        android:src="@mipmap/sex_boy" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_dy_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_toRightOf="@id/ap_dy_head"
+        android:text=""
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp"
+        app:font_format="@string/font_format_regular" />
+
+    <com.eggplant.qiezisocial.widget.textview.ExpandableTextView
+        android:id="@+id/ap_dy_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ap_dy_nick"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_5"
+        android:layout_toRightOf="@id/ap_dy_head"
+        android:lineSpacingExtra="@dimen/qb_px_2"
+        android:textColor="@color/tv_gray4"
+        android:textSize="13sp" />
+    <com.eggplant.qiezisocial.widget.ninegridImage.NineGridView
+        android:visibility="gone"
+        android:id="@+id/ap_dy_ninegridview"
+        app:ngv_mode="grid"
+        android:layout_marginTop="@dimen/qb_px_5"
+        android:layout_below="@id/ap_dy_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:id="@+id/ap_dy_media"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ap_dy_ninegridview"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_5"
+        android:layout_toRightOf="@id/ap_dy_head">
+
+        <FrameLayout
+            android:id="@+id/ap_dy_media_one"
+            android:layout_width="@dimen/qb_px_200"
+            android:layout_height="@dimen/qb_px_215"
+            android:visibility="gone">
+
+            <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+                android:id="@+id/ap_dy_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/ap_dy_play"
+                android:layout_width="@dimen/qb_px_50"
+                android:layout_height="@dimen/qb_px_50"
+                android:layout_gravity="center"
+                android:src="@mipmap/vcr_play" />
+            <TextView
+                android:layout_margin="@dimen/qb_px_3"
+                android:layout_gravity="right|bottom"
+                android:id="@+id/ap_dy_long_chart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/picture_gif_tag"
+                android:text="@string/picture_long_chart"
+                android:textColor="@color/picture_color_white"
+                android:textSize="11sp"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/ap_dy_media_ry"
+            android:layout_width="@dimen/qb_px_242"
+            android:layout_height="@dimen/qb_px_75" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_dy_media_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ap_dy_media_ry"
+            android:layout_toRightOf="@id/ap_dy_media_ry"
+            android:text=""
+            android:textColor="@color/tv_gray9"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_dy_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ap_dy_media"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:layout_toRightOf="@id/ap_dy_head"
+        android:text="00:00"
+        android:textColor="@color/tv_gray2"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/ap_dy_pub_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/ap_dy_media"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:src="@mipmap/icon_dyna_comm"
+        android:visibility="visible" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_dy_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ap_dy_media"
+        android:layout_marginRight="@dimen/qb_px_20"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:layout_toLeftOf="@id/ap_dy_pub_comment"
+        android:drawableLeft="@mipmap/like_unselect"
+        android:drawablePadding="@dimen/qb_px_2"
+        android:gravity="bottom"
+        android:text="0"
+        android:textColor="@color/tv_gray2"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/ap_dy_like_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/ap_dy_like"
+        android:layout_below="@id/ap_dy_media"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:src="@mipmap/like_unselect"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/ap_dy_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/ap_dy_media"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:padding="@dimen/qb_px_5"
+        android:src="@mipmap/report"
+        android:visibility="gone" />
+    <ImageView
+        android:id="@+id/ap_dy_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/ap_dy_like_img"
+        android:layout_below="@id/ap_dy_media"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:padding="@dimen/qb_px_5"
+        android:src="@mipmap/report"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/ap_dy_likeuser"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_18"
+        android:layout_below="@id/ap_dy_time"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:layout_toRightOf="@id/ap_dy_head"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/like_select" />
+    </LinearLayout>
+
+    <com.eggplant.qiezisocial.widget.CommentListView
+        android:id="@+id/ap_dy_comment"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ap_dy_likeuser"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:layout_toLeftOf="@id/ap_dy_like"
+        android:layout_toRightOf="@id/ap_dy_head"
+        android:orientation="vertical"
+        app:item_color_content="@color/tv_gray4"
+        app:item_color_name="@color/tv_gray2"
+        app:item_color_reply="@color/loadmore_color" />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_dy_scenes"
+        android:textSize="10sp"
+        android:paddingLeft="@dimen/qb_px_10"
+        android:paddingRight="@dimen/qb_px_10"
+        android:paddingTop="@dimen/qb_px_3"
+        android:paddingBottom="@dimen/qb_px_3"
+        android:textColor="@color/tv_black"
+        android:background="@drawable/tv_yellow_bg"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#TUT"
+        android:layout_below="@+id/ap_dy_comment"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_toRightOf="@id/ap_dy_head"
+        />
+
+</RelativeLayout>

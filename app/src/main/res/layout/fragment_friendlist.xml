@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ft_fdlist_gp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/ft_fdlist_ry"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:id="@+id/ft_fdlist_emptyview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/qb_px_173"
+                android:src="@mipmap/empty_msg_icon" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/qb_px_300"
+                android:text="快去结交新朋友吧"
+                android:textColor="@color/empty_hint_color"
+                android:textSize="17sp" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:visibility="gone"
+                android:id="@+id/ft_fdlist_pub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/qb_px_350"
+                android:drawableBottom="@drawable/pub_widget"
+                android:drawablePadding="@dimen/qb_px_5"
+                android:text="发布要求"
+                android:textColor="@color/rule_yellow"
+                android:textSize="17sp" />
+
+        </FrameLayout>
+
+        <com.eggplant.qiezisocial.widget.azlist.AZWaveSideBarView
+            android:layout_marginTop="@dimen/qb_px_50"
+            android:layout_marginBottom="@dimen/qb_px_50"
+            android:id="@+id/ft_fdlist_azview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:barWidth="@dimen/qb_px_40"
+            app:hintCircleColor="@color/tv_yellow"
+            app:hintTextColor="@color/tv_black2"
+            app:selectTextColor="@color/tv_black2"
+            app:waveColor="@color/tv_yellow" />
+    </FrameLayout>
+
+</LinearLayout>

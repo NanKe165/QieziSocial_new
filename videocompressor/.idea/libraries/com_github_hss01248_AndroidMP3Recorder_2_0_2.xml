@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.github.hss01248:AndroidMP3Recorder-2.0.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/AndroidMP3Recorder-2.0.2.aar/21f1fc5a7a6045a186feef728235df41/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/AndroidMP3Recorder-2.0.2.aar/21f1fc5a7a6045a186feef728235df41/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

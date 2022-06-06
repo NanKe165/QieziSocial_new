@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <root-path
+        name="root"
+        path="" />
+    <files-path
+        name="files"
+        path="social/file" />
+
+    <cache-path
+        name="cache"
+        path="social/cache" />
+
+    <external-path
+        name="external"
+        path="social/external" />
+
+    <external-files-path
+        name="external_file_path"
+        path="social/external/file" />
+    <external-cache-path
+        name="external_cache_path"
+        path="social/cache/path" />
+
+
+    <root-path
+        name="opensdk_root"
+        path="" />
+    <external-files-path
+        name="opensdk_external"
+        path="Images/tmp" />
+
+    <external-files-path
+        name="umeng_cache"
+        path="umeng_cache/" />
+    <external-files-path
+        name="share_files"
+        path="." />
+</paths>

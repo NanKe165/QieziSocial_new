@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/qb_px_35"
+    android:paddingLeft="@dimen/qb_px_28"
+    android:paddingRight="@dimen/qb_px_28"
+    android:paddingTop="@dimen/qb_px_40">
+    <ImageView
+        android:id="@+id/ft_select_sex_boy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/login_select_boy"
+        />
+    <ImageView
+        android:id="@+id/ft_select_sex_girl"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/login_select_girl"
+        />
+</FrameLayout>

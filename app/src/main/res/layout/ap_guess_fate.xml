@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_130"
+    android:paddingRight="@dimen/qb_px_15">
+
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:id="@+id/ap_guessfate_head"
+        android:layout_width="@dimen/qb_px_46"
+        android:layout_height="@dimen/qb_px_46"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:src="@mipmap/normal_head" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_guessfate_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_66"
+        android:layout_marginTop="@dimen/qb_px_19"
+        android:maxLines="1"
+        android:text="安河桥"
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_66"
+        android:layout_marginTop="@dimen/qb_px_44"
+        android:orientation="horizontal">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_guessfate_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/question_icon"
+            android:drawablePadding="@dimen/qb_px_3"
+            android:maxLines="1"
+            android:text="谁最有可能和我约会？"
+            android:textColor="@color/tv_black2"
+            android:textSize="16sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ap_guessfate_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" (8)"
+            android:textColor="@color/tv_gray2"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_guessfate_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_36"
+        android:layout_marginLeft="@dimen/qb_px_66"
+        android:layout_marginTop="@dimen/qb_px_73"
+        android:background="@drawable/tv_yellow_bg2"
+        android:gravity="center"
+        android:text="我有5个小心思猜对2个自动加好友哦"
+        android:textColor="@color/tv_black"
+        android:textSize="11sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/login_ft_bg"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        />
+</FrameLayout>

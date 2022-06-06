@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/mine_top_bg"
+        android:visibility="visible" />
+
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:id="@+id/ft_mine_head"
+        android:layout_width="@dimen/qb_px_83"
+        android:layout_height="@dimen/qb_px_83"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_43"
+        android:src="@mipmap/normal_head" />
+
+
+    <ImageView
+        android:id="@+id/ft_mine_sex"
+        android:layout_width="@dimen/qb_px_20"
+        android:layout_height="@dimen/qb_px_20"
+        android:layout_alignBottom="@id/ft_mine_head"
+        android:layout_alignRight="@id/ft_mine_head"
+        android:layout_marginBottom="@dimen/qb_px_5"
+        android:layout_marginRight="@dimen/qb_px_5" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ft_mine_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ft_mine_head"
+        android:layout_marginLeft="@dimen/qb_px_117"
+        android:layout_marginTop="@dimen/qb_px_12"
+        android:drawablePadding="@dimen/qb_px_5"
+        android:maxLength="10"
+        android:text=""
+        android:textColor="@color/tv_black"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ft_mine_sign1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ft_mine_nick"
+        android:layout_marginLeft="@dimen/qb_px_117"
+        android:layout_marginTop="@dimen/qb_px_5"
+        android:drawablePadding="@dimen/qb_px_5"
+        android:text=""
+        android:textColor="@color/tv_black" />
+
+    <com.eggplant.qiezisocial.widget.LabelView
+        android:id="@+id/ft_mine_labelview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ft_mine_sign1"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/ft_mine_state"
+        android:layout_width="@dimen/qb_px_100"
+        android:layout_height="@dimen/qb_px_33"
+        android:layout_below="@id/ft_mine_head"
+       android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_20"
+        android:background="@drawable/state_bg_white">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ft_mine_state_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@mipmap/state_select_icon_white"
+            android:drawablePadding="@dimen/qb_px_2"
+            android:text="心情"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/ft_mine_setinfo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_below="@id/ft_mine_state"
+        android:layout_marginTop="@dimen/qb_px_70"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@mipmap/mine_setinfo"
+            android:drawablePadding="@dimen/qb_px_5"
+            android:gravity="center_vertical"
+            android:text="编辑资料"
+            android:textColor="@color/tv_gray4"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@mipmap/sp_icon" />
+    </FrameLayout>
+
+    <View
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/ft_mine_setinfo"
+        android:background="@color/line_color2" />
+
+    <FrameLayout
+        android:id="@+id/ft_mine_decorate"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_below="@id/ft_mine_setinfo"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15"
+        android:visibility="visible">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@mipmap/mine_decorate"
+            android:drawablePadding="@dimen/qb_px_5"
+            android:gravity="center_vertical"
+            android:text="个性皮肤"
+            android:textColor="@color/tv_gray4"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@mipmap/sp_icon" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/ft_mine_decorate"
+        android:background="@color/line_color2" />
+
+    <FrameLayout
+        android:id="@+id/ft_mine_vcr"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_below="@id/ft_mine_decorate"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15"
+        android:visibility="gone">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@mipmap/mine_vcr"
+            android:drawablePadding="@dimen/qb_px_5"
+            android:text="我的vcr"
+            android:textColor="@color/tv_black"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@mipmap/sp_icon" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/ft_mine_vcr"
+        android:background="@color/line_color2"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/ft_mine_follow_vcr"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_below="@id/ft_mine_vcr"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15"
+        android:visibility="visible">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@mipmap/mine_dynamic"
+            android:drawablePadding="@dimen/qb_px_5"
+            android:text="我的动态"
+            android:textColor="@color/tv_gray4"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@mipmap/sp_icon" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/ft_mine_follow_vcr"
+        android:background="@color/line_color2"
+        android:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/ft_mine_setting"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_below="@id/ft_mine_follow_vcr"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@mipmap/mine_setting"
+            android:drawablePadding="@dimen/qb_px_5"
+            android:gravity="center_vertical"
+            android:text="个人设置"
+            android:textColor="@color/tv_gray4"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@mipmap/sp_icon" />
+    </FrameLayout>
+</RelativeLayout>

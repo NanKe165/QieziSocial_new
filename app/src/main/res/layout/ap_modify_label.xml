@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ap_modify_label_gp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/qb_px_10"
+    android:layout_marginTop="@dimen/qb_px_15">
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_modify_label_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/qb_px_35"
+        android:layout_gravity="center"
+        android:paddingLeft="@dimen/qb_px_20"
+        android:paddingRight="@dimen/qb_px_20"
+        android:background="@drawable/lab_unselect"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="交友"
+        android:textSize="17sp"
+        />
+</FrameLayout>

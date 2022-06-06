@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:paddingTop="@dimen/qb_px_10"
+    android:paddingBottom="@dimen/qb_px_10"
+    android:paddingLeft="@dimen/qb_px_20"
+    android:paddingRight="@dimen/qb_px_20"
+    android:layout_height="wrap_content"
+    android:background="@drawable/addblack_bg"
+    android:orientation="vertical">
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/dlg_delte_record"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:padding="@dimen/qb_px_10"
+        android:layout_height="wrap_content"
+        android:text="删除聊天记录"
+        android:textSize="14sp"
+        android:textColor="@color/tv_gray4"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/dlg_delte_friend"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:padding="@dimen/qb_px_10"
+        android:layout_height="wrap_content"
+        android:text="删除好友"
+        android:textSize="14sp"
+        android:textColor="@color/tv_gray4"
+        />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/dlg_delte_block"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:padding="@dimen/qb_px_10"
+        android:layout_height="wrap_content"
+        android:text="拉黑"
+        android:textSize="14sp"
+        android:textColor="@color/tv_gray4"
+        />
+</LinearLayout>

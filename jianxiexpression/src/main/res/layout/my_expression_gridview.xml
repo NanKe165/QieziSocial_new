@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    android:id="@+id/gv_rootview"
+    >
+<com.mabeijianxi.jianxiexpression.widget.CustomGridView
+    android:id="@+id/gv_expression"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:verticalSpacing="@dimen/qb_px_10"
+    android:paddingTop="@dimen/qb_px_10"
+    android:paddingBottom="@dimen/qb_px_10"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:numColumns="7"
+    android:paddingLeft="@dimen/qb_px_3"
+    android:paddingRight="@dimen/qb_px_3"
+    />
+</FrameLayout>

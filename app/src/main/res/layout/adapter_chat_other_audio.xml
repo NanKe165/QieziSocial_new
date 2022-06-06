@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="2dp"
+    android:orientation="vertical">
+    <TextView
+        android:visibility="gone"
+        android:paddingBottom="@dimen/qb_px_3"
+        android:id="@+id/chat_hint_tv"
+        android:paddingTop="@dimen/qb_px_3"
+        android:paddingLeft="@dimen/qb_px_5"
+        android:paddingRight="@dimen/qb_px_5"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:layout_marginBottom="@dimen/qb_px_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="昨天 20:04"
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp"
+
+        android:layout_gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="horizontal">
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.xiao.nicevideoplayer.NiceVideoPlayer
+                android:id="@+id/ap_chat_player"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:background="@color/blue" />
+
+            <com.eggplant.qiezisocial.widget.image.CircleImageView
+                android:id="@+id/adapter_chat_head"
+                android:layout_width="@dimen/qb_px_40"
+                android:layout_height="@dimen/qb_px_40"
+                android:layout_marginBottom="@dimen/qb_px_5"
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginTop="@dimen/qb_px_5"
+                android:src="@mipmap/normal_head" />
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/center"
+            android:layout_width="@dimen/qb_px_80"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/qb_px_7"
+            android:layout_marginLeft="@dimen/qb_px_7"
+            android:layout_marginTop="@dimen/qb_px_7"
+            android:background="@drawable/msg_chat_other_bg"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <ImageView
+                android:id="@+id/ap_chat_aimg"
+                android:layout_width="@dimen/qb_px_15"
+                android:layout_height="@dimen/qb_px_15"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:src="@drawable/audio_other3" />
+
+            <ImageView
+                android:id="@+id/ap_chat_aimg_play"
+                android:layout_width="@dimen/qb_px_15"
+                android:layout_height="@dimen/qb_px_15"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:src="@drawable/anim_audio_other" />
+
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/ap_chat_atime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/qb_px_10"
+            android:layout_toLeftOf="@id/center"
+            android:text="2''"
+            android:textColor="@color/tv_black"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/adapter_chat_ununited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/qb_px_10"
+            android:src="@mipmap/chat_ununited"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/pop_vcr_gp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/fun_shadow1">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/pop_vcr_report1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="举报" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/pop_vcr_gp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/fun_shadow2"
+        android:orientation="vertical">
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/pop_vcr_report2"
+            android:layout_width="@dimen/qb_px_80"
+            android:layout_height="@dimen/qb_px_30"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/qb_px_25"
+            android:gravity="center"
+            android:text="举报" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/pop_vcr_guanzhu"
+            android:layout_width="@dimen/qb_px_80"
+            android:layout_height="@dimen/qb_px_30"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/qb_px_55"
+            android:gravity="center"
+            android:text="取消关注" />
+    </FrameLayout>
+</FrameLayout>

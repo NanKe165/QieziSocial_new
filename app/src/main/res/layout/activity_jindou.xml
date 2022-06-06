@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/jd_rootview"
+    android:background="@drawable/homebg2"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.eggplant.qiezisocial.widget.topbar.Topbar
+            android:id="@+id/jd_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qb_px_30"
+            app:returnDrawable="@drawable/return_white"
+            app:tbTitle="我的金豆"
+            app:tbTitleColor="@color/white" />
+
+        <FrameLayout
+            android:layout_width="@dimen/qb_px_215"
+            android:layout_height="@dimen/qb_px_215"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:layout_marginTop="@dimen/qb_px_80"
+            android:background="@drawable/dialog_shadow"
+            android:orientation="horizontal">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/jd_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/tv_gray4"
+                android:textSize="60sp" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_15"
+                android:layout_marginTop="@dimen/qb_px_15"
+                android:drawableRight="@mipmap/icon_jindou2"
+                android:text="账户余额"
+                android:textSize="18sp"
+                android:textColor="@color/tv_cf"
+                android:drawablePadding="@dimen/qb_px_5"
+                android:gravity="center_vertical"
+
+                />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_marginTop="@dimen/qb_px_80"
+            android:layout_marginRight="@dimen/qb_px_15"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_100"
+            android:background="@drawable/dialog_shadow"
+            android:layout_gravity="right"
+            >
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/jd_guize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+
+                android:drawableLeft="@mipmap/icon_guize"
+                android:drawablePadding="@dimen/qb_px_5"
+                android:text="规则"
+                android:textColor="@color/tv_gray2"
+                android:textSize="14sp" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_marginTop="@dimen/qb_px_195"
+            android:layout_marginRight="@dimen/qb_px_15"
+            android:layout_width="@dimen/qb_px_100"
+            android:layout_height="@dimen/qb_px_100"
+            android:background="@drawable/dialog_shadow"
+            android:layout_gravity="right"
+            >
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/jd_mx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+
+                android:drawableLeft="@mipmap/icon_mx"
+                android:drawablePadding="@dimen/qb_px_5"
+                android:text="明细"
+                android:textColor="@color/tv_gray2"
+                android:textSize="14sp" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/qb_px_18"
+        android:paddingLeft="@dimen/qb_px_13"
+        android:paddingRight="@dimen/qb_px_13"
+        android:paddingTop="@dimen/qb_px_18"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/jd_award1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/qb_px_72"
+            android:layout_weight="1"
+            android:src="@mipmap/icon_award_left" />
+
+        <FrameLayout
+            android:layout_width="@dimen/qb_px_13"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/jd_award2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/qb_px_72"
+            android:layout_weight="1"
+            android:src="@mipmap/icon_award_right" />
+    </LinearLayout>
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_13"
+        android:text="在线行为和对应可获得的金豆数量："
+        android:textColor="@color/tv_black2"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15"
+        android:paddingBottom="@dimen/qb_px_20"
+        android:background="@drawable/dialog_shadow"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_marginBottom="@dimen/qb_px_130"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/qb_px_16">
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tv_gray2"
+            android:textSize="14sp"
+            android:text="每日任务"
+            android:layout_marginTop="@dimen/qb_px_20"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="今日已获得 0 金豆"
+            android:textSize="11sp"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/qb_px_23"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="@dimen/qb_px_50"
+            android:id="@+id/jd_ry"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+          />
+
+    </FrameLayout>
+</LinearLayout>

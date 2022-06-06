@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_46">
+
+    <FrameLayout
+        android:id="@+id/tb_gp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/tb_left_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/qb_px_10"
+        android:padding="@dimen/qb_px_10"
+        android:src="@mipmap/tb_left_return" />
+
+    <ImageView
+        android:id="@+id/tb_right_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginRight="@dimen/qb_px_10"
+        android:src="@mipmap/tb_right_return"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tb_right_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginRight="@dimen/qb_px_10"
+        android:paddingBottom="@dimen/qb_px_3"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:paddingRight="@dimen/qb_px_15"
+        android:paddingTop="@dimen/qb_px_3"
+        android:text=""
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tb_title"
+        android:layout_width="@dimen/qb_px_180"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/tv_black"
+        android:textSize="18sp"
+        android:singleLine="true"
+        android:scrollHorizontally="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        />
+
+
+    <View
+        android:id="@+id/tb_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_gravity="bottom"
+        android:background="@color/edit_bg"
+        android:visibility="gone" />
+</FrameLayout>

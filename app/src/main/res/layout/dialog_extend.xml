@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_430"
+        android:background="@drawable/extend_bg">
+
+        <FrameLayout
+            android:layout_width="@dimen/qb_px_42"
+            android:layout_height="@dimen/qb_px_3"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/qb_px_12"
+            android:background="@drawable/extend_widget" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/extend_caicaicai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_14"
+            android:layout_marginTop="@dimen/qb_px_52"
+            android:drawableLeft="@mipmap/caicaicai_icon"
+            android:drawablePadding="@dimen/qb_px_6"
+            android:gravity="center_vertical"
+            android:text="缘分猜猜猜"
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line_color2"
+            android:layout_marginTop="@dimen/qb_px_90"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/extend_vcr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_14"
+            android:layout_marginTop="@dimen/qb_px_102"
+            android:drawableLeft="@mipmap/vcr_icon"
+            android:drawablePadding="@dimen/qb_px_6"
+            android:gravity="center_vertical"
+            android:text="我的VCR"
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line_color2"
+            android:layout_marginTop="@dimen/qb_px_140"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/extend_near_qs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_14"
+            android:layout_marginTop="@dimen/qb_px_152"
+            android:drawableLeft="@mipmap/near_qs_icon"
+            android:drawablePadding="@dimen/qb_px_6"
+            android:gravity="center_vertical"
+            android:text="附近的问题"
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="@dimen/qb_px_28"
+            android:drawablePadding="@dimen/qb_px_8"
+            android:drawableTop="@mipmap/extend_icon"
+            android:text="扩展功能"
+            android:textColor="@color/tv_gray2"
+            android:textSize="13sp" />
+    </FrameLayout>
+</FrameLayout>

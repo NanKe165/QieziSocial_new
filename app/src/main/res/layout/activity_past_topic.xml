@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg">
+
+    <com.eggplant.qiezisocial.widget.topbar.Topbar
+        android:id="@+id/ptopic_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_35"
+        app:bgColor="@color/translate"
+        app:tbTitle="往期话题" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ptopic_ry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/qb_px_80" />
+
+</FrameLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tv_yellow"
+    android:orientation="vertical">
+
+    <com.eggplant.qiezisocial.widget.NumbsView
+        android:id="@+id/set_guess_numbview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_80" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_25"
+        android:layout_marginRight="@dimen/qb_px_25"
+        android:layout_marginTop="@dimen/qb_px_30"
+        android:background="@drawable/pub_dialog_bg"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/qb_px_57"
+        android:paddingLeft="@dimen/qb_px_33"
+        android:paddingRight="@dimen/qb_px_33"
+        android:paddingTop="@dimen/qb_px_47">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/ft_set_guess_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/question_icon"
+                android:drawablePadding="@dimen/qb_px_6"
+                android:text=""
+                android:textColor="@color/tv_black2"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/ft_set_guess_nextqs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/next_qs" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/qb_px_28"
+            android:background="@color/line_color2" />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="12sp"
+            android:textColor="@color/tv_hint2"
+            android:layout_marginTop="@dimen/qb_px_25"
+            android:text="请选择一个答案"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ft_set_guess_answ1"
+            android:layout_marginTop="@dimen/qb_px_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp"
+            android:drawablePadding="@dimen/qb_px_2"
+            android:drawableLeft="@mipmap/answer_unselect"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/ft_set_guess_answ2"
+            android:layout_marginTop="@dimen/qb_px_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp"
+            android:drawablePadding="@dimen/qb_px_2"
+            android:drawableLeft="@mipmap/answer_unselect"
+            />
+
+    </LinearLayout>
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ft_set_guess_next"
+        android:layout_width="@dimen/qb_px_166"
+        android:layout_height="@dimen/qb_px_53"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/qb_px_55"
+        android:background="@drawable/pub_dialog_bg"
+        android:gravity="center"
+        android:text="下一题"
+        android:textColor="@color/tv_black"
+        android:textSize="14sp"
+        />
+</LinearLayout>

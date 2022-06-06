@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+    <FrameLayout
+        android:id="@+id/lchat_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/translate_black" />
+
+    <com.eggplant.qiezisocial.widget.keyboard.EmojiKeyBoard
+        android:id="@+id/lchat_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:clipChildren="false"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/qb_px_90"
+            android:layout_marginLeft="@dimen/qb_px_15"
+            android:layout_marginRight="@dimen/qb_px_67"
+            android:background="@drawable/pub_dialog_bg"
+            android:clickable="true"
+            android:clipChildren="false">
+
+            <FrameLayout
+                android:id="@+id/lchat_img_gp"
+                android:layout_width="@dimen/qb_px_60"
+                android:layout_height="@dimen/qb_px_80"
+                android:layout_marginLeft="@dimen/qb_px_15"
+                android:layout_marginTop="-15dp">
+
+                <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+                    android:id="@+id/lchat_img"
+                    android:layout_width="@dimen/qb_px_60"
+                    android:layout_height="@dimen/qb_px_80"
+                    android:scaleType="centerCrop"
+                    android:src="@color/color_girl" />
+
+                <ImageView
+                    android:id="@+id/lchat_video_play"
+                    android:layout_width="@dimen/qb_px_20"
+                    android:layout_height="@dimen/qb_px_20"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/vcr_play" />
+            </FrameLayout>
+
+
+            <ImageView
+                android:id="@+id/lchat_mul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-11dp"
+                android:layout_toRightOf="@id/lchat_img_gp"
+                android:src="@mipmap/mulimg" />
+
+            <ImageView
+                android:id="@+id/lchat_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/qb_px_15"
+                android:layout_marginTop="@dimen/qb_px_10"
+                android:padding="@dimen/qb_px_5"
+                android:src="@mipmap/close_black" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/lchat_ry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_17"
+                android:layout_marginRight="@dimen/qb_px_15"
+                android:layout_toLeftOf="@id/lchat_close"
+                android:layout_toRightOf="@id/lchat_img_gp" />
+
+
+            <com.eggplant.qiezisocial.widget.QzEdittext
+                android:id="@+id/lchat_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lchat_ry"
+                android:layout_marginBottom="@dimen/qb_px_8"
+                android:layout_marginLeft="@dimen/qb_px_15"
+                android:layout_marginRight="@dimen/qb_px_15"
+                android:layout_marginTop="@dimen/qb_px_24"
+                android:background="@drawable/verify_chat_edit_bg"
+                android:hint="小纸条回复"
+                android:imeOptions="actionSend"
+                android:inputType="textImeMultiLine"
+                android:maxLength="30"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/qb_px_7"
+                android:paddingLeft="@dimen/qb_px_19"
+                android:paddingRight="@dimen/qb_px_29"
+                android:paddingTop="@dimen/qb_px_7"
+                android:textColorHint="@color/bottom_hint_color"
+                android:textSize="10sp" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/lchat_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/lchat_edit"
+                android:layout_alignTop="@id/lchat_edit"
+                android:layout_marginRight="@dimen/qb_px_20"
+                android:layout_marginTop="@dimen/qb_px_6"
+                android:text="(5s)"
+                android:textColor="@color/tv_gray"
+                android:textSize="10sp" />
+        </RelativeLayout>
+    </com.eggplant.qiezisocial.widget.keyboard.EmojiKeyBoard>
+</FrameLayout>

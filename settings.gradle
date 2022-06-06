@@ -1,0 +1,1 @@
+include ':app', ':jianxiexpression', ':mp3Recorder', ':nicevideoplayer', ':videocompressor', ':camera', ':picture_library', ':ucrop'

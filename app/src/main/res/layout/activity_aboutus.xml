@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/home_bg"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/qb_px_30"
+    >
+    <com.eggplant.qiezisocial.widget.topbar.Topbar
+        android:id="@+id/about_us_bar"
+        app:tbTitle="关于我们"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about_us"
+        android:layout_marginTop="@dimen/qb_px_70"
+        android:layout_marginLeft="@dimen/qb_px_30"
+        android:layout_marginRight="@dimen/qb_px_30"
+        android:textSize="14sp"
+        android:textColor="@color/tv_black2"
+        />
+</FrameLayout>

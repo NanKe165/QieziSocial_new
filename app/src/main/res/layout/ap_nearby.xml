@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.eggplant.qiezisocial.widget.image.CircleImageView
+        android:id="@+id/ap_nearby_head"
+        android:layout_width="@dimen/qb_px_57"
+        android:layout_height="@dimen/qb_px_57"
+        android:layout_marginLeft="@dimen/qb_px_14"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:src="@mipmap/normal_head" />
+        <ImageView
+            android:id="@+id/ap_nearby_sex"
+            android:layout_width="@dimen/qb_px_10"
+            android:layout_height="@dimen/qb_px_10"
+            android:src="@mipmap/sex_girl"
+            android:layout_alignRight="@id/ap_nearby_head"
+            android:layout_alignBottom="@id/ap_nearby_head"
+            android:layout_margin="@dimen/qb_px_5"
+            />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_nearby_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ap_nearby_head"
+        android:layout_marginLeft="@dimen/qb_px_10"
+        android:layout_marginTop="@dimen/qb_px_11"
+        android:layout_toRightOf="@id/ap_nearby_head"
+        android:text="nick"
+        android:textColor="@color/tv_black"
+        android:textSize="16sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_nearby_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ap_nearby_nick"
+        android:layout_marginLeft="@dimen/qb_px_10"
+        android:layout_marginTop="@dimen/qb_px_4"
+        android:layout_toRightOf="@id/ap_nearby_nick"
+        android:background="@drawable/label_pink_bg"
+        android:paddingBottom="@dimen/qb_px_1"
+        android:paddingLeft="@dimen/qb_px_8"
+        android:paddingRight="@dimen/qb_px_8"
+        android:paddingTop="@dimen/qb_px_1"
+        android:text="15岁"
+        android:textColor="@color/white"
+        android:textSize="10sp" />
+
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_nearby_careers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ap_nearby_nick"
+        android:layout_marginLeft="@dimen/qb_px_10"
+        android:layout_marginTop="@dimen/qb_px_4"
+        android:layout_toRightOf="@id/ap_nearby_age"
+        android:background="@drawable/label_orange_bg"
+        android:paddingBottom="@dimen/qb_px_1"
+        android:paddingLeft="@dimen/qb_px_8"
+        android:paddingRight="@dimen/qb_px_8"
+        android:paddingTop="@dimen/qb_px_1"
+        android:text="美妆博主"
+        android:textColor="@color/white"
+        android:textSize="10sp" />
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:id="@+id/ap_nearby_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/tv_gray3"
+        android:textSize="12sp"
+        android:text="100米以内"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/qb_px_23"
+        android:layout_marginRight="@dimen/qb_px_14"
+        />
+    <LinearLayout
+        android:layout_marginTop="@dimen/qb_px_8"
+        android:layout_alignLeft="@id/ap_nearby_nick"
+        android:layout_below="@id/ap_nearby_nick"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/qb_px_8"
+            android:id="@+id/ap_nearby_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="@color/tv_gray7"
+            android:text="签名：我的地盘我做主"
+
+            />
+        <LinearLayout
+            android:id="@+id/ap_nearby_imgs"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/qb_px_8"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/qb_px_51">
+            <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+                android:layout_width="@dimen/qb_px_70"
+                android:layout_height="match_parent"
+                android:src="@mipmap/home_bg"
+                android:scaleType="centerCrop"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/qb_px_24"
+            android:background="@color/line_color"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
