@@ -46,6 +46,7 @@ class VerifyFriendActivity : BaseActivity() {
     }
 
     override fun initView() {
+        //更新
         from = intent.getStringExtra("from")
         user = intent.getSerializableExtra("user") as UserEntry?
         bean = intent.getSerializableExtra("bean") as MainInfoBean?

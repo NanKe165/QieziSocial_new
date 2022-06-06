@@ -29,6 +29,7 @@ android {
     }
     signingConfigs {
         debugSign {
+            //windows更新
             ///Users/vincent/Desktop/zhaorenwan_social.jks
             storeFile file('D:/project/project/zhaorenwan_social.jks')
             keyAlias 'social'
