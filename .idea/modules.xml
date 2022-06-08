@@ -2,24 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/QieziSocial_new.iml" filepath="$PROJECT_DIR$/.idea/QieziSocial_new.iml" />
-      <module fileurl="file://G:\tem\QieziSocial_new\QieziSocial_new.iml" filepath="G:\tem\QieziSocial_new\QieziSocial_new.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QieziSocial_new.iml" filepath="$PROJECT_DIR$/QieziSocial_new.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://G:\tem\QieziSocial_new\app\app.iml" filepath="G:\tem\QieziSocial_new\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/camera/camera.iml" filepath="$PROJECT_DIR$/camera/camera.iml" />
-      <module fileurl="file://G:\tem\QieziSocial_new\camera\camera.iml" filepath="G:\tem\QieziSocial_new\camera\camera.iml" />
       <module fileurl="file://$PROJECT_DIR$/jianxiexpression/jianxiexpression.iml" filepath="$PROJECT_DIR$/jianxiexpression/jianxiexpression.iml" />
-      <module fileurl="file://G:\tem\QieziSocial_new\jianxiexpression\jianxiexpression.iml" filepath="G:\tem\QieziSocial_new\jianxiexpression\jianxiexpression.iml" />
       <module fileurl="file://$PROJECT_DIR$/mp3Recorder/mp3Recorder.iml" filepath="$PROJECT_DIR$/mp3Recorder/mp3Recorder.iml" />
-      <module fileurl="file://G:\tem\QieziSocial_new\mp3Recorder\mp3Recorder.iml" filepath="G:\tem\QieziSocial_new\mp3Recorder\mp3Recorder.iml" />
       <module fileurl="file://$PROJECT_DIR$/nicevideoplayer/nicevideoplayer.iml" filepath="$PROJECT_DIR$/nicevideoplayer/nicevideoplayer.iml" />
-      <module fileurl="file://G:\tem\QieziSocial_new\nicevideoplayer\nicevideoplayer.iml" filepath="G:\tem\QieziSocial_new\nicevideoplayer\nicevideoplayer.iml" />
       <module fileurl="file://$PROJECT_DIR$/picture_library/picture_library.iml" filepath="$PROJECT_DIR$/picture_library/picture_library.iml" />
-      <module fileurl="file://G:\tem\QieziSocial_new\picture_library\picture_library.iml" filepath="G:\tem\QieziSocial_new\picture_library\picture_library.iml" />
       <module fileurl="file://$PROJECT_DIR$/ucrop/ucrop.iml" filepath="$PROJECT_DIR$/ucrop/ucrop.iml" />
-      <module fileurl="file://G:\tem\QieziSocial_new\ucrop\ucrop.iml" filepath="G:\tem\QieziSocial_new\ucrop\ucrop.iml" />
       <module fileurl="file://$PROJECT_DIR$/videocompressor/videocompressor.iml" filepath="$PROJECT_DIR$/videocompressor/videocompressor.iml" />
-      <module fileurl="file://G:\tem\QieziSocial_new\videocompressor\videocompressor.iml" filepath="G:\tem\QieziSocial_new\videocompressor\videocompressor.iml" />
     </modules>
   </component>
 </project>

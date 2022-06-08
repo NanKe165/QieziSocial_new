@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.text.TextUtils
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.*
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -47,7 +48,8 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
     var requestcode = -1
     var fragment: Fragment? = null
     var gchat = false
-
+    var needAnimPosition=-1
+    var multModel=false
 
     init {
         addItemType(ChatMultiEntry.CHAT_MINE, R.layout.adapter_chat_mine)
@@ -64,7 +66,13 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
         maxHeight = ScreenUtil.getDisplayHeightPixels(mContext) / 3
     }
 
+
     override fun convert(helper: BaseViewHolder?, item: ChatMultiEntry<ChatEntry>?) {
+        helper!!.addOnClickListener(R.id.adapter_chat_multselect)
+        helper!!.addOnLongClickListener(R.id.center)
+        if (multModel){
+            helper!!.getView<ImageView>(R.id.adapter_chat_multselect).visibility=View.VISIBLE
+        }
         if (helper!!.itemViewType == ChatMultiEntry.CHAT_QUESTION_TITLE) {
             if (TextUtils.equals(item!!.bean.layout, "男")) {
                 helper.itemView.adapter_chat_qs_sex.setImageResource(R.mipmap.sex_boy)
@@ -144,6 +152,11 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
                 }
             }
         }
+
+        if (needAnimPosition==helper.adapterPosition-headerLayoutCount){
+            helper.itemView.animation = AnimationUtils.loadAnimation(mContext, R.anim.chat_item_add_anim)
+        }
+        needAnimPosition=-1
     }
 
     @SuppressLint("CheckResult")

@@ -1,7 +1,6 @@
 package com.eggplant.qiezisocial.ui.main.adapter
 
 import android.support.v4.content.ContextCompat
-import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
 import com.bumptech.glide.Glide
@@ -52,7 +51,7 @@ class CardAdapter(data: List<BoxEntry>?) : BaseQuickAdapter<BoxEntry, BaseViewHo
 
         if (gpWidth == 0)
             gpWidth = ScreenUtil.getDisplayWidthPixels(mContext)
-        Log.i("cardAp", "gpWidth :$gpWidth")
+//        Log.i("cardAp", "gpWidth :$gpWidth")
         val x0 = gpWidth / 2
         val we1 = random.nextFloat() * (0.9f - 0.7f) + 0.7f
         val we2 = random.nextFloat() * (1 - 0.1f) + 0.1f
@@ -63,9 +62,9 @@ class CardAdapter(data: List<BoxEntry>?) : BaseQuickAdapter<BoxEntry, BaseViewHo
             fw = 1.0f
         }
         var width = (fw * gpWidth).toInt()
-        Log.i("cardAp", "width--- :$width   fw$fw ")
+//        Log.i("cardAp", "width--- :$width   fw$fw ")
         if (width < ScreenUtil.dip2px(mContext, 200)) {
-            Log.i("cardAp", "width <200dp")
+//            Log.i("cardAp", "width <200dp")
             width = ScreenUtil.dip2px(mContext, 200)
         }
 

@@ -26,7 +26,16 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+        <ImageView
+            android:id="@+id/adapter_chat_multselect"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/login_rule_unread"
+            android:layout_marginTop="@dimen/qb_px_15"
+            android:padding="@dimen/qb_px_5"
+            android:layout_marginLeft="@dimen/qb_px_5"
+            />
         <com.eggplant.qiezisocial.widget.image.CircleImageView
             android:id="@+id/adapter_chat_head"
             android:layout_width="@dimen/qb_px_40"

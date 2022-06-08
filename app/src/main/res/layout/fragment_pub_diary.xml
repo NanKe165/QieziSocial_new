@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         app:rightTxtBg="@drawable/tv_yellow_bg"
         app:tbRightTxt="发布"
-        app:tbTitle="发布日志" />
+        app:tbTitle="我观世界" />
 
     <View
         android:layout_width="match_parent"

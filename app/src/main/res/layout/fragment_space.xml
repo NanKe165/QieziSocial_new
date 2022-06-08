@@ -290,6 +290,7 @@
                             android:id="@+id/ft_space_visitor_gp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+
                             android:orientation="horizontal"
                             android:paddingBottom="@dimen/qb_px_13"
                             android:paddingTop="@dimen/qb_px_13">
@@ -350,7 +351,7 @@
                                 android:id="@+id/ft_space_visitor_numb"
                                 android:layout_width="@dimen/qb_px_17"
                                 android:layout_height="@dimen/qb_px_17"
-                                android:layout_marginRight="@dimen/qb_px_16"
+                                android:layout_marginRight="@dimen/qb_px_10"
                                 android:background="@drawable/msg_hint"
                                 android:gravity="center"
                                 android:text="0"
@@ -363,6 +364,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginTop="@dimen/qb_px_4"
+                                android:layout_gravity="center_vertical"
                                 android:src="@mipmap/icon_space_arrows"
                                 android:visibility="visible" />
                         </LinearLayout>
@@ -513,7 +515,7 @@
                                 android:textColor="@color/tv_gray4"
                                 android:textSize="13sp"
                                 android:textStyle="bold"
-                                android:visibility="visible" />
+                                android:visibility="gone" />
 
                             <ImageView
                                 android:id="@+id/ft_space_diary_right"

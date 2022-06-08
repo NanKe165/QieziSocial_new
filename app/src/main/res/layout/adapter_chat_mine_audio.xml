@@ -26,7 +26,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+        <ImageView
+            android:id="@+id/adapter_chat_multselect"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/login_rule_unread"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/qb_px_5"
+            android:layout_marginLeft="@dimen/qb_px_5"
+            />
         <com.xiao.nicevideoplayer.NiceVideoPlayer
             android:id="@+id/ap_chat_player"
             android:layout_width="1dp"

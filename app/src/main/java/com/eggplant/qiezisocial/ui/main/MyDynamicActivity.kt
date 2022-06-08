@@ -1,7 +1,6 @@
 package com.eggplant.qiezisocial.ui.main
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.Gravity
@@ -27,7 +26,6 @@ import com.eggplant.qiezisocial.widget.popupwindow.BasePopupWindow
 import com.eggplant.qiezisocial.widget.topbar.SimpBarListener
 import com.lzy.okgo.model.Response
 import kotlinx.android.synthetic.main.activity_blacklist.*
-import kotlinx.android.synthetic.main.activity_dynamic.*
 import kotlinx.android.synthetic.main.dlg_dynamic_delete.view.*
 
 
@@ -57,7 +55,7 @@ class MyDynamicActivity : BaseActivity() {
         initPopWindow()
         uid=intent.getIntExtra("uid",0)
         model = DynamicModel()
-        adapter = DynamicAdapter(mContext, null)
+        adapter = DynamicAdapter(activity, null)
 
         adapter.setEnableLoadMore(true)
         black_ry.layoutManager = LinearLayoutManager(mContext)

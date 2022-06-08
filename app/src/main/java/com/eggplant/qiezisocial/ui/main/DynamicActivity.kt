@@ -92,7 +92,7 @@ class DynamicActivity : BaseMvpActivity<DynamicPresenter>(), ExpressionGridFragm
             dy_bar.setTitle(name)
             dy_title.text = name
         }
-        adapter = DynamicAdapter(mContext, null)
+        adapter = DynamicAdapter(activity, null)
         if (goal == null || sid == null) {
             goal=""
             sid=""

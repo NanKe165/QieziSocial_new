@@ -203,7 +203,13 @@ class FriendParkFramgnet : BaseMvpFragment<FriendParkPresenter>(), FriendParkCon
 
         if (showPosition != -1) {
             var offest = 0
-            val view = manager.getChildAt(showPosition + adapter.headerLayoutCount)
+            var view = manager.getChildAt(showPosition + adapter.headerLayoutCount)
+            if (view==null){
+                view=manager.findViewByPosition(showPosition+adapter.headerLayoutCount)
+                if (view==null) {
+                    return
+                }
+            }
             var loca = IntArray(2)
             view.getLocationOnScreen(loca)
             val showMode = (showPosition + 1) % 3

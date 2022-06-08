@@ -16,7 +16,17 @@
         android:paddingBottom="@dimen/qb_px_6"
         android:paddingLeft="@dimen/qb_px_23"
         android:paddingRight="@dimen/qb_px_14">
-
+        <ImageView
+            android:id="@+id/adapter_chat_multselect"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/login_rule_unread"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/qb_px_5"
+            android:layout_marginLeft="@dimen/qb_px_5"
+            />
         <com.eggplant.qiezisocial.widget.QzTextView
             android:layout_marginTop="@dimen/qb_px_15"
             android:id="@+id/adapter_chat_qs_content"

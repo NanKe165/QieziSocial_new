@@ -1,6 +1,7 @@
 package com.eggplant.qiezisocial.ui.main.adapter
 
-import android.content.Context
+import android.app.Activity
+import android.content.Intent
 import android.graphics.Bitmap
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
@@ -20,6 +21,7 @@ import com.eggplant.qiezisocial.entry.BoxEntry
 import com.eggplant.qiezisocial.entry.CommentEntry
 import com.eggplant.qiezisocial.entry.UserEntry
 import com.eggplant.qiezisocial.model.API
+import com.eggplant.qiezisocial.ui.main.OtherSpaceActivity
 import com.eggplant.qiezisocial.utils.DateUtils
 import com.eggplant.qiezisocial.utils.PrevUtils
 import com.eggplant.qiezisocial.utils.ScreenUtil
@@ -34,13 +36,13 @@ import kotlinx.android.synthetic.main.ap_dynamic.view.*
  * Created by Administrator on 2021/8/19.
  */
 
-class DynamicAdapter(context: Context, data: List<BoxEntry>?) : BaseQuickAdapter<BoxEntry, BaseViewHolder>(R.layout.ap_dynamic, data) {
+class DynamicAdapter(context: Activity, data: List<BoxEntry>?) : BaseQuickAdapter<BoxEntry, BaseViewHolder>(R.layout.ap_dynamic, data) {
     var deleteOpen = false
     var maxWidth = 0
     var maxHeight = 0
+    var activity: Activity = context
 
     init {
-
         maxWidth = ScreenUtil.dip2px(context, 200)
         maxHeight = ScreenUtil.dip2px(context, 215)
     }
@@ -55,7 +57,7 @@ class DynamicAdapter(context: Context, data: List<BoxEntry>?) : BaseQuickAdapter
         helper.itemView.ap_dy_like.text = "${item.like}"
         if (item.mylike) {
             helper.itemView.ap_dy_like_img.setImageResource(R.mipmap.like_select)
-            helper.itemView.ap_dy_like.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.like_select, 0,0, 0)
+            helper.itemView.ap_dy_like.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.like_select, 0, 0, 0)
             helper.itemView.ap_dy_like.setTextColor(ContextCompat.getColor(mContext, R.color.red_btn))
         } else {
             helper.itemView.ap_dy_like_img.setImageResource(R.mipmap.like_unselect)
@@ -89,25 +91,25 @@ class DynamicAdapter(context: Context, data: List<BoxEntry>?) : BaseQuickAdapter
 
         if (media.isNotEmpty()) {
             mediaGp.visibility = View.VISIBLE
-            var haveVideo=false
-            var imageInfo=ArrayList<ImageInfo>()
+            var haveVideo = false
+            var imageInfo = ArrayList<ImageInfo>()
             media.forEach {
-                if (it.type=="video") {
+                if (it.type == "video") {
                     haveVideo = true
-                }else {
+                } else {
                     val image = ImageInfo()
-                    image.setThumbnailUrl(API.PIC_PREFIX+it.extra)
-                    image.setBigImageUrl(API.PIC_PREFIX+it.org)
+                    image.setThumbnailUrl(API.PIC_PREFIX + it.extra)
+                    image.setBigImageUrl(API.PIC_PREFIX + it.org)
                     imageInfo.add(image)
                 }
             }
-            if (media.size==1||haveVideo) {
+            if (media.size == 1 || haveVideo) {
 //                helper.itemView.ap_dy_ninegridview.visibility=View.GONE
 //                helper.itemView.ap_dy_media.visibility=View.VISIBLE
-                helper.itemView.ap_dy_media_ry.visibility=View.GONE
-                helper.itemView.ap_dy_media_tv.visibility=View.GONE
-                helper.itemView.ap_dy_long_chart.visibility=View.GONE
-                helper.itemView.ap_dy_media_one.visibility=View.VISIBLE
+                helper.itemView.ap_dy_media_ry.visibility = View.GONE
+                helper.itemView.ap_dy_media_tv.visibility = View.GONE
+                helper.itemView.ap_dy_long_chart.visibility = View.GONE
+                helper.itemView.ap_dy_media_one.visibility = View.VISIBLE
                 var imagPath = ""
                 var videoPath = ""
                 play.visibility = View.GONE
@@ -131,11 +133,11 @@ class DynamicAdapter(context: Context, data: List<BoxEntry>?) : BaseQuickAdapter
                                     resource.height > maxHeight -> {
                                         val eqLongImage = MediaUtils.isLongImg(resource.width,
                                                 resource.height)
-                                        if (eqLongImage){
-                                            imgWidth=maxWidth.toFloat()*2/3
-                                            imgHeight=maxHeight.toFloat()
-                                            helper.itemView.ap_dy_long_chart.visibility=View.VISIBLE
-                                        }else{
+                                        if (eqLongImage) {
+                                            imgWidth = maxWidth.toFloat() * 2 / 3
+                                            imgHeight = maxHeight.toFloat()
+                                            helper.itemView.ap_dy_long_chart.visibility = View.VISIBLE
+                                        } else {
                                             imgWidth = resource.width.toFloat() / resource.height * maxHeight
                                             imgHeight = if (imgWidth > maxWidth) {
                                                 imgWidth = maxWidth.toFloat()
@@ -193,20 +195,20 @@ class DynamicAdapter(context: Context, data: List<BoxEntry>?) : BaseQuickAdapter
                     }
                     true
                 }
-            }else{
-                helper.itemView.ap_dy_media_ry.visibility=View.VISIBLE
-                helper.itemView.ap_dy_media_tv.visibility=View.GONE
-                helper.itemView.ap_dy_media_one.visibility=View.GONE
-                helper.itemView.ap_dy_long_chart.visibility=View.GONE
+            } else {
+                helper.itemView.ap_dy_media_ry.visibility = View.VISIBLE
+                helper.itemView.ap_dy_media_tv.visibility = View.GONE
+                helper.itemView.ap_dy_media_one.visibility = View.GONE
+                helper.itemView.ap_dy_long_chart.visibility = View.GONE
                 val layoutParams = mediaGp.layoutParams
                 layoutParams.width = RelativeLayout.LayoutParams.WRAP_CONTENT
-                layoutParams.height =RelativeLayout.LayoutParams.WRAP_CONTENT
+                layoutParams.height = RelativeLayout.LayoutParams.WRAP_CONTENT
                 mediaGp.layoutParams = layoutParams
-                helper.itemView.ap_dy_media_ry.layoutManager=LinearLayoutManager(mContext,HORIZONTAL,false)
-                helper.itemView.ap_dy_media_ry.adapter=RoundImageAdapter(media)
-                if (media.size>3){
-                    helper.itemView.ap_dy_media_tv.text="${media.size-3}+"
-                    helper.itemView.ap_dy_media_tv.visibility=View.VISIBLE
+                helper.itemView.ap_dy_media_ry.layoutManager = LinearLayoutManager(mContext, HORIZONTAL, false)
+                helper.itemView.ap_dy_media_ry.adapter = RoundImageAdapter(media)
+                if (media.size > 3) {
+                    helper.itemView.ap_dy_media_tv.text = "${media.size - 3}+"
+                    helper.itemView.ap_dy_media_tv.visibility = View.VISIBLE
                 }
 
 //                helper.itemView.ap_dy_ninegridview.visibility=View.VISIBLE
@@ -237,13 +239,13 @@ class DynamicAdapter(context: Context, data: List<BoxEntry>?) : BaseQuickAdapter
         }
 
         if (deleteOpen) {
-            helper.itemView.ap_dy_pub_comment.visibility=View.GONE
-            helper.itemView.ap_dy_like.visibility=View.GONE
-            helper.itemView.ap_dy_like_img.visibility=View.GONE
+            helper.itemView.ap_dy_pub_comment.visibility = View.GONE
+            helper.itemView.ap_dy_like.visibility = View.GONE
+            helper.itemView.ap_dy_like_img.visibility = View.GONE
             helper.itemView.ap_dy_report.visibility = View.GONE
             helper.itemView.ap_dy_delete.visibility = View.VISIBLE
             helper.addOnClickListener(R.id.ap_dy_delete)
-        }else{
+        } else {
 
         }
         if (item.likeuser != null && item.likeuser.isNotEmpty()) {
@@ -257,7 +259,7 @@ class DynamicAdapter(context: Context, data: List<BoxEntry>?) : BaseQuickAdapter
             var moreSzie = 0
             item.likeuser.forEachIndexed { index, userEntry ->
                 if (index < 8) {
-                    likeUser.addView(getLikeView(userEntry))
+                    likeUser.addView(getLikeView(activity, userEntry))
                 } else {
                     moreSzie++
                 }
@@ -268,43 +270,47 @@ class DynamicAdapter(context: Context, data: List<BoxEntry>?) : BaseQuickAdapter
                 sizeTv.text = "$moreSzie+"
                 sizeTv.textSize = 17F
                 sizeTv.setTextColor(ContextCompat.getColor(mContext, R.color.tv_gray9))
-                sizeTv.layoutParams = getLayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT,margin)
+                sizeTv.layoutParams = getLayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, margin)
                 likeUser.addView(sizeTv)
             }
         } else {
             helper.itemView.ap_dy_likeuser.visibility = View.GONE
         }
-        if (item.comment!=null&&item.comment.isNotEmpty()) {
-            helper.itemView.ap_dy_comment.visibility=View.VISIBLE
-            helper.itemView.ap_dy_comment.isShowLoadMore=true
+        if (item.comment != null && item.comment.isNotEmpty()) {
+            helper.itemView.ap_dy_comment.visibility = View.VISIBLE
+            helper.itemView.ap_dy_comment.isShowLoadMore = true
             helper.itemView.ap_dy_comment.setDiaryUid(item.uid)
             helper.itemView.ap_dy_comment.datas = item.comment
-            helper.itemView.ap_dy_comment.setOnItemClickListener {
-                position ->
+            helper.itemView.ap_dy_comment.setOnItemClickListener { position ->
                 commentListener?.invoke(helper.adapterPosition, item.comment[position])
             }
-        }else{
-            helper.itemView.ap_dy_comment.visibility=View.GONE
+        } else {
+            helper.itemView.ap_dy_comment.visibility = View.GONE
         }
 //        if (deleteOpen&&item.scenes!=null&&item.scenes.isNotEmpty()){
 //            helper.itemView.ap_dy_scenes.text="#${item.scenes}"
 //            helper.itemView.ap_dy_scenes.visibility=View.VISIBLE
 //        }else{
-            helper.itemView.ap_dy_scenes.visibility=View.GONE
+        helper.itemView.ap_dy_scenes.visibility = View.GONE
 //        }
     }
 
-    private fun getLikeView(it: UserEntry): CircleImageView {
+    private fun getLikeView(activity: Activity, user: UserEntry): CircleImageView {
         var img = CircleImageView(mContext)
         val imgWidth = ScreenUtil.dip2px(mContext, 17)
         val margin = ScreenUtil.dip2px(mContext, 5)
-        val params = getLayoutParams(imgWidth,imgWidth,margin)
+        val params = getLayoutParams(imgWidth, imgWidth, margin)
         img.layoutParams = params
-        Glide.with(mContext).load(API.PIC_PREFIX + it.face).into(img)
+        Glide.with(mContext).load(API.PIC_PREFIX + user.face).into(img)
+        img.setOnClickListener {
+            var intent = Intent(activity, OtherSpaceActivity::class.java).putExtra("bean", user)
+            activity.startActivity(intent)
+            activity.overridePendingTransition(R.anim.open_enter, R.anim.open_exit)
+        }
         return img
     }
 
-    private fun getLayoutParams(w: Int, h: Int,leftMargin:Int): LinearLayout.LayoutParams {
+    private fun getLayoutParams(w: Int, h: Int, leftMargin: Int): LinearLayout.LayoutParams {
         var params = LinearLayout.LayoutParams(w, h)
         params.setMargins(leftMargin, 0, 0, 0)
         return params

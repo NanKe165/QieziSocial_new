@@ -165,7 +165,7 @@
                 android:layout_gravity="center"
                 android:textColor="@color/tv_black2"
                 android:textSize="16sp"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:drawableTop="@mipmap/icon_friend_top"
                 android:drawablePadding="@dimen/qb_px_10"
                 />

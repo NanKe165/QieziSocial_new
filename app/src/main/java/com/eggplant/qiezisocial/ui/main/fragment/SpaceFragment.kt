@@ -27,7 +27,6 @@ import com.eggplant.qiezisocial.model.LoginModel
 import com.eggplant.qiezisocial.model.callback.JsonCallback
 import com.eggplant.qiezisocial.ui.award.JindouActivity
 import com.eggplant.qiezisocial.ui.decorate.DecorateActivity
-import com.eggplant.qiezisocial.ui.extend.DiaryActivity
 import com.eggplant.qiezisocial.ui.extend.PubDiaryActivity
 import com.eggplant.qiezisocial.ui.extend.RecordVideoActivity
 import com.eggplant.qiezisocial.ui.extend.dialog.PubVcrDialog
@@ -134,7 +133,7 @@ class SpaceFragment : BaseFragment() {
             ft_line_dt.visibility = View.GONE
             ft_space_gz.visibility = View.VISIBLE
             ft_line_gz.visibility = View.GONE
-            ft_space_diary_right.visibility = View.GONE
+//            ft_space_diary_right.visibility = View.GONE
             ft_space_info_right.visibility = View.GONE
             ft_space_label_right.visibility = View.GONE
             ft_space_gz_right.visibility = View.GONE
@@ -269,7 +268,7 @@ class SpaceFragment : BaseFragment() {
         } else {
             ft_space_gz_size.text = ""
         }
-        Log.i("spaceFt", "setVisitInfo ------secreflag:${body.secretflag}")
+//        Log.i("spaceFt", "setVisitInfo ------secreflag:${body.secretflag}")
         if (body.secretflag) {
             ft_space_gz.text = "已暗恋"
             ft_space_gz.background = ContextCompat.getDrawable(mContext!!, R.drawable.hidden_loved)
@@ -341,6 +340,11 @@ class SpaceFragment : BaseFragment() {
             }
 //            ft_space_diary_numb.visibility = View.GONE
 //            ft_space_diary_numb.text = "0"
+        }
+        ft_space_head.setOnClickListener {
+            if (user!!.uid == application.infoBean!!.uid) {
+                startActivityForResult(Intent(mContext!!, SetInfoActivity::class.java), REQUEST_SETINFO)
+            }
         }
         ft_space_info_gp.setOnClickListener {
             if (user!!.uid == application.infoBean!!.uid) {

@@ -2,7 +2,6 @@ package com.eggplant.qiezisocial.ui.chat
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
-import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.SharedPreferences
@@ -90,8 +89,10 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
         chat_ry.adapter = adapter
         layoutManager = LinearLayoutManager(mContext)
 //        layoutManager.stackFromEnd = true
+
         chat_ry.layoutManager = layoutManager
         (chat_ry.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+
 //        (chat_ry.itemAnimator as SimpleItemAnimator).addDuration = 1000
 //        (chat_ry.itemAnimator as SimpleItemAnimator).moveDuration = 1000
 //        (chat_ry.itemAnimator as SimpleItemAnimator).removeDuration = 1000
@@ -246,6 +247,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
                 chat_ry.viewTreeObserver.removeOnGlobalLayoutListener(this)
             }
         })
+
         //录制语音回调
         chat_keyboard.setRecorderListener(object : RecorderListener {
 
@@ -274,6 +276,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
                     mPresenter.mainInfoBean!!.`object` = ""
                     MainDBManager.getInstance(mContext).updateUser(mPresenter.mainInfoBean)
                     val chatEntryChatMultiBean = ChatMultiEntry(ChatMultiEntry.CHAT_MINE_AUDIO, createChatEntry)
+                    adapter.needAnimPosition=adapter.data.size
                     adapter.addData(chatEntryChatMultiBean)
                     scrollToBottom()
                 }
@@ -393,6 +396,15 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
                 }
             }
         }
+        adapter.setOnItemLongClickListener { _, view, position ->
+
+//            adapter.multModel=true
+//            adapter.notifyDataSetChanged()
+            true
+        }
+        adapter.setOnItemChildLongClickListener { _, view, position ->
+            true
+        }
     }
 
 
@@ -416,6 +428,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onNewMsg(event: NewMsgEvent) {
         var newData = mPresenter.getNewData(mContext, adapter.data)
+        adapter.needAnimPosition=adapter.data.size
         adapter.addData(newData)
         scrollToBottom()
     }
@@ -711,6 +724,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
         }
     }
     override fun addItem(chatEntryChatMultiBean: ChatMultiEntry<ChatEntry>) {
+        adapter.needAnimPosition=adapter.data.size
         adapter.addData(chatEntryChatMultiBean)
     }
 
@@ -718,6 +732,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
         if (position < adapter.data.size) {
             adapter.addData(position, chatEntryChatMultiBean)
         } else {
+            adapter.needAnimPosition=adapter.data.size
             adapter.addData(chatEntryChatMultiBean)
         }
     }

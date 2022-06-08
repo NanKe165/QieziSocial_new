@@ -7,9 +7,13 @@ import com.bumptech.glide.Glide
 import com.eggplant.qiezisocial.QzApplication
 import com.eggplant.qiezisocial.R
 import com.eggplant.qiezisocial.base.BaseActivity
+import com.eggplant.qiezisocial.entry.BaseEntry
+import com.eggplant.qiezisocial.entry.UserEntry
 import com.eggplant.qiezisocial.event.SocketMsgEvent
 import com.eggplant.qiezisocial.greendao.entry.MainInfoBean
 import com.eggplant.qiezisocial.model.API
+import com.eggplant.qiezisocial.model.MsgModel
+import com.eggplant.qiezisocial.model.callback.JsonCallback
 import com.eggplant.qiezisocial.ui.chat.ChatActivity
 import com.lzy.okgo.OkGo
 import com.lzy.okgo.callback.StringCallback
@@ -77,6 +81,25 @@ class GreetSbActivity : BaseActivity() {
             }
             finish()
         }
+        greetsb_head.setOnClickListener {
+            toOtherAtivity()
+
+        }
+    }
+
+    private fun toOtherAtivity() {
+        MsgModel().getUserInfo(activity,bean!!.uid.toInt(),object : JsonCallback<BaseEntry<UserEntry>>() {
+            override fun onSuccess(response: Response<BaseEntry<UserEntry>>?) {
+                if (response!!.isSuccessful) {
+                    val userinfor = response.body().userinfor
+                    if (userinfor != null) {
+                        var intent = Intent(activity, OtherSpaceActivity::class.java).putExtra("bean", userinfor)
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.open_enter, R.anim.open_exit)
+                    }
+                }
+            }
+        })
     }
 
     private fun sendComfort() {

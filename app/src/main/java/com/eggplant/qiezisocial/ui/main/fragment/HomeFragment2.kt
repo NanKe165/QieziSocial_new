@@ -8,13 +8,13 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.FrameLayout
+import android.widget.LinearLayout.VERTICAL
 import com.eggplant.qiezisocial.R
 import com.eggplant.qiezisocial.base.BaseMvpFragment
 import com.eggplant.qiezisocial.contract.HomeContract
@@ -37,7 +37,6 @@ import com.umeng.socialize.ShareAction
 import com.umeng.socialize.bean.SHARE_MEDIA
 import com.umeng.socialize.media.UMImage
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.ft_home.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -117,12 +116,18 @@ class HomeFragment2 : BaseMvpFragment<HomePresenter>(), HomeContract.View {
                     runLayoutAnimation(home2_ry)
                 } else {
                     val layoutManager = home2_ry.layoutManager as LinearLayoutManager
-                    val firstCvPosition = layoutManager.findFirstVisibleItemPosition()
-//                    Log.i("homeFt2", "firstCvP---$firstCvPosition")
-                    adapter.addData(firstCvPosition, data)
-                    if (firstCvPosition == 0) {
-                        layoutManager.scrollToPosition(0)
+//                    val firstCvPosition = layoutManager.findFirstVisibleItemPosition()
+                    var lastCvPosition = layoutManager.findLastVisibleItemPosition() - adapter.headerLayoutCount
+                    if (lastCvPosition>=adapter.data.size){
+                        adapter.addData( data)
+                    }else{
+                        adapter.addData(lastCvPosition, data)
                     }
+//                    Log.i("homeFt2", "firstCvP---$firstCvPosition")
+//                    layoutManager.scrollToPosition(lastCvPosition)
+//                    if (firstCvPosition == 0) {
+//                        layoutManager.scrollToPosition(0)
+//                    }
                 }
             }
         }
@@ -191,7 +196,10 @@ class HomeFragment2 : BaseMvpFragment<HomePresenter>(), HomeContract.View {
         val footView = LayoutInflater.from(mContext).inflate(R.layout.layout_test_head_foot, null, false)
         adapter.setHeaderView(headView)
         adapter.setFooterView(footView)
-        home2_ry.layoutManager = LinearLayoutManager(mContext)
+    val   layoutManager=  LinearLayoutManager(mContext,VERTICAL,true)
+         layoutManager.stackFromEnd = true
+        home2_ry.layoutManager = layoutManager
+
         home2_ry.itemAnimator = HomeRyAnimator()
         home2_ry.adapter = adapter
         home2_progress.setTextView(home2_jd_time)
