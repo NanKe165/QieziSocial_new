@@ -25,6 +25,7 @@ import com.eggplant.qiezisocial.utils.DateUtils
 import com.eggplant.qiezisocial.utils.PrevUtils
 import com.eggplant.qiezisocial.utils.ScreenUtil
 import com.eggplant.qiezisocial.widget.ChatMediaView
+import com.eggplant.qiezisocial.widget.QzEdittext
 import com.eggplant.qiezisocial.widget.QzTextView
 import com.eggplant.qiezisocial.widget.ninegridImage.ImageInfo
 import com.luck.picture.lib.tools.MediaUtils
@@ -217,13 +218,13 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
         var mediaView = helper.getView<ChatMediaView>(R.id.adapter_chat_mediaview)
         var videoView = helper.getView<FrameLayout>(R.id.adapter_chat_video)
         val contentImg = helper.getView<ImageView>(R.id.adapter_chat_cImg)
-        var contentTv = helper.getView<QzTextView>(R.id.adapter_chat_content)
+        var contentTv = helper.getView<QzEdittext>(R.id.adapter_chat_content)
         val content = item.bean.content
         var q1 = item.bean.question1
         var q2 = item.bean.question2
         var q3 = item.bean.question3
         var q4 = item.bean.extra
-        contentTv.text = content
+        contentTv.setText(content)
         var mediaData = ArrayList<String>()
         var finalType = "pic"
         var videoPath: String? = null
@@ -554,11 +555,12 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
                     }
                 } else if (!TextUtils.isEmpty(content)) {
                     helper.setText(R.id.adapter_chat_content, content)
+//                    helper.addOnLongClickListener(R.id.adapter_chat_content)
                 }
                 var mediaData = ArrayList<String>()
                 var finalType = "pic"
                 var videoPath: String? = null
-                android.util.Log.i("chatap", "${media1}  ${media2}  ${media3}")
+//                android.util.Log.i("chatap", "${media1}  ${media2}  ${media3}")
                 val data1 = getMediaData(media1, "m1", item.bean)
                 val data2 = getMediaData(media2, "m2", item.bean)
                 val data3 = getMediaData(media3, "m3", item.bean)

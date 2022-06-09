@@ -45,6 +45,7 @@ import com.umeng.analytics.MobclickAgent
 import com.xiao.nicevideoplayer.NiceVideoPlayerManager
 import kotlinx.android.synthetic.main.activity_chat.*
 import kotlinx.android.synthetic.main.pop_chat_add.view.*
+import kotlinx.android.synthetic.main.pop_chat_item_option.view.*
 import kotlinx.android.synthetic.main.pop_chat_option.view.*
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -72,7 +73,9 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
 
     lateinit var addPopwindow: BasePopupWindow
     lateinit var optionWindow: BasePopupWindow
+    lateinit var itemOptionWindow: BasePopupWindow
     lateinit var optionView: View
+    lateinit var itemOptionView: View
     private val REQUEST_PHOTO_ALBUM = 112
     private val REQUEST_ADD_VIDEO = 113
     private val REQUEST_TAKE_PHOTO = 114
@@ -181,6 +184,10 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
             addPopwindow.dismiss()
         }
 
+        itemOptionWindow = BasePopupWindow(mContext)
+        itemOptionWindow.showAnimMode = 1
+        itemOptionView = LayoutInflater.from(mContext).inflate(R.layout.pop_chat_item_option, null, false)
+        itemOptionWindow.contentView = itemOptionView
 
     }
 
@@ -276,7 +283,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
                     mPresenter.mainInfoBean!!.`object` = ""
                     MainDBManager.getInstance(mContext).updateUser(mPresenter.mainInfoBean)
                     val chatEntryChatMultiBean = ChatMultiEntry(ChatMultiEntry.CHAT_MINE_AUDIO, createChatEntry)
-                    adapter.needAnimPosition=adapter.data.size
+                    adapter.needAnimPosition = adapter.data.size
                     adapter.addData(chatEntryChatMultiBean)
                     scrollToBottom()
                 }
@@ -382,7 +389,11 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
             }
 
         })
+        adapter.setOnItemClickListener { adapter, view, position ->
+            chat_keyboard.reset()
+        }
         adapter.setOnItemChildClickListener { adapter, view, position ->
+            chat_keyboard.reset()
             val entry = adapter.data[position] as ChatMultiEntry<ChatEntry>
             if (view.id == R.id.adapter_chat_head) {
                 val uid = entry.bean.from
@@ -396,13 +407,23 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
                 }
             }
         }
-        adapter.setOnItemLongClickListener { _, view, position ->
 
-//            adapter.multModel=true
-//            adapter.notifyDataSetChanged()
-            true
-        }
         adapter.setOnItemChildLongClickListener { _, view, position ->
+            if (view.id == R.id.center) {
+                itemOptionView.pop_chat_copy.visibility=View.GONE
+                val loca = IntArray(2)
+                view.getLocationOnScreen(loca)
+                val showWidth = ScreenUtil.dip2px(mContext,130)
+                val showHeight=ScreenUtil.dip2px(mContext,45)
+                val viewWidth = view.width
+                var offsetX: Int
+                if (showWidth>viewWidth){
+                    offsetX=-((showWidth-viewWidth)/2)
+                }else{
+                    offsetX=(viewWidth-showWidth)/2
+                }
+                itemOptionWindow.showAtLocation(view, Gravity.NO_GRAVITY, if (loca[0]+offsetX>0){loca[0]+offsetX}else{0}, loca[1] - showHeight)
+            }
             true
         }
     }
@@ -428,7 +449,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onNewMsg(event: NewMsgEvent) {
         var newData = mPresenter.getNewData(mContext, adapter.data)
-        adapter.needAnimPosition=adapter.data.size
+        adapter.needAnimPosition = adapter.data.size
         adapter.addData(newData)
         scrollToBottom()
     }
@@ -652,7 +673,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
      * call by   initdata or onNewIntent
      */
     override fun refreshItem(onNewIntent: Boolean, data: List<ChatMultiEntry<ChatEntry>>) {
-        chat_ry.alpha=0f
+        chat_ry.alpha = 0f
         if (onNewIntent) {
             adapter.setNewData(data)
             scrollToBottom()
@@ -684,22 +705,21 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
             }
             scrollToPosition(adapter.data.size)
             chat_ry.postDelayed({
-                var lastVisibleItem= layoutManager.findLastCompletelyVisibleItemPosition()
+                var lastVisibleItem = layoutManager.findLastCompletelyVisibleItemPosition()
 
-                if (adapter.data.size!=0
-                        &&lastVisibleItem-adapter.headerLayoutCount-adapter.footerLayoutCount<adapter.data.size-1){
+                if (adapter.data.size != 0
+                        && lastVisibleItem - adapter.headerLayoutCount - adapter.footerLayoutCount < adapter.data.size - 1) {
 
-                 scrollToBottom()
-                }else{
-                    val alpha=chat_ry.alpha
-                    if (alpha==0f){
-                        val alphaAnim =android.animation.ObjectAnimator.ofFloat(chat_ry,"alpha",0.0f,1.0f)
-                        alphaAnim.duration=500
+                    scrollToBottom()
+                } else {
+                    val alpha = chat_ry.alpha
+                    if (alpha == 0f) {
+                        val alphaAnim = android.animation.ObjectAnimator.ofFloat(chat_ry, "alpha", 0.0f, 1.0f)
+                        alphaAnim.duration = 500
                         alphaAnim.start()
                     }
                 }
-            },300)
-
+            }, 300)
 
 
 //                if (needScroll) {
@@ -714,17 +734,18 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
 
     override fun setMyHead(myface: String?) {
         myface?.let {
-            adapter.mineheadPic=it
+            adapter.mineheadPic = it
         }
     }
 
     override fun setOtherFace(face: String?) {
         face?.let {
-            adapter.otherheadPic=it
+            adapter.otherheadPic = it
         }
     }
+
     override fun addItem(chatEntryChatMultiBean: ChatMultiEntry<ChatEntry>) {
-        adapter.needAnimPosition=adapter.data.size
+        adapter.needAnimPosition = adapter.data.size
         adapter.addData(chatEntryChatMultiBean)
     }
 
@@ -732,7 +753,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
         if (position < adapter.data.size) {
             adapter.addData(position, chatEntryChatMultiBean)
         } else {
-            adapter.needAnimPosition=adapter.data.size
+            adapter.needAnimPosition = adapter.data.size
             adapter.addData(chatEntryChatMultiBean)
         }
     }

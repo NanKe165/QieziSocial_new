@@ -98,11 +98,15 @@
                 android:clipChildren="false"
                 android:clipToPadding="false">
 
-                <com.eggplant.qiezisocial.widget.QzHttpTextView
+                <com.eggplant.qiezisocial.widget.QzEdittext
                     android:id="@+id/adapter_chat_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:editable="false"
+                    android:textCursorDrawable="@null"
+                    android:textIsSelectable="true"
+                    android:background="@null"
                     android:layout_marginLeft="@dimen/qb_px_5"
                     android:layout_marginRight="@dimen/qb_px_5"
                     android:maxWidth="@dimen/qb_px_200"
