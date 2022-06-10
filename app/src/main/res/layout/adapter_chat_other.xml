@@ -86,6 +86,7 @@
             </FrameLayout>
 
             <RelativeLayout
+                android:descendantFocusability="afterDescendants"
                 android:id="@+id/center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -97,16 +98,15 @@
                 android:background="@drawable/msg_chat_other_bg"
                 android:clipChildren="false"
                 android:clipToPadding="false">
-
-                <com.eggplant.qiezisocial.widget.QzEdittext
+                <!--android:editable="false"-->
+                <!--android:textCursorDrawable="@null"-->
+                <!--android:textIsSelectable="true"-->
+                <!--android:background="@null"-->
+                <com.eggplant.qiezisocial.widget.QzTextView
                     android:id="@+id/adapter_chat_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:editable="false"
-                    android:textCursorDrawable="@null"
-                    android:textIsSelectable="true"
-                    android:background="@null"
                     android:layout_marginLeft="@dimen/qb_px_5"
                     android:layout_marginRight="@dimen/qb_px_5"
                     android:maxWidth="@dimen/qb_px_200"

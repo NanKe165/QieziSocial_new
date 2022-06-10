@@ -36,6 +36,8 @@ import com.eggplant.qiezisocial.utils.NotifycationUtils
 import com.eggplant.qiezisocial.utils.ScreenUtil
 import com.eggplant.qiezisocial.utils.TipsUtil
 import com.eggplant.qiezisocial.utils.mp3.RecorderListener
+import com.eggplant.qiezisocial.utils.selectabletxt.OnSelectTextClickListener
+import com.eggplant.qiezisocial.utils.selectabletxt.SelectableTextHelper
 import com.eggplant.qiezisocial.widget.keyboard.EmojiEmoticonsKeyBoard
 import com.eggplant.qiezisocial.widget.popupwindow.BasePopupWindow
 import com.eggplant.qiezisocial.widget.topbar.SimpBarListener
@@ -82,6 +84,8 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
     private var windowHeight: Int = 0
     private var windowWidth: Int = 0
     private var isfriend = true
+
+    var mSelectableTextHelper: SelectableTextHelper? = null
     override fun getLayoutId(): Int {
         return R.layout.activity_chat
     }
@@ -243,11 +247,11 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
                 chat_ry.postDelayed({ scrollToPosition(adapter.data.size) }, 100)
             }
         }
-        chat_ry.setOnTouchListener { _, event ->
-            if (event?.action == MotionEvent.ACTION_UP)
-                chat_keyboard.reset()
-            false
-        }
+//        chat_ry.setOnTouchListener { _, event ->
+//            if (event?.action == MotionEvent.ACTION_UP)
+//                chat_keyboard.reset()
+//            false
+//        }
         chat_ry.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 addRecyclerScrollListener()
@@ -389,42 +393,110 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
             }
 
         })
-        adapter.setOnItemClickListener { adapter, view, position ->
+        adapter.setOnItemChildClickListener { _, view, position ->
             chat_keyboard.reset()
-        }
-        adapter.setOnItemChildClickListener { adapter, view, position ->
-            chat_keyboard.reset()
+            if (mSelectableTextHelper != null) {
+                mSelectableTextHelper!!.dismiss()
+            }
             val entry = adapter.data[position] as ChatMultiEntry<ChatEntry>
             if (view.id == R.id.adapter_chat_head) {
+                if (adapter.multModel) {
+                    if (adapter.multSelectList.contains("${position + adapter.headerLayoutCount}")) {
+                        adapter.multSelectList.remove("${position + adapter.headerLayoutCount}")
+                    } else {
+                        adapter.multSelectList.add("${position + adapter.headerLayoutCount}")
+                    }
+                    notifyAdapterItemChanged(position + adapter.headerLayoutCount)
+                    return@setOnItemChildClickListener
+                }
                 val uid = entry.bean.from
                 mPresenter.toOtherActivity(activity, uid)
-                if (entry.itemType === ChatMultiEntry.CHAT_MINE || entry.itemType === ChatMultiEntry.CHAT_MINE_VIDEO || entry.itemType === ChatMultiEntry.CHAT_MINE_AUDIO) {
-//                    startActivity(Intent(mContext, OthersSpaceActivity::class.java).putExtra("uid", entry.bean.userId.toString()))
-                    //TODO
-                } else {
-//                    startActivity(Intent(mContext, OthersSpaceActivity::class.java).putExtra("uid", entry.bean.chatId.toString()))
-                    //TODO
-                }
+//                if (entry.itemType === ChatMultiEntry.CHAT_MINE || entry.itemType === ChatMultiEntry.CHAT_MINE_VIDEO || entry.itemType === ChatMultiEntry.CHAT_MINE_AUDIO) {
+////                    startActivity(Intent(mContext, OthersSpaceActivity::class.java).putExtra("uid", entry.bean.userId.toString()))
+//                    //TODO
+//                } else {
+////                    startActivity(Intent(mContext, OthersSpaceActivity::class.java).putExtra("uid", entry.bean.chatId.toString()))
+//                    //TODO
+//                }
             }
         }
 
+        adapter.setOnItemClickListener { _, view, position ->
+            chat_keyboard.reset()
+            if (mSelectableTextHelper != null) {
+                mSelectableTextHelper!!.dismiss()
+            }
+            if (adapter.multModel) {
+                if (adapter.multSelectList.contains("${position + adapter.headerLayoutCount}")) {
+                    adapter.multSelectList.remove("${position + adapter.headerLayoutCount}")
+                } else {
+                    adapter.multSelectList.add("${position + adapter.headerLayoutCount}")
+                }
+                notifyAdapterItemChanged(position + adapter.headerLayoutCount)
+            }
+        }
+
+
         adapter.setOnItemChildLongClickListener { _, view, position ->
-            if (view.id == R.id.center) {
-                itemOptionView.pop_chat_copy.visibility=View.GONE
+            if (view.id == R.id.center || view.id == R.id.ap_chat_album || view.id == R.id.adapter_chat_mediaview || view.id == R.id.adapter_chat_cImg) {
+                itemOptionView.pop_chat_copy.visibility = View.GONE
                 val loca = IntArray(2)
                 view.getLocationOnScreen(loca)
-                val showWidth = ScreenUtil.dip2px(mContext,130)
-                val showHeight=ScreenUtil.dip2px(mContext,45)
+                val showWidth = ScreenUtil.dip2px(mContext, 130)
+                val showHeight = ScreenUtil.dip2px(mContext, 45)
                 val viewWidth = view.width
                 var offsetX: Int
-                if (showWidth>viewWidth){
-                    offsetX=-((showWidth-viewWidth)/2)
-                }else{
-                    offsetX=(viewWidth-showWidth)/2
+                if (showWidth > viewWidth) {
+                    offsetX = -((showWidth - viewWidth) / 2)
+                } else {
+                    offsetX = (viewWidth - showWidth) / 2
                 }
-                itemOptionWindow.showAtLocation(view, Gravity.NO_GRAVITY, if (loca[0]+offsetX>0){loca[0]+offsetX}else{0}, loca[1] - showHeight)
+                itemOptionWindow.showAtLocation(view, Gravity.NO_GRAVITY, if (loca[0] + offsetX > 0) {
+                    loca[0] + offsetX
+                } else {
+                    0
+                }, loca[1] - showHeight)
+
+            } else if (view.id == R.id.adapter_chat_content) {
+                if (mSelectableTextHelper != null) {
+                    mSelectableTextHelper!!.dismiss()
+                }
+                mSelectableTextHelper = SelectableTextHelper.Builder(view as TextView)
+                        .setSelectedColor(mContext.resources.getColor(R.color.label_color1))
+                        .setCursorHandleSizeInDp(20f)
+                        .setCursorHandleColor(mContext.resources.getColor(R.color.label_color2))
+                        .build()
+                mSelectableTextHelper!!.setOnNotesClickListener(object : OnSelectTextClickListener {
+                    override fun onMultSelectClick(content: CharSequence?) {
+                        adapter.multModel = true
+                        adapter.multSelectList.add("${position + adapter.headerLayoutCount}")
+                        adapter.notifyDataSetChanged()
+                        setMultSelectModel(true)
+                    }
+
+                    override fun onDelClick() {
+                        chat_keyboard.reset()
+                    }
+                })
+                view.postDelayed({
+                    mSelectableTextHelper!!.showSelectView()
+                }, 200)
+
             }
             true
+        }
+
+    }
+
+    var mulSelectModel = false
+    private fun setMultSelectModel(b: Boolean) {
+        mulSelectModel = b
+        if (mulSelectModel) {
+            chat_mult_cancle.visibility = View.VISIBLE
+            chat_del.visibility = View.VISIBLE
+        } else {
+            chat_mult_cancle.visibility = View.GONE
+            chat_del.visibility = View.GONE
         }
     }
 

@@ -25,7 +25,6 @@ import com.eggplant.qiezisocial.utils.DateUtils
 import com.eggplant.qiezisocial.utils.PrevUtils
 import com.eggplant.qiezisocial.utils.ScreenUtil
 import com.eggplant.qiezisocial.widget.ChatMediaView
-import com.eggplant.qiezisocial.widget.QzEdittext
 import com.eggplant.qiezisocial.widget.QzTextView
 import com.eggplant.qiezisocial.widget.ninegridImage.ImageInfo
 import com.luck.picture.lib.tools.MediaUtils
@@ -51,6 +50,7 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
     var gchat = false
     var needAnimPosition=-1
     var multModel=false
+    var multSelectList=ArrayList<String>()
 
     init {
         addItemType(ChatMultiEntry.CHAT_MINE, R.layout.adapter_chat_mine)
@@ -70,9 +70,14 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
 
     override fun convert(helper: BaseViewHolder?, item: ChatMultiEntry<ChatEntry>?) {
         helper!!.addOnClickListener(R.id.adapter_chat_multselect)
-        helper!!.addOnLongClickListener(R.id.center)
+
         if (multModel){
-            helper!!.getView<ImageView>(R.id.adapter_chat_multselect).visibility=View.VISIBLE
+            helper.getView<ImageView>(R.id.adapter_chat_multselect).visibility=View.VISIBLE
+            if (multSelectList.contains("${helper.adapterPosition}")){
+                helper.getView<ImageView>(R.id.adapter_chat_multselect).setImageResource(R.mipmap.answer_select)
+            }else{
+                helper.getView<ImageView>(R.id.adapter_chat_multselect).setImageResource(R.mipmap.login_rule_unread)
+            }
         }
         if (helper!!.itemViewType == ChatMultiEntry.CHAT_QUESTION_TITLE) {
             if (TextUtils.equals(item!!.bean.layout, "男")) {
@@ -172,12 +177,16 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
 
             ChatMultiEntry.CHAT_OTHER_AUDIO, ChatMultiEntry.CHAT_MINE_AUDIO
             -> {
+                helper.addOnLongClickListener(R.id.center)
                 //音频消息
                 setAudioData(helper, item)
+
             }
 
             ChatMultiEntry.CHAT_OTHER_VIDEO, ChatMultiEntry.CHAT_MINE_VIDEO
             -> {
+
+                helper.addOnLongClickListener(R.id.ap_chat_album)
                 //视频消息
                 setVideoData(helper, item)
             }
@@ -218,13 +227,13 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
         var mediaView = helper.getView<ChatMediaView>(R.id.adapter_chat_mediaview)
         var videoView = helper.getView<FrameLayout>(R.id.adapter_chat_video)
         val contentImg = helper.getView<ImageView>(R.id.adapter_chat_cImg)
-        var contentTv = helper.getView<QzEdittext>(R.id.adapter_chat_content)
+        var contentTv = helper.getView<TextView>(R.id.adapter_chat_content)
         val content = item.bean.content
         var q1 = item.bean.question1
         var q2 = item.bean.question2
         var q3 = item.bean.question3
         var q4 = item.bean.extra
-        contentTv.setText(content)
+        contentTv.text = content
         var mediaData = ArrayList<String>()
         var finalType = "pic"
         var videoPath: String? = null
@@ -539,7 +548,7 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
             }
         })
 
-        android.util.Log.i("contentImg", " type:$type")
+//        android.util.Log.i("contentImg", " type:$type")
         when (type) {
             "gtxt", "boxanswer" -> {
                 contentImg.visibility = View.GONE
@@ -555,7 +564,8 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
                     }
                 } else if (!TextUtils.isEmpty(content)) {
                     helper.setText(R.id.adapter_chat_content, content)
-//                    helper.addOnLongClickListener(R.id.adapter_chat_content)
+
+                    helper.addOnLongClickListener(R.id.adapter_chat_content)
                 }
                 var mediaData = ArrayList<String>()
                 var finalType = "pic"
@@ -591,11 +601,13 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
                     if (mediaData.size > 0 && videoPath != null) {
                         mediaView.visibility = View.VISIBLE
                         mediaView.setVideo(videoPath, mediaData[0])
+                        helper.addOnLongClickListener(R.id.adapter_chat_mediaview)
                     }
                 } else {
                     if (mediaData.size > 0) {
                         mediaView.visibility = View.VISIBLE
                         mediaView.setImages(mediaData)
+                        helper.addOnLongClickListener(R.id.adapter_chat_mediaview)
                     }
                 }
 
@@ -685,6 +697,7 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
                             .apply(options)
                             .into(contentImg)
                 }
+                helper.addOnLongClickListener(R.id.adapter_chat_cImg)
             }
         }
     }

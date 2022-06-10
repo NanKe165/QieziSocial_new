@@ -14,8 +14,18 @@
         android:id="@+id/chat_bar"
         android:layout_width="match_parent"
         app:bgColor="@color/home_bg"
-
         android:layout_height="wrap_content"/>
+    <com.eggplant.qiezisocial.widget.QzTextView
+        android:background="@color/white"
+        android:layout_width="@dimen/qb_px_60"
+        android:layout_height="@dimen/qb_px_46"
+        android:gravity="center"
+        android:text="取消"
+        android:textSize="14sp"
+        android:textColor="@color/tv_black2"
+        android:id="@+id/chat_mult_cancle"
+
+        />
     <com.eggplant.qiezisocial.widget.keyboard.EmojiEmoticonsKeyBoard
         android:id="@+id/chat_keyboard"
         android:layout_width="match_parent"
@@ -82,4 +92,23 @@
 
         </FrameLayout>
     </com.eggplant.qiezisocial.widget.keyboard.EmojiEmoticonsKeyBoard>
+    <FrameLayout
+        android:id="@+id/chat_del"
+        android:visibility="gone"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line_color6"
+            />
+        <ImageView
+            android:layout_width="@dimen/qb_px_25"
+            android:layout_gravity="center"
+            android:layout_height="@dimen/qb_px_25"
+            android:src="@mipmap/icon_chat_del"
+            />
+    </FrameLayout>
 </FrameLayout>

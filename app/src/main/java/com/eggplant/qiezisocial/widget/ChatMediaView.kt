@@ -45,6 +45,9 @@ class ChatMediaView @JvmOverloads constructor(context: Context, attrs: Attribute
         v.setOnClickListener {
             PrevUtils.onVideoItemClick(context, v, videoPath, picPath)
         }
+        v.setOnLongClickListener {
+            false
+        }
         addView(v)
     }
 
@@ -59,6 +62,9 @@ class ChatMediaView @JvmOverloads constructor(context: Context, attrs: Attribute
         Glide.with(context).load(path).into(v.ly_media_img)
         v.setOnClickListener {
             PrevUtils.onImageItemClick(context, v, index, imginfo)
+        }
+        v.setOnLongClickListener {
+            false
         }
         return v
     }
