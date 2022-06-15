@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.eggplant.qiezisocial.widget.BubbleLayout
+        app:radius="@dimen/qb_px_5"
+        app:shadow_color="@color/translate_black"
+        app:shadow_size="@dimen/qb_px_5"
+        android:padding="@dimen/qb_px_5"
+        app:direction="bottom"
+        app:triangle_visiable="true"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:visibility="gone"
+                android:id="@+id/pop_chat_copy"
+                android:layout_width="@dimen/qb_px_60"
+                android:gravity="center"
+                android:layout_height="@dimen/qb_px_35"
+                android:textSize="14sp"
+                android:textColor="@color/tv_black2"
+                android:text="复制"
+                />
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/pop_chat_multselect"
+                android:layout_width="@dimen/qb_px_60"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:textColor="@color/tv_black2"
+                android:layout_height="@dimen/qb_px_35"
+                android:text="多选"
+                />
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/pop_chat_del"
+                android:layout_width="@dimen/qb_px_60"
+                android:gravity="center"
+                android:layout_height="@dimen/qb_px_35"
+                android:textSize="14sp"
+                android:textColor="@color/tv_black2"
+                android:text="删除"
+                />
+
+        </LinearLayout>
+    </com.eggplant.qiezisocial.widget.BubbleLayout>
+</FrameLayout>

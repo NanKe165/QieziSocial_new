@@ -103,6 +103,13 @@ class FriendParkFramgnet : BaseMvpFragment<FriendParkPresenter>(), FriendParkCon
             enableVoice=!enableVoice
             setVoiceState()
         }
+        headview.fdpark_head_world.setOnClickListener {
+            if (!ClickUtil.isNotFastClick()) {
+                return@setOnClickListener
+            }
+            startActivity(Intent(mContext, DynamicActivity::class.java))
+            activity?.overridePendingTransition(R.anim.open_enter, R.anim.open_exit)
+        }
 
     }
 

@@ -6,7 +6,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.LinearSmoothScroller
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SimpleItemAnimator
 import android.text.TextUtils
@@ -31,7 +30,7 @@ import com.eggplant.qiezisocial.socket.WebSocketService
 import com.eggplant.qiezisocial.socket.event.CommonResponse
 import com.eggplant.qiezisocial.socket.event.NewMsgEvent
 import com.eggplant.qiezisocial.socket.event.WebSocketSendDataErrorEvent
-import com.eggplant.qiezisocial.ui.main.TopSmoothScroller
+import com.eggplant.qiezisocial.ui.chat.dialog.ChatDelDialog
 import com.eggplant.qiezisocial.utils.NotifycationUtils
 import com.eggplant.qiezisocial.utils.ScreenUtil
 import com.eggplant.qiezisocial.utils.TipsUtil
@@ -46,8 +45,8 @@ import com.mabeijianxi.jianxiexpression.ExpressionGridFragment
 import com.umeng.analytics.MobclickAgent
 import com.xiao.nicevideoplayer.NiceVideoPlayerManager
 import kotlinx.android.synthetic.main.activity_chat.*
+import kotlinx.android.synthetic.main.layout_operate_windows.view.*
 import kotlinx.android.synthetic.main.pop_chat_add.view.*
-import kotlinx.android.synthetic.main.pop_chat_item_option.view.*
 import kotlinx.android.synthetic.main.pop_chat_option.view.*
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -67,7 +66,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
     override val webSocketClass: Class<out AbsBaseWebSocketService>
         get() = WebSocketService::class.java
 
-    lateinit var layoutManager: LinearLayoutManager
+    lateinit var layoutManager: SmoothScrollLayoutManager
     lateinit var loadBar: View
     lateinit var adapter: ChatAdapter
     var from: String? = ""
@@ -76,8 +75,10 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
     lateinit var addPopwindow: BasePopupWindow
     lateinit var optionWindow: BasePopupWindow
     lateinit var itemOptionWindow: BasePopupWindow
+    lateinit var delDlg: ChatDelDialog
     lateinit var optionView: View
     lateinit var itemOptionView: View
+    private  var itemOptionSelectPos=-1
     private val REQUEST_PHOTO_ALBUM = 112
     private val REQUEST_ADD_VIDEO = 113
     private val REQUEST_TAKE_PHOTO = 114
@@ -94,7 +95,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
         mPresenter.attachView(this)
         adapter = ChatAdapter(mContext, null)
         chat_ry.adapter = adapter
-        layoutManager = LinearLayoutManager(mContext)
+        layoutManager = SmoothScrollLayoutManager(mContext)
 //        layoutManager.stackFromEnd = true
 
         chat_ry.layoutManager = layoutManager
@@ -114,6 +115,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
         loadBar.visibility = View.GONE
         adapter.addHeaderView(loadBar)
         initAddPopwindow()
+        initDialog()
         from = intent.getStringExtra("from")
         chat_bar.setRightDrawable(R.mipmap.report)
 //        if (TextUtils.equals(from, "home")) {
@@ -126,6 +128,26 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
 //        }
 
 
+    }
+
+    private fun initDialog() {
+        delDlg = ChatDelDialog(mContext, intArrayOf(R.id.dlg_chat_del_cancel, R.id.dlg_chat_del_sure))
+        delDlg.setOnBaseDialogItemClickListener { dialog, view ->
+            when (view.id) {
+                R.id.dlg_chat_del_cancel -> {
+                    adapter.multSelectList.clear()
+                }
+                R.id.dlg_chat_del_sure -> {
+                    val delP = adapter.multSelectList[0].toInt() - adapter.headerLayoutCount
+                    val delData = adapter.data[delP]
+                    adapter.data.remove(delData)
+                    adapter.multSelectList.clear()
+                    adapter.notifyDataSetChanged()
+                    ChatDBManager.getInstance(mContext).deleteUser(delData.bean)
+                }
+            }
+            dialog.dismiss()
+        }
     }
 
     private fun initAddPopwindow() {
@@ -190,8 +212,28 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
 
         itemOptionWindow = BasePopupWindow(mContext)
         itemOptionWindow.showAnimMode = 1
-        itemOptionView = LayoutInflater.from(mContext).inflate(R.layout.pop_chat_item_option, null, false)
+        itemOptionView = LayoutInflater.from(mContext).inflate(R.layout.layout_operate_windows, null, false)
+        itemOptionView.tv_copy.visibility = View.GONE
+        itemOptionView.tv_line.visibility = View.GONE
         itemOptionWindow.contentView = itemOptionView
+        itemOptionWindow.setOnDismissListener {
+            itemOptionSelectPos=-1
+        }
+        itemOptionView.tv_note.setOnClickListener {
+            adapter.multModel = true
+            adapter.multSelectList.add("${itemOptionSelectPos + adapter.headerLayoutCount}")
+            adapter.notifyDataSetChanged()
+            setMultSelectModel(true)
+            itemOptionSelectPos=-1
+            itemOptionWindow.dismiss()
+        }
+        itemOptionView.tv_del.setOnClickListener {
+            adapter.multSelectList.add("${itemOptionSelectPos + adapter.headerLayoutCount}")
+            chat_keyboard.reset()
+            delDlg.show()
+            itemOptionSelectPos=-1
+            itemOptionWindow.dismiss()
+        }
 
     }
 
@@ -247,11 +289,15 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
                 chat_ry.postDelayed({ scrollToPosition(adapter.data.size) }, 100)
             }
         }
-//        chat_ry.setOnTouchListener { _, event ->
-//            if (event?.action == MotionEvent.ACTION_UP)
-//                chat_keyboard.reset()
-//            false
-//        }
+        chat_ry.setOnTouchListener { _, event ->
+            if (event?.action == MotionEvent.ACTION_UP) {
+                chat_keyboard.reset()
+                if (mSelectableTextHelper != null) {
+                    mSelectableTextHelper!!.dismiss()
+                }
+            }
+            false
+        }
         chat_ry.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 addRecyclerScrollListener()
@@ -289,7 +335,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
                     val chatEntryChatMultiBean = ChatMultiEntry(ChatMultiEntry.CHAT_MINE_AUDIO, createChatEntry)
                     adapter.needAnimPosition = adapter.data.size
                     adapter.addData(chatEntryChatMultiBean)
-                    scrollToBottom()
+                    smoothScrollBottom()
                 }
             }
 
@@ -439,32 +485,33 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
 
         adapter.setOnItemChildLongClickListener { _, view, position ->
             if (view.id == R.id.center || view.id == R.id.ap_chat_album || view.id == R.id.adapter_chat_mediaview || view.id == R.id.adapter_chat_cImg) {
-                itemOptionView.pop_chat_copy.visibility = View.GONE
                 val loca = IntArray(2)
                 view.getLocationOnScreen(loca)
                 val showWidth = ScreenUtil.dip2px(mContext, 130)
                 val showHeight = ScreenUtil.dip2px(mContext, 45)
                 val viewWidth = view.width
-                var offsetX: Int
-                if (showWidth > viewWidth) {
-                    offsetX = -((showWidth - viewWidth) / 2)
-                } else {
-                    offsetX = (viewWidth - showWidth) / 2
-                }
-                itemOptionWindow.showAtLocation(view, Gravity.NO_GRAVITY, if (loca[0] + offsetX > 0) {
-                    loca[0] + offsetX
-                } else {
-                    0
-                }, loca[1] - showHeight)
+//                var offsetX: Int
+//                if (showWidth > viewWidth) {
+//                    offsetX = -((showWidth - viewWidth) / 2)
+//                } else {
+//                    offsetX = (viewWidth - showWidth) / 2
+//                }
+//                if (loca[0] + offsetX > 0) {
+//                    loca[0] + offsetX
+//                } else {
+//                    0
+//                }
+                itemOptionSelectPos=position
+                itemOptionWindow.showAtLocation(view, Gravity.NO_GRAVITY,  loca[0], loca[1] - showHeight)
 
             } else if (view.id == R.id.adapter_chat_content) {
                 if (mSelectableTextHelper != null) {
                     mSelectableTextHelper!!.dismiss()
                 }
                 mSelectableTextHelper = SelectableTextHelper.Builder(view as TextView)
-                        .setSelectedColor(mContext.resources.getColor(R.color.label_color1))
+                        .setSelectedColor(mContext.resources.getColor(R.color.translate_black2))
                         .setCursorHandleSizeInDp(20f)
-                        .setCursorHandleColor(mContext.resources.getColor(R.color.label_color2))
+                        .setCursorHandleColor(mContext.resources.getColor(R.color.black))
                         .build()
                 mSelectableTextHelper!!.setOnNotesClickListener(object : OnSelectTextClickListener {
                     override fun onMultSelectClick(content: CharSequence?) {
@@ -475,16 +522,39 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
                     }
 
                     override fun onDelClick() {
+                        adapter.multSelectList.add("${position + adapter.headerLayoutCount}")
                         chat_keyboard.reset()
+                        delDlg.show()
                     }
                 })
                 view.postDelayed({
                     mSelectableTextHelper!!.showSelectView()
                 }, 200)
-
             }
             true
         }
+        chat_mult_cancle.setOnClickListener {
+            setMultSelectModel(false)
+            adapter.multModel = false
+            adapter.multSelectList.clear()
+            adapter.notifyDataSetChanged()
+        }
+        chat_del.setOnClickListener {
+            val delData = arrayListOf<ChatMultiEntry<ChatEntry>>()
+            adapter.multSelectList.forEach {
+                val delPos = it.toInt() - adapter.headerLayoutCount
+                delData.add(adapter.data[delPos])
+            }
+            delData.forEach {
+                adapter.data.remove(it)
+                ChatDBManager.getInstance(mContext).deleteUser(it.bean)
+            }
+            adapter.multModel = false
+            adapter.multSelectList.clear()
+            adapter.notifyDataSetChanged()
+            setMultSelectModel(false)
+        }
+
 
     }
 
@@ -494,6 +564,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
         if (mulSelectModel) {
             chat_mult_cancle.visibility = View.VISIBLE
             chat_del.visibility = View.VISIBLE
+            chat_keyboard.reset()
         } else {
             chat_mult_cancle.visibility = View.GONE
             chat_del.visibility = View.GONE
@@ -523,7 +594,18 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
         var newData = mPresenter.getNewData(mContext, adapter.data)
         adapter.needAnimPosition = adapter.data.size
         adapter.addData(newData)
-        scrollToBottom()
+        smoothScrollBottom()
+//        scrollToBottom()
+
+    }
+   override fun smoothScrollBottom(){
+        val lastPosition = layoutManager.findLastVisibleItemPosition()
+        if (lastPosition==adapter.data.size-1){
+            chat_ry.smoothScrollToPosition(adapter.data.size)
+        }else{
+            scrollToBottom()
+        }
+
     }
 
 
@@ -675,14 +757,15 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
 
 
     fun scrollToPosition(position: Int) {
+
         Log.i("chatScroll", "scrollToPosition")
         var position = position
         if (position < 0)
             position = 0
-//        layoutManager.scrollToPosition(position)
-        var scroller = TopSmoothScroller(activity) as LinearSmoothScroller
-        scroller.targetPosition = position
-        layoutManager.startSmoothScroll(scroller)
+        layoutManager.scrollToPosition(position)
+//        var scroller = TopSmoothScroller(activity) as LinearSmoothScroller
+//        scroller.targetPosition = position
+//        layoutManager.startSmoothScroll(scroller)
     }
 
     /**
@@ -759,15 +842,10 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
         return adapter.data.size
     }
 
-    var scrolling = false
-    var needScroll = false
+
     override fun scrollToBottom() {
-//        if (!scrolling) {
-//            scrolling = true
+
         chat_ry.postDelayed({
-            //                Log.i("chatScroll","scrollToBottom")
-//                scrollToPosition(adapter.data.size)
-//                scrolling = false
             chat_ry.scrollToPosition(adapter.data.size)
             layoutManager.scrollToPositionWithOffset(adapter.data.size, 0)//先要滚动到这个位置
             val target = layoutManager.findViewByPosition(adapter.data.size)//然后才能拿到这个View
@@ -781,7 +859,6 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
 
                 if (adapter.data.size != 0
                         && lastVisibleItem - adapter.headerLayoutCount - adapter.footerLayoutCount < adapter.data.size - 1) {
-
                     scrollToBottom()
                 } else {
                     val alpha = chat_ry.alpha
@@ -793,15 +870,8 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
                 }
             }, 300)
 
-
-//                if (needScroll) {
-//                    needScroll = false
-//                    scrollToBottom()
-//                }
         }, 50)
-//        } else {
-//            needScroll = true
-//        }
+
     }
 
     override fun setMyHead(myface: String?) {

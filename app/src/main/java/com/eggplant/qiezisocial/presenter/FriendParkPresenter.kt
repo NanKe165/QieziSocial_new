@@ -18,7 +18,7 @@ class FriendParkPresenter : BasePresenter<FriendParkContract.View>(), FriendPark
 
     private fun filterData(beans: List<MainInfoBean>): ArrayList<MainInfoBean> {
         val arrayList = ArrayList<MainInfoBean>()
-        Log.i("FdPark","bean size :${beans.size}")
+        val idList=ArrayList<Long>()
         if (beans.isNotEmpty()) {
             for (i in beans.indices) {
                 val bean = beans[i]
@@ -36,15 +36,19 @@ class FriendParkPresenter : BasePresenter<FriendParkContract.View>(), FriendPark
                     if (i == beans.size - 1 && !TextUtils.equals(type, "boxanswer")) {
                         bean.`object` = ""
                     }
-                    if (TextUtils.equals(bean.type, "gfriendlist") && !TextUtils.isEmpty(msg)) {
+                    if (TextUtils.equals(bean.type, "gfriendlist") && !TextUtils.isEmpty(msg)&&!idList.contains(bean.uid)) {
                         arrayList.add(bean)
-                    } else if (TextUtils.equals(bean.type, "temporal") && !TextUtils.isEmpty(msg)) {
+                        idList.add(bean.uid)
+                    } else if (TextUtils.equals(bean.type, "temporal") && !TextUtils.isEmpty(msg)&&!idList.contains(bean.uid)) {
                         arrayList.add(bean)
-                    } else if (TextUtils.equals(bean.type, "gapplylist") && !TextUtils.isEmpty(msg)) {
+                        idList.add(bean.uid)
+                    } else if (TextUtils.equals(bean.type, "gapplylist") && !TextUtils.isEmpty(msg)&&!idList.contains(bean.uid)) {
                         arrayList.add(bean)
+                        idList.add(bean.uid)
                     }
-                } else if (TextUtils.equals(bean.type, "gfriendlist")&&bean.uid!=2048L) {
+                } else if (TextUtils.equals(bean.type, "gfriendlist")&&bean.uid!=2048L&&!idList.contains(bean.uid)) {
                     arrayList.add(bean)
+                    idList.add(bean.uid)
                 }
             }
         }

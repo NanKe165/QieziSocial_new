@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+
+        android:id="@+id/tv_root"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+        <LinearLayout
+            android:background="@color/tv_black2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_copy"
+               android:layout_width="@dimen/qb_px_60"
+                android:layout_height="@dimen/qb_px_35"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:textColor="@color/tv_white2"
+                android:text="复制" />
+            <View
+                android:id="@+id/tv_line"
+                android:background="@color/line_color6"
+                android:layout_width="0.5dp"
+
+                android:layout_height="@dimen/qb_px_20"
+                android:layout_gravity="center"/>
+
+
+            <TextView
+                android:id="@+id/tv_note"
+                android:layout_width="@dimen/qb_px_60"
+                android:textSize="13sp"
+                android:textColor="@color/tv_white2"
+                android:layout_height="@dimen/qb_px_35"
+                android:gravity="center"
+                android:text="多选"/>
+            <View
+                android:background="@color/line_color6"
+                android:layout_width="0.5dp"
+                android:layout_height="@dimen/qb_px_20"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/tv_del"
+                android:layout_width="@dimen/qb_px_60"
+                android:layout_height="@dimen/qb_px_35"
+                android:textSize="13sp"
+                android:textColor="@color/tv_white2"
+                android:gravity="center"
+                android:text="删除"/>
+            <TextView
+                android:id="@+id/tv_select_all"
+                android:layout_width="@dimen/qb_px_60"
+                android:layout_height="@dimen/qb_px_35"
+                android:text="所有"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

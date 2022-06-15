@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/login_rule_unread"
-            android:layout_gravity="center_vertical"
+           android:layout_marginTop="@dimen/qb_px_18"
             android:padding="@dimen/qb_px_5"
             android:layout_marginLeft="@dimen/qb_px_5"
             />

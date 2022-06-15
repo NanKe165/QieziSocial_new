@@ -89,7 +89,7 @@ class JindouActivity : BaseActivity() {
             startActivity(Intent(mContext, MingxiActivity::class.java))
         }
         jd_guize.setOnClickListener {
-
+            startActivity(Intent(mContext,JindouRuleActivity::class.java))
         }
     }
 

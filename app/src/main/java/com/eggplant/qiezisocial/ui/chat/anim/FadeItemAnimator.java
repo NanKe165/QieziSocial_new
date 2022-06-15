@@ -30,6 +30,7 @@ public class FadeItemAnimator extends BaseItemAnimator {
     public void removeAnimationEnd(RecyclerView.ViewHolder view) {
         Log.i("FadeItemAnimator","removeAnimationEnd");
         ViewCompat.setAlpha(view.itemView,1);
+        ViewCompat.setTranslationY(view.itemView,0);
     }
 
     /**
@@ -40,6 +41,7 @@ public class FadeItemAnimator extends BaseItemAnimator {
     public void addAnimationInit(RecyclerView.ViewHolder holder) {
         Log.i("FadeItemAnimator","addAnimationInit");
         ViewCompat.setAlpha(holder.itemView, 0);
+        ViewCompat.setTranslationY(holder.itemView,holder.itemView.getHeight());
     }
 
     /**
@@ -51,6 +53,7 @@ public class FadeItemAnimator extends BaseItemAnimator {
     public void setAddAnimation(RecyclerView.ViewHolder holder,ViewPropertyAnimatorCompat animator) {
         Log.i("FadeItemAnimator","setAddAnimation");
         animator.alpha(1);
+        animator.translationY(0);
     }
 
     /**
@@ -61,6 +64,7 @@ public class FadeItemAnimator extends BaseItemAnimator {
     public void addAnimationCancel(RecyclerView.ViewHolder holder) {
         Log.i("FadeItemAnimator","addAnimationCancel");
         ViewCompat.setAlpha(holder.itemView, 1);
+        ViewCompat.setTranslationY(holder.itemView,0);
     }
 
     /**
@@ -72,6 +76,7 @@ public class FadeItemAnimator extends BaseItemAnimator {
     public void setOldChangeAnimation(RecyclerView.ViewHolder holder, ViewPropertyAnimatorCompat animator) {
         Log.i("FadeItemAnimator","setOldChangeAnimation");
         animator.alpha(0);
+
     }
 
     /**
@@ -82,6 +87,7 @@ public class FadeItemAnimator extends BaseItemAnimator {
     public void oldChangeAnimationEnd(RecyclerView.ViewHolder holder) {
         Log.i("FadeItemAnimator","oldChangeAnimationEnd");
         ViewCompat.setAlpha(holder.itemView,1);
+        ViewCompat.setTranslationY(holder.itemView,0);
     }
 
     /**
@@ -92,6 +98,7 @@ public class FadeItemAnimator extends BaseItemAnimator {
     public void newChangeAnimationInit(RecyclerView.ViewHolder holder) {
         Log.i("FadeItemAnimator","newChangeAnimationInit");
         ViewCompat.setAlpha(holder.itemView,0);
+        ViewCompat.setTranslationY(holder.itemView,holder.itemView.getHeight());
     }
 
     /**
@@ -103,6 +110,7 @@ public class FadeItemAnimator extends BaseItemAnimator {
     public void setNewChangeAnimation(RecyclerView.ViewHolder holder, ViewPropertyAnimatorCompat animator) {
         Log.i("FadeItemAnimator","setNewChangeAnimation");
         animator.alpha(1);
+        animator.translationY(0);
     }
 
     /**
@@ -113,5 +121,6 @@ public class FadeItemAnimator extends BaseItemAnimator {
     public void newChangeAnimationEnd(RecyclerView.ViewHolder holder) {
         Log.i("FadeItemAnimator","newChangeAnimationEnd");
         ViewCompat.setAlpha(holder.itemView,1);
+        ViewCompat.setTranslationY(holder.itemView,0);
     }
 }

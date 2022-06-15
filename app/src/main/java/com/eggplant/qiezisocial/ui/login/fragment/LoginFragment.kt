@@ -4,19 +4,18 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.CountDownTimer
+import android.support.v4.content.ContextCompat
 import android.text.*
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
 import android.view.View
-import com.bumptech.glide.Glide
 import com.eggplant.qiezisocial.QzApplication
 import com.eggplant.qiezisocial.R
 import com.eggplant.qiezisocial.base.BaseFragment
 import com.eggplant.qiezisocial.entry.BaseEntry
 import com.eggplant.qiezisocial.entry.LoginEntry
 import com.eggplant.qiezisocial.entry.UserEntry
-import com.eggplant.qiezisocial.model.API
 import com.eggplant.qiezisocial.model.LoginModel
 import com.eggplant.qiezisocial.model.callback.DialogCallback
 import com.eggplant.qiezisocial.model.callback.JsonCallback
@@ -50,7 +49,7 @@ class LoginFragment : BaseFragment() {
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             if (s == null || s.isEmpty()) {
-                ft_login_head.visibility = View.GONE
+//                ft_login_head.visibility = View.GONE
                 ft_login_rule.visibility = View.VISIBLE
             }
         }
@@ -64,10 +63,11 @@ class LoginFragment : BaseFragment() {
     override fun initView() {
         setPermissionTxt()
         if (head.isNotEmpty()&&phone.isNotEmpty()){
-            Glide.with(mContext!!).load(API.Companion.PIC_PREFIX + head).into(ft_login_head)
+//            Glide.with(mContext!!).load(API.Companion.PIC_PREFIX + head).into(ft_login_head)
             ft_login_phone.setText(phone)
-            ft_login_head.visibility = View.VISIBLE
+//            ft_login_head.visibility = View.VISIBLE
             ft_login_rule.visibility = View.GONE
+            ft_login_sure.background=ContextCompat.getDrawable(mContext!!,R.drawable.tv_yellow_bg3)
             isChecked=true
         }
     }
@@ -78,8 +78,10 @@ class LoginFragment : BaseFragment() {
         ft_login_rule.setOnClickListener {
             if (isChecked){
                 ft_login_rule.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.login_rule_unread,0,0,0)
+                ft_login_sure.background=ContextCompat.getDrawable(mContext!!,R.drawable.tv_gray_bg4)
             }else{
                 ft_login_rule.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.login_rule_read,0,0,0)
+                ft_login_sure.background=ContextCompat.getDrawable(mContext!!,R.drawable.tv_yellow_bg3)
             }
             isChecked=!isChecked
         }
@@ -92,6 +94,8 @@ class LoginFragment : BaseFragment() {
             } else {
                 ft_login_get_vcode.isClickable = false
                 ft_login_get_vcode.isFocusable = false
+                ft_login_get_vcode.background=ContextCompat.getDrawable(mContext!!,R.drawable.tv_gray_bg3)
+                ft_login_get_vcode.setTextColor(ContextCompat.getColor(mContext!!,R.color.tv_e2))
                 requestCode(mContext!!, phone)
                 startCountDown()
             }
@@ -270,6 +274,8 @@ class LoginFragment : BaseFragment() {
                 ft_login_get_vcode?.isClickable = true
                 ft_login_get_vcode?.isFocusable = true
                 ft_login_get_vcode?.text = "重新获取"
+                ft_login_get_vcode.background=ContextCompat.getDrawable(mContext!!,R.drawable.tv_yellow_bg)
+                ft_login_get_vcode.setTextColor(ContextCompat.getColor(mContext!!,R.color.tv_black))
             }
         }
         countTimer?.start()

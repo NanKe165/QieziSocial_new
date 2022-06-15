@@ -98,6 +98,21 @@ class WebSocketService : AbsBaseWebSocketService() {
             chatEntry.userId = userId.toLong()
 
             if (result.has("qsid")) {
+                //处理一下后台返回的脏数据
+//                Log.e(TAG, "qsid=="+(result.get("qsid").toString()))
+
+                if (result.get("qsid").toString() == "null"){
+                    val `object` = JSONObject()
+                    `object`.put("type", "message")
+                    `object`.put("act", "gread")
+                    `object`.put("created", System.currentTimeMillis())
+                    `object`.put("range", "private")
+                    `object`.put("from", result.get("from"))
+                    `object`.put("to", result.get("to"))
+                    `object`.put("id", result.get("id"))
+                    sendText(`object`.toString())
+                    return
+                }
                 chatEntry.qsid = result.getLong("qsid")
             }
             if (result.has("gsid")) {
@@ -671,6 +686,7 @@ class WebSocketService : AbsBaseWebSocketService() {
                         val b = MainDBManager.getInstance(this).insertUser(bean)
                         if (b) {
                             EventBus.getDefault().post(HomeMsgEvent("邀请您添加为好友", bean))
+                            NotifycationUtils.getInstance(this).systemNotify("您有新的好友申请","apply")
                         }
                         EventBus.getDefault().post(FriendListEvent(bean.type))
                     }
@@ -718,7 +734,6 @@ class WebSocketService : AbsBaseWebSocketService() {
 //                    EventBus.getDefault().post(alist)
 //                }
 
-
             }
             "smalltxt" -> {
                 val data = result.getJSONObject("data")
@@ -734,6 +749,24 @@ class WebSocketService : AbsBaseWebSocketService() {
                 `object`.put("id", id)
                 sendText(`object`.toString())
             }
+            "notice" -> {
+                val `object` = JSONObject()
+                `object`.put("type", "message")
+                `object`.put("act", "nread")
+                `object`.put("created", System.currentTimeMillis())
+                if (result.has("data")) {
+                    val data = result.getJSONArray("data")
+                    if (data.length() > 0) {
+                        val jsonObject = data.getJSONObject(0)
+                        val msg=jsonObject.getString("msg")
+                        `object`.put("id", jsonObject.getString("id"))
+                        sendText(`object`.toString())
+                        NotifycationUtils.getInstance(this).systemNotify(msg,"notice")
+                    }
+                }
+
+            }
+
             "groupuserlist" -> {
                 val data = result.getJSONObject("data")
                 if (data != null) {
@@ -745,6 +778,7 @@ class WebSocketService : AbsBaseWebSocketService() {
                 }
 
             }
+
             "ggreet", "gbutter", "gcomfort" -> {
                 val event = Gson().fromJson<GreetSbEvent>(result.toString(), GreetSbEvent::class.java)
                 EventBus.getDefault().post(event)

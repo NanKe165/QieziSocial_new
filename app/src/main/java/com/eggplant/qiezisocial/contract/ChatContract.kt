@@ -43,6 +43,7 @@ interface ChatContract
         fun setEmojiView(extra: String)
         fun setMyHead(myface: String?)
         fun setOtherFace(face: String?)
+        fun smoothScrollBottom()
     }
 
     interface Presenter {

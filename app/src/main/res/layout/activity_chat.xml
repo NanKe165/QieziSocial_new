@@ -16,6 +16,7 @@
         app:bgColor="@color/home_bg"
         android:layout_height="wrap_content"/>
     <com.eggplant.qiezisocial.widget.QzTextView
+        android:visibility="gone"
         android:background="@color/white"
         android:layout_width="@dimen/qb_px_60"
         android:layout_height="@dimen/qb_px_46"

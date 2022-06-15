@@ -91,11 +91,14 @@
         <!--android:exported="true" />-->
         <!-- 厂商通道 Android 12 兼容 End -->
         <service android:name="com.amap.api.location.APSService"></service>
-        <activity android:name=".ui.test.TestActivity"/>
         <activity android:name=".ui.main.CheckSceneActivity"/>
         <activity android:name=".ui.main.GreetSbListActivity"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".ui.award.JindouRuleActivity"/>
+        <activity android:name=".ui.notify.EmptyActivity"
+            android:theme="@style/Transparent"
+            android:launchMode="singleInstance"/>
         <activity android:name=".ui.main.GreetSbDetailActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.main.GreetSbActivity"
@@ -109,7 +112,6 @@
             android:theme="@style/Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 

@@ -14,6 +14,8 @@ import com.eggplant.qiezisocial.R;
 import com.eggplant.qiezisocial.event.HomeMsgEvent;
 import com.eggplant.qiezisocial.greendao.entry.MainInfoBean;
 import com.eggplant.qiezisocial.ui.chat.ChatActivity;
+import com.eggplant.qiezisocial.ui.main.FriendActivity;
+import com.eggplant.qiezisocial.ui.notify.EmptyActivity;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -116,6 +118,52 @@ public class NotifycationUtils {
         }
         notificationManager.notify("msg", 1, notification);
 
+    }
+    public void systemNotify(String title,String type){
+        //是否震动
+        isShake = (boolean) StorageUtil.getParam(context, "shake", true);
+        //是否有声音
+        isVoice = (boolean) StorageUtil.getParam(context, "voice", true);
+
+        Intent mintent=new Intent(context, EmptyActivity.class);
+        if (type=="apply"){
+            mintent=  new Intent(context, FriendActivity.class);
+            mintent.putExtra("from","apply");
+        }
+        int requestID = (int) System.currentTimeMillis();
+        PendingIntent pintent = PendingIntent.getActivity(context, requestID, mintent, PendingIntent.FLAG_UPDATE_CURRENT);
+        String id = "my_channel_01";
+        String name = "msg_channel";
+        Notification notification = null;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel mChannel = new NotificationChannel(id, name, NotificationManager.IMPORTANCE_DEFAULT);
+
+            notificationManager.createNotificationChannel(mChannel);
+            notification = new Notification.Builder(context)
+                    .setChannelId(id)
+                    .setContentTitle(title)
+//                    .setContentText(title)
+                    .setSmallIcon(R.mipmap.box_ic)
+                    .setDefaults(Notification.DEFAULT_ALL)
+                    .setAutoCancel(true)
+                    .setContentIntent(pintent)
+                    .build();
+
+
+            notification.flags = Notification.DEFAULT_LIGHTS | Notification.FLAG_AUTO_CANCEL;
+        } else {
+            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
+                    .setContentTitle(title)
+//                    .setContentText(title)
+                    .setSmallIcon(R.mipmap.box_ic)
+                    .setDefaults(Notification.DEFAULT_ALL)
+                    .setAutoCancel(true)
+                    .setContentIntent(pintent)
+                    .setChannelId(id);//无效
+            notification = notificationBuilder.build();
+        }
+        notificationManager.notify("msg", 2, notification);
 
     }
 

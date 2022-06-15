@@ -6,7 +6,7 @@ import android.util.Log
 import com.eggplant.qiezisocial.R
 import com.eggplant.qiezisocial.base.BaseActivity
 import com.eggplant.qiezisocial.ui.main.fragment.FriendMsgFragment
-import com.eggplant.qiezisocial.widget.topbar.SimpBarListener
+import com.eggplant.qiezisocial.utils.NotifycationUtils
 import com.eggplant.qiezisocial.widget.topbar.TopBarListener
 import kotlinx.android.synthetic.main.activity_friend.*
 
@@ -20,7 +20,7 @@ class FriendActivity : BaseActivity() {
     }
 
     override fun initView() {
-
+        NotifycationUtils.getInstance(mContext).cancelNotify(2)
     }
 
     override fun initView(savedInstanceState: Bundle?) {

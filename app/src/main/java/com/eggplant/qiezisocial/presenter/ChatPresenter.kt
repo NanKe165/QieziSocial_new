@@ -515,7 +515,7 @@ class ChatPresenter : BasePresenter<ChatContract.View>(), ChatContract.Presenter
                 mainInfoBean!!.qsType = ""
                 MainDBManager.getInstance(activity).updateUser(mainInfoBean)
                 mView?.addItem(chatEntryChatMultiBean)
-                mView?.scrollToBottom()
+                mView?.smoothScrollBottom()
             }
         }
     }
@@ -752,7 +752,7 @@ class ChatPresenter : BasePresenter<ChatContract.View>(), ChatContract.Presenter
             MainDBManager.getInstance(mContext).updateUser(mainInfoBean)
             val chatEntryChatMultiBean = ChatMultiEntry(ChatMultiEntry.CHAT_MINE_VIDEO, chatEntry)
             mView?.addItem(chatEntryChatMultiBean)
-            mView?.scrollToBottom()
+            mView?.smoothScrollBottom()
         }
     }
 
@@ -818,7 +818,7 @@ class ChatPresenter : BasePresenter<ChatContract.View>(), ChatContract.Presenter
             MainDBManager.getInstance(mContext).updateUser(mainInfoBean)
             val chatEntryChatMultiBean = ChatMultiEntry(ChatMultiEntry.CHAT_MINE, chatEntry)
             mView?.addItem(chatEntryChatMultiBean)
-            mView?.scrollToBottom()
+            mView?.smoothScrollBottom()
         }
     }
 

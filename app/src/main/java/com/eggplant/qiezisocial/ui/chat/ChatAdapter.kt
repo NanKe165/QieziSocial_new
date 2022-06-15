@@ -78,8 +78,10 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
             }else{
                 helper.getView<ImageView>(R.id.adapter_chat_multselect).setImageResource(R.mipmap.login_rule_unread)
             }
+        }else{
+            helper.getView<ImageView>(R.id.adapter_chat_multselect).visibility=View.GONE
         }
-        if (helper!!.itemViewType == ChatMultiEntry.CHAT_QUESTION_TITLE) {
+        if (helper.itemViewType == ChatMultiEntry.CHAT_QUESTION_TITLE) {
             if (TextUtils.equals(item!!.bean.layout, "男")) {
                 helper.itemView.adapter_chat_qs_sex.setImageResource(R.mipmap.sex_boy)
             } else {
@@ -115,7 +117,7 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
                 hintTv?.visibility = View.GONE
             }
             val face = item.bean.face
-            val head = helper?.getView<ImageView>(R.id.adapter_chat_head)
+            val head = helper.getView<ImageView>(R.id.adapter_chat_head)
             if (item.itemType == ChatMultiEntry.CHAT_MINE || item.itemType == ChatMultiEntry.CHAT_MINE_AUDIO
                     || item.itemType == ChatMultiEntry.CHAT_MINE_VIDEO || item.itemType == ChatMultiEntry.CHAT_MINE_QUESTION) {
                 if (mineheadPic.isNotEmpty()) {
