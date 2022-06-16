@@ -1,7 +1,6 @@
 package com.eggplant.qiezisocial.presenter
 
 import android.text.TextUtils
-import android.util.Log
 import com.eggplant.qiezisocial.base.BasePresenter
 import com.eggplant.qiezisocial.contract.FriendParkContract
 import com.eggplant.qiezisocial.greendao.entry.MainInfoBean
@@ -27,7 +26,7 @@ class FriendParkPresenter : BasePresenter<FriendParkContract.View>(), FriendPark
                 val qsid = bean.qsid
                 val gsid = bean.gsid
                 val extractMark = bean.isExtractMark
-                Log.i("FdPark","bean qsid :${bean.qsid}  gsid :${bean.gsid}  type :${bean.type}   extractMark:$extractMark")
+//                Log.i("FdPark","${bean.nick} ${bean.newGreetTime}   ${bean.newMsgTime} ${bean.online}  ${bean.created}")
 
                 if (gsid != 0L || qsid != 0L) {
                     if (!extractMark) {

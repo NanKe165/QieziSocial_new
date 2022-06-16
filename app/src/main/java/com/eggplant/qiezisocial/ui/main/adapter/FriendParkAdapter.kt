@@ -18,5 +18,7 @@ class FriendParkAdapter(data: List<MainInfoBean>?) : BaseQuickAdapter<MainInfoBe
         if (item.face.isNotEmpty())
             Glide.with(mContext).load(API.PIC_PREFIX + item.face).into(helper.itemView.ap_fd_park_head)
         helper.itemView.ap_fd_park_nick.text=item.nick
+
+
     }
 }

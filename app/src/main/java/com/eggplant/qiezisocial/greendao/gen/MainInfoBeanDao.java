@@ -62,15 +62,16 @@ public class MainInfoBeanDao extends AbstractDao<MainInfoBean, Long> {
         public final static Property Msg_user_id = new Property(32, long.class, "msg_user_id", false, "MSG_USER_ID");
         public final static Property MsgNum = new Property(33, int.class, "msgNum", false, "MSG_NUM");
         public final static Property NewMsgTime = new Property(34, long.class, "newMsgTime", false, "NEW_MSG_TIME");
-        public final static Property MsgType = new Property(35, String.class, "msgType", false, "MSG_TYPE");
-        public final static Property Source = new Property(36, String.class, "source", false, "SOURCE");
-        public final static Property Online = new Property(37, String.class, "online", false, "ONLINE");
-        public final static Property Mood = new Property(38, String.class, "mood", false, "MOOD");
-        public final static Property Message = new Property(39, String.class, "message", false, "MESSAGE");
-        public final static Property ExtractMark = new Property(40, boolean.class, "extractMark", false, "EXTRACT_MARK");
-        public final static Property Media1 = new Property(41, String.class, "media1", false, "MEDIA1");
-        public final static Property Media2 = new Property(42, String.class, "media2", false, "MEDIA2");
-        public final static Property Media3 = new Property(43, String.class, "media3", false, "MEDIA3");
+        public final static Property NewGreetTime = new Property(35, long.class, "newGreetTime", false, "NEW_GREET_TIME");
+        public final static Property MsgType = new Property(36, String.class, "msgType", false, "MSG_TYPE");
+        public final static Property Source = new Property(37, String.class, "source", false, "SOURCE");
+        public final static Property Online = new Property(38, String.class, "online", false, "ONLINE");
+        public final static Property Mood = new Property(39, String.class, "mood", false, "MOOD");
+        public final static Property Message = new Property(40, String.class, "message", false, "MESSAGE");
+        public final static Property ExtractMark = new Property(41, boolean.class, "extractMark", false, "EXTRACT_MARK");
+        public final static Property Media1 = new Property(42, String.class, "media1", false, "MEDIA1");
+        public final static Property Media2 = new Property(43, String.class, "media2", false, "MEDIA2");
+        public final static Property Media3 = new Property(44, String.class, "media3", false, "MEDIA3");
     }
 
     private final ListConverter picConverter = new ListConverter();
@@ -122,15 +123,16 @@ public class MainInfoBeanDao extends AbstractDao<MainInfoBean, Long> {
                 "\"MSG_USER_ID\" INTEGER NOT NULL ," + // 32: msg_user_id
                 "\"MSG_NUM\" INTEGER NOT NULL ," + // 33: msgNum
                 "\"NEW_MSG_TIME\" INTEGER NOT NULL ," + // 34: newMsgTime
-                "\"MSG_TYPE\" TEXT," + // 35: msgType
-                "\"SOURCE\" TEXT," + // 36: source
-                "\"ONLINE\" TEXT," + // 37: online
-                "\"MOOD\" TEXT," + // 38: mood
-                "\"MESSAGE\" TEXT," + // 39: message
-                "\"EXTRACT_MARK\" INTEGER NOT NULL ," + // 40: extractMark
-                "\"MEDIA1\" TEXT," + // 41: media1
-                "\"MEDIA2\" TEXT," + // 42: media2
-                "\"MEDIA3\" TEXT);"); // 43: media3
+                "\"NEW_GREET_TIME\" INTEGER NOT NULL ," + // 35: newGreetTime
+                "\"MSG_TYPE\" TEXT," + // 36: msgType
+                "\"SOURCE\" TEXT," + // 37: source
+                "\"ONLINE\" TEXT," + // 38: online
+                "\"MOOD\" TEXT," + // 39: mood
+                "\"MESSAGE\" TEXT," + // 40: message
+                "\"EXTRACT_MARK\" INTEGER NOT NULL ," + // 41: extractMark
+                "\"MEDIA1\" TEXT," + // 42: media1
+                "\"MEDIA2\" TEXT," + // 43: media2
+                "\"MEDIA3\" TEXT);"); // 44: media3
     }
 
     /** Drops the underlying database table. */
@@ -281,46 +283,47 @@ public class MainInfoBeanDao extends AbstractDao<MainInfoBean, Long> {
         stmt.bindLong(33, entity.getMsg_user_id());
         stmt.bindLong(34, entity.getMsgNum());
         stmt.bindLong(35, entity.getNewMsgTime());
+        stmt.bindLong(36, entity.getNewGreetTime());
  
         String msgType = entity.getMsgType();
         if (msgType != null) {
-            stmt.bindString(36, msgType);
+            stmt.bindString(37, msgType);
         }
  
         String source = entity.getSource();
         if (source != null) {
-            stmt.bindString(37, source);
+            stmt.bindString(38, source);
         }
  
         String online = entity.getOnline();
         if (online != null) {
-            stmt.bindString(38, online);
+            stmt.bindString(39, online);
         }
  
         String mood = entity.getMood();
         if (mood != null) {
-            stmt.bindString(39, mood);
+            stmt.bindString(40, mood);
         }
  
         String message = entity.getMessage();
         if (message != null) {
-            stmt.bindString(40, message);
+            stmt.bindString(41, message);
         }
-        stmt.bindLong(41, entity.getExtractMark() ? 1L: 0L);
+        stmt.bindLong(42, entity.getExtractMark() ? 1L: 0L);
  
         String media1 = entity.getMedia1();
         if (media1 != null) {
-            stmt.bindString(42, media1);
+            stmt.bindString(43, media1);
         }
  
         String media2 = entity.getMedia2();
         if (media2 != null) {
-            stmt.bindString(43, media2);
+            stmt.bindString(44, media2);
         }
  
         String media3 = entity.getMedia3();
         if (media3 != null) {
-            stmt.bindString(44, media3);
+            stmt.bindString(45, media3);
         }
     }
 
@@ -466,46 +469,47 @@ public class MainInfoBeanDao extends AbstractDao<MainInfoBean, Long> {
         stmt.bindLong(33, entity.getMsg_user_id());
         stmt.bindLong(34, entity.getMsgNum());
         stmt.bindLong(35, entity.getNewMsgTime());
+        stmt.bindLong(36, entity.getNewGreetTime());
  
         String msgType = entity.getMsgType();
         if (msgType != null) {
-            stmt.bindString(36, msgType);
+            stmt.bindString(37, msgType);
         }
  
         String source = entity.getSource();
         if (source != null) {
-            stmt.bindString(37, source);
+            stmt.bindString(38, source);
         }
  
         String online = entity.getOnline();
         if (online != null) {
-            stmt.bindString(38, online);
+            stmt.bindString(39, online);
         }
  
         String mood = entity.getMood();
         if (mood != null) {
-            stmt.bindString(39, mood);
+            stmt.bindString(40, mood);
         }
  
         String message = entity.getMessage();
         if (message != null) {
-            stmt.bindString(40, message);
+            stmt.bindString(41, message);
         }
-        stmt.bindLong(41, entity.getExtractMark() ? 1L: 0L);
+        stmt.bindLong(42, entity.getExtractMark() ? 1L: 0L);
  
         String media1 = entity.getMedia1();
         if (media1 != null) {
-            stmt.bindString(42, media1);
+            stmt.bindString(43, media1);
         }
  
         String media2 = entity.getMedia2();
         if (media2 != null) {
-            stmt.bindString(43, media2);
+            stmt.bindString(44, media2);
         }
  
         String media3 = entity.getMedia3();
         if (media3 != null) {
-            stmt.bindString(44, media3);
+            stmt.bindString(45, media3);
         }
     }
 
@@ -552,15 +556,16 @@ public class MainInfoBeanDao extends AbstractDao<MainInfoBean, Long> {
             cursor.getLong(offset + 32), // msg_user_id
             cursor.getInt(offset + 33), // msgNum
             cursor.getLong(offset + 34), // newMsgTime
-            cursor.isNull(offset + 35) ? null : cursor.getString(offset + 35), // msgType
-            cursor.isNull(offset + 36) ? null : cursor.getString(offset + 36), // source
-            cursor.isNull(offset + 37) ? null : cursor.getString(offset + 37), // online
-            cursor.isNull(offset + 38) ? null : cursor.getString(offset + 38), // mood
-            cursor.isNull(offset + 39) ? null : cursor.getString(offset + 39), // message
-            cursor.getShort(offset + 40) != 0, // extractMark
-            cursor.isNull(offset + 41) ? null : cursor.getString(offset + 41), // media1
-            cursor.isNull(offset + 42) ? null : cursor.getString(offset + 42), // media2
-            cursor.isNull(offset + 43) ? null : cursor.getString(offset + 43) // media3
+            cursor.getLong(offset + 35), // newGreetTime
+            cursor.isNull(offset + 36) ? null : cursor.getString(offset + 36), // msgType
+            cursor.isNull(offset + 37) ? null : cursor.getString(offset + 37), // source
+            cursor.isNull(offset + 38) ? null : cursor.getString(offset + 38), // online
+            cursor.isNull(offset + 39) ? null : cursor.getString(offset + 39), // mood
+            cursor.isNull(offset + 40) ? null : cursor.getString(offset + 40), // message
+            cursor.getShort(offset + 41) != 0, // extractMark
+            cursor.isNull(offset + 42) ? null : cursor.getString(offset + 42), // media1
+            cursor.isNull(offset + 43) ? null : cursor.getString(offset + 43), // media2
+            cursor.isNull(offset + 44) ? null : cursor.getString(offset + 44) // media3
         );
         return entity;
     }
@@ -602,15 +607,16 @@ public class MainInfoBeanDao extends AbstractDao<MainInfoBean, Long> {
         entity.setMsg_user_id(cursor.getLong(offset + 32));
         entity.setMsgNum(cursor.getInt(offset + 33));
         entity.setNewMsgTime(cursor.getLong(offset + 34));
-        entity.setMsgType(cursor.isNull(offset + 35) ? null : cursor.getString(offset + 35));
-        entity.setSource(cursor.isNull(offset + 36) ? null : cursor.getString(offset + 36));
-        entity.setOnline(cursor.isNull(offset + 37) ? null : cursor.getString(offset + 37));
-        entity.setMood(cursor.isNull(offset + 38) ? null : cursor.getString(offset + 38));
-        entity.setMessage(cursor.isNull(offset + 39) ? null : cursor.getString(offset + 39));
-        entity.setExtractMark(cursor.getShort(offset + 40) != 0);
-        entity.setMedia1(cursor.isNull(offset + 41) ? null : cursor.getString(offset + 41));
-        entity.setMedia2(cursor.isNull(offset + 42) ? null : cursor.getString(offset + 42));
-        entity.setMedia3(cursor.isNull(offset + 43) ? null : cursor.getString(offset + 43));
+        entity.setNewGreetTime(cursor.getLong(offset + 35));
+        entity.setMsgType(cursor.isNull(offset + 36) ? null : cursor.getString(offset + 36));
+        entity.setSource(cursor.isNull(offset + 37) ? null : cursor.getString(offset + 37));
+        entity.setOnline(cursor.isNull(offset + 38) ? null : cursor.getString(offset + 38));
+        entity.setMood(cursor.isNull(offset + 39) ? null : cursor.getString(offset + 39));
+        entity.setMessage(cursor.isNull(offset + 40) ? null : cursor.getString(offset + 40));
+        entity.setExtractMark(cursor.getShort(offset + 41) != 0);
+        entity.setMedia1(cursor.isNull(offset + 42) ? null : cursor.getString(offset + 42));
+        entity.setMedia2(cursor.isNull(offset + 43) ? null : cursor.getString(offset + 43));
+        entity.setMedia3(cursor.isNull(offset + 44) ? null : cursor.getString(offset + 44));
      }
     
     @Override

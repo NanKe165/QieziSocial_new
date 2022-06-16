@@ -152,7 +152,7 @@ class FriendParkFramgnet : BaseMvpFragment<FriendParkPresenter>(), FriendParkCon
 
     override fun onResume() {
         super.onResume()
-        mPresenter.setData(MainDBManager.getInstance(context).queryMainUserList())
+        mPresenter.setData(MainDBManager.getInstance(context).queryMainUserListWithGreet())
     }
 
     override fun setNewData(data: ArrayList<MainInfoBean>) {
@@ -255,6 +255,13 @@ class FriendParkFramgnet : BaseMvpFragment<FriendParkPresenter>(), FriendParkCon
             if (playVoice)
                 VoiceUtils.playVoice(mContext, enableVoice, R.raw.pig_music)
             replyGreetSbList.remove(showData)
+
+            val mainUserlist = MainDBManager.getInstance(mContext).queryMainUserList(  showData!!.from.toString())
+            mainUserlist?.forEach {
+                it.newGreetTime = System.currentTimeMillis()
+                MainDBManager.getInstance(mContext).updateUser(it)
+            }
+
             ft_fdpark_ry.postDelayed({
                 replyWindow.dismiss()
             }, 4000)
@@ -267,7 +274,7 @@ class FriendParkFramgnet : BaseMvpFragment<FriendParkPresenter>(), FriendParkCon
     fun onFriendList(event: FriendListEvent) {
         val currentTimeMillis = System.currentTimeMillis()
         if (currentTimeMillis - lastRefreshTime > 1000) {
-            val newData = MainDBManager.getInstance(mContext).queryMainUserList()
+            val newData = MainDBManager.getInstance(mContext).queryMainUserListWithGreet()
             mPresenter.setData(newData)
         }
         if (TextUtils.equals(event.type, "gfriendlist") || TextUtils.equals(event.type, "gapplylist")) {
@@ -280,7 +287,7 @@ class FriendParkFramgnet : BaseMvpFragment<FriendParkPresenter>(), FriendParkCon
         lastRefreshTime = System.currentTimeMillis()
         val currentTimeMillis = System.currentTimeMillis()
         if (currentTimeMillis - lastRefreshTime > 1000) {
-            mPresenter.setData(MainDBManager.getInstance(mContext).queryMainUserList())
+            mPresenter.setData(MainDBManager.getInstance(mContext).queryMainUserListWithGreet())
         }
 
     }

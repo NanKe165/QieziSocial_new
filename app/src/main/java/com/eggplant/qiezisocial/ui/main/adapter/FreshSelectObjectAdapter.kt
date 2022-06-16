@@ -140,11 +140,16 @@ class FreshSelectObjectAdapter(data: List<ScenesEntry>?) : BaseQuickAdapter<Scen
         }
 
 
-
+        helper.itemView.ap_f_selectobj_newmsg.visibility=View.GONE
         helper.itemView.ap_f_selectobj_lock.visibility = View.GONE
         if (entry.userinfor?.uid==QzApplication.get().loginEntry?.userinfor?.uid){
-
-
+            if (entry.code != null&&entry.code.isNotEmpty()) {
+                if (stat != "审核通过" && stat != null) {
+                } else {
+                    helper.itemView.ap_f_selectobj_newmsg.visibility = View.VISIBLE
+                    helper.itemView.ap_f_selectobj_newmsg.text = "密码：${entry.code}"
+                }
+            }
         }else {
             if (entry.code != null&&entry.code.isNotEmpty()) {
                 helper.itemView.ap_f_selectobj_lock.visibility = View.VISIBLE

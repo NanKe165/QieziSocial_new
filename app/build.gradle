@@ -64,7 +64,7 @@ android {
         }
     }
     greendao {
-        schemaVersion 19
+        schemaVersion 20
         daoPackage 'com.eggplant.qiezisocial.greendao.gen'
         targetGenDir 'src/main/java'
     }

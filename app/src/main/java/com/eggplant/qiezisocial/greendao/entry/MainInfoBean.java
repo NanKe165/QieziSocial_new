@@ -61,6 +61,7 @@ public class MainInfoBean implements Serializable {
     private long msg_user_id;
     private int msgNum;
     private long newMsgTime;
+    private long newGreetTime;
     // txt pic audio video
     private String msgType;
     // applyfriend extra
@@ -74,6 +75,14 @@ public class MainInfoBean implements Serializable {
     private String media1;
     private String media2;
     private String media3;
+
+    public void setNewGreetTime(long newGreetTime) {
+        this.newGreetTime = newGreetTime;
+    }
+
+    public long getNewGreetTime() {
+        return newGreetTime;
+    }
 
     public String getMedia1() {
         return media1;
@@ -322,14 +331,14 @@ public class MainInfoBean implements Serializable {
         this.id = id;
     }
 
-    @Generated(hash = 252184526)
+    @Generated(hash = 706442396)
     public MainInfoBean(Long id, long qsid, long gsid, int qsuid, String qsTxt, String qsUserFace, String qsNick,
             String qsType, long userId, long uid, long created, String nick, String remark, String sex,
             String birth, String careers, String face, String card, String edu, String xz, String topic,
             String city, String height, String weight, String object, String label, List<String> pic,
             String account, String type, String msg, String msg_user_nick, String msg_user_face, long msg_user_id,
-            int msgNum, long newMsgTime, String msgType, String source, String online, String mood,
-            String message, boolean extractMark, String media1, String media2, String media3) {
+            int msgNum, long newMsgTime, long newGreetTime, String msgType, String source, String online,
+            String mood, String message, boolean extractMark, String media1, String media2, String media3) {
         this.id = id;
         this.qsid = qsid;
         this.gsid = gsid;
@@ -365,6 +374,7 @@ public class MainInfoBean implements Serializable {
         this.msg_user_id = msg_user_id;
         this.msgNum = msgNum;
         this.newMsgTime = newMsgTime;
+        this.newGreetTime = newGreetTime;
         this.msgType = msgType;
         this.source = source;
         this.online = online;

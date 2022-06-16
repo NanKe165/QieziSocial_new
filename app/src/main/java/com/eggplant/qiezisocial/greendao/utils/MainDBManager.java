@@ -206,6 +206,22 @@ public class MainDBManager {
 //        QueryBuilder<MainInfoBean> qb = userDao.queryBuilder();
         userDao.update(user);
     }
+    /**
+     * 查询用户
+     */
+    public  List<MainInfoBean>  queryMainUserList(String uid) {
+        SharedPreferences userInfo = context.getSharedPreferences("userEntry", Context.MODE_PRIVATE);
+        int userId = userInfo.getInt("uid", 0);
+        DaoMaster daoMaster = new DaoMaster(getReadableDatabase());
+        DaoSession daoSession = daoMaster.newSession();
+        MainInfoBeanDao userDao = daoSession.getMainInfoBeanDao();
+        QueryBuilder<MainInfoBean> qb = userDao.queryBuilder();
+        qb.where(MainInfoBeanDao.Properties.Uid.eq(uid))
+                .where(MainInfoBeanDao.Properties.UserId.eq(userId));
+        List<MainInfoBean> list =  qb.list();
+        return list;
+    }
+
 
     /**
      * 查询用户列表
@@ -221,6 +237,23 @@ public class MainDBManager {
                 .orderDesc(MainInfoBeanDao.Properties.NewMsgTime)
                 .orderDesc(MainInfoBeanDao.Properties.Online)
                 .orderDesc(MainInfoBeanDao.Properties.Created);
+        List<MainInfoBean> list = qb.list();
+        return list;
+    }
+    /**
+     * 查询用户列表
+     */
+    public List<MainInfoBean> queryMainUserListWithGreet() {
+        SharedPreferences userInfo = context.getSharedPreferences("userEntry", Context.MODE_PRIVATE);
+        int uid = userInfo.getInt("uid", 0);
+        DaoMaster daoMaster = new DaoMaster(getReadableDatabase());
+        DaoSession daoSession = daoMaster.newSession();
+        MainInfoBeanDao userDao = daoSession.getMainInfoBeanDao();
+        QueryBuilder<MainInfoBean> qb = userDao.queryBuilder()
+                .where(MainInfoBeanDao.Properties.UserId.eq(uid))
+                .orderDesc(MainInfoBeanDao.Properties.NewGreetTime)
+                .orderDesc(MainInfoBeanDao.Properties.NewMsgTime)
+                ;
         List<MainInfoBean> list = qb.list();
         return list;
     }
@@ -264,6 +297,8 @@ public class MainDBManager {
         List<MainInfoBean> list = qb.list();
         return list;
     }
+
+
 
     /**
      * 查询用户
