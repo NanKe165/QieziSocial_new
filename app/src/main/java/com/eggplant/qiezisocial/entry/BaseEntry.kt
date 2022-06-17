@@ -24,5 +24,6 @@ class BaseEntry<T> {
     var feedback:String?=null
     var momentcount:Int?=null
 
+    var infor:T?=null
 
 }

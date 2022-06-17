@@ -27,6 +27,7 @@
         android:requiresFadingEdge="vertical" />
 
     <FrameLayout
+        android:id="@+id/home2_pub_gp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -39,7 +40,7 @@
         <FrameLayout
             android:id="@+id/home2_pub"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/qb_px_60"
+            android:layout_height="@dimen/qb_px_45"
             android:layout_gravity="bottom"
             android:background="@drawable/home_pub_bg"
             android:visibility="visible">
@@ -74,15 +75,52 @@
         </FrameLayout>
 
         <ImageView
+
+            android:src="@drawable/icon_home_dector7"
             android:id="@+id/home2_decorate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/qb_px_55"
+            android:layout_marginBottom="@dimen/qb_px_40"
             android:visibility="visible" />
 
     </FrameLayout>
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/home2_scene_user_gp"
+        android:layout_width="@dimen/qb_px_45"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="@dimen/qb_px_15"
+        >
+        <FrameLayout
+            android:background="@drawable/home_pub_bg"
+            android:layout_width="@dimen/qb_px_45"
+            android:layout_height="@dimen/qb_px_45"/>
+        <com.eggplant.qiezisocial.widget.image.RoundRectImageView
+            android:id="@+id/home2_scene_user_img"
+            android:layout_width="@dimen/qb_px_39"
+            android:layout_height="@dimen/qb_px_39"
+            android:layout_margin="@dimen/qb_px_3"
+            app:round_radian="12"
+            android:src="@color/label_color2"
+            />
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:textSize="8sp"
+            android:textColor="@color/tv_black"
+            android:paddingLeft="@dimen/qb_px_6"
+            android:paddingRight="@dimen/qb_px_6"
+            android:paddingTop="@dimen/qb_px_2"
+            android:paddingBottom="@dimen/qb_px_2"
+            android:text="场主"
+            android:background="@drawable/home_pub_bg"
+            />
 
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"

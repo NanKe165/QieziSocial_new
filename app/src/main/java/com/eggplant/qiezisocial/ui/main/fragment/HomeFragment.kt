@@ -60,6 +60,9 @@ class HomeFragment : BaseMvpFragment<HomePresenter>(), HomeContract.View {
 
     }
 
+    override fun setSceneUser(user: UserEntry?) {
+
+    }
     private val REQUEST_ANSWQS = 100
     private val REQUEST_PUB_BOX = 101
     private var replyPosition = -1

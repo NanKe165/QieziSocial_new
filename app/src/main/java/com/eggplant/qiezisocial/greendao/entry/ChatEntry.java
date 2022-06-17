@@ -56,6 +56,21 @@ public class ChatEntry implements Serializable {
     //群聊id
     private long gsid;
 
+    //scene场景
+    private String scene_sid;
+    private String scene_title;
+    private String scene_des;
+    private String scene_bg;
+    private String scene_pic;
+    private String scene_moment;
+    private String scene_type;
+    private String scene_code;
+    //创建场景的用户id
+    private String scene_uid;
+
+
+
+
 
     private String question1;
     private String question2;
@@ -65,6 +80,79 @@ public class ChatEntry implements Serializable {
     private String answer3;
 
     private boolean msgRead;
+
+
+    public String getScene_sid() {
+        return scene_sid;
+    }
+
+    public void setScene_sid(String scene_sid) {
+        this.scene_sid = scene_sid;
+    }
+
+    public String getScene_title() {
+        return scene_title;
+    }
+
+    public void setScene_title(String scene_title) {
+        this.scene_title = scene_title;
+    }
+
+    public String getScene_des() {
+        return scene_des;
+    }
+
+    public void setScene_des(String scene_des) {
+        this.scene_des = scene_des;
+    }
+
+    public String getScene_bg() {
+        return scene_bg;
+    }
+
+    public void setScene_bg(String scene_bg) {
+        this.scene_bg = scene_bg;
+    }
+
+    public String getScene_pic() {
+        return scene_pic;
+    }
+
+    public void setScene_pic(String scene_pic) {
+        this.scene_pic = scene_pic;
+    }
+
+    public String getScene_moment() {
+        return scene_moment;
+    }
+
+    public void setScene_moment(String scene_moment) {
+        this.scene_moment = scene_moment;
+    }
+
+    public String getScene_type() {
+        return scene_type;
+    }
+
+    public void setScene_type(String scene_type) {
+        this.scene_type = scene_type;
+    }
+
+    public String getScene_code() {
+        return scene_code;
+    }
+
+    public void setScene_code(String scene_code) {
+        this.scene_code = scene_code;
+    }
+
+    public String getScene_uid() {
+        return scene_uid;
+    }
+
+    public void setScene_uid(String scene_uid) {
+        this.scene_uid = scene_uid;
+    }
 
     public String getLayoutType() {
         return layoutType;
@@ -326,12 +414,13 @@ public class ChatEntry implements Serializable {
         this.userId = userId;
     }
 
-    @Generated(hash = 154603456)
+    @Generated(hash = 72638283)
     public ChatEntry(long userId, String msgId, long chatId, String type, String content, String extra, long from, long to,
             String created, boolean isShowCreated, String face, String nick, String sex, String birth, String edu,
             String height, String weight, String careers, String label, String layoutType, String layout, int msgStat,
-            long qsid, long gsid, String question1, String question2, String question3, String answer1, String answer2,
-            String answer3, boolean msgRead, Long id) {
+            long qsid, long gsid, String scene_sid, String scene_title, String scene_des, String scene_bg, String scene_pic,
+            String scene_moment, String scene_type, String scene_code, String scene_uid, String question1, String question2,
+            String question3, String answer1, String answer2, String answer3, boolean msgRead, Long id) {
         this.userId = userId;
         this.msgId = msgId;
         this.chatId = chatId;
@@ -356,6 +445,15 @@ public class ChatEntry implements Serializable {
         this.msgStat = msgStat;
         this.qsid = qsid;
         this.gsid = gsid;
+        this.scene_sid = scene_sid;
+        this.scene_title = scene_title;
+        this.scene_des = scene_des;
+        this.scene_bg = scene_bg;
+        this.scene_pic = scene_pic;
+        this.scene_moment = scene_moment;
+        this.scene_type = scene_type;
+        this.scene_code = scene_code;
+        this.scene_uid = scene_uid;
         this.question1 = question1;
         this.question2 = question2;
         this.question3 = question3;

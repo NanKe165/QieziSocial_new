@@ -23,6 +23,7 @@ interface HomeContract{
         fun collectScene(currentSid: String, i: Boolean, jsonCallback: JsonCallback<BaseEntry<*>>)
         fun visitQuestion(id: Int)
         fun getRedPacket(sid: String, jsonCallback: JsonCallback<BaseEntry<RedPacketEntry>>)
+        fun getFilterType(activity: Activity, sid: String, jsonCallback: JsonCallback<BaseEntry<ScenesEntry>>)
     }
     interface View :BaseView{
         /**
@@ -43,6 +44,7 @@ interface HomeContract{
         fun showMainHintView()
         fun onThreadBeat()
         fun setRedPacket(redPacketEntry: RedPacketEntry)
+        fun setSceneUser(user: UserEntry?)
 
 
     }

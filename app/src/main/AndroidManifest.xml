@@ -95,6 +95,11 @@
         <activity android:name=".ui.main.GreetSbListActivity"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".ui.main.SelfSceneSuccessActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent"
+            />
         <activity android:name=".ui.award.JindouRuleActivity"/>
         <activity android:name=".ui.notify.EmptyActivity"
             android:theme="@style/Transparent"

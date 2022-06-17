@@ -12,6 +12,7 @@ import android.util.Log
 import com.eggplant.qiezisocial.QzApplication
 import com.eggplant.qiezisocial.R
 import com.eggplant.qiezisocial.entry.GchatParcelEntry
+import com.eggplant.qiezisocial.entry.ScenesEntry
 import com.eggplant.qiezisocial.event.*
 import com.eggplant.qiezisocial.greendao.entry.ChatEntry
 import com.eggplant.qiezisocial.greendao.entry.MainInfoBean
@@ -101,7 +102,7 @@ class WebSocketService : AbsBaseWebSocketService() {
                 //处理一下后台返回的脏数据
 //                Log.e(TAG, "qsid=="+(result.get("qsid").toString()))
 
-                if (result.get("qsid").toString() == "null"){
+                if (result.get("qsid").toString() == "null") {
                     val `object` = JSONObject()
                     `object`.put("type", "message")
                     `object`.put("act", "gread")
@@ -686,7 +687,7 @@ class WebSocketService : AbsBaseWebSocketService() {
                         val b = MainDBManager.getInstance(this).insertUser(bean)
                         if (b) {
                             EventBus.getDefault().post(HomeMsgEvent("邀请您添加为好友", bean))
-                            NotifycationUtils.getInstance(this).systemNotify("您有新的好友申请","apply")
+                            NotifycationUtils.getInstance(this).systemNotify("您有新的好友申请", "apply")
                         }
                         EventBus.getDefault().post(FriendListEvent(bean.type))
                     }
@@ -758,10 +759,21 @@ class WebSocketService : AbsBaseWebSocketService() {
                     val data = result.getJSONArray("data")
                     if (data.length() > 0) {
                         val jsonObject = data.getJSONObject(0)
-                        val msg=jsonObject.getString("msg")
+                        val msg = jsonObject.getString("msg")
+                        val type = jsonObject.getString("type")
+
                         `object`.put("id", jsonObject.getString("id"))
                         sendText(`object`.toString())
-                        NotifycationUtils.getInstance(this).systemNotify(msg,"notice")
+                        //自建场景通过
+                        if (type == "selfscenes") {
+                            if (jsonObject.has("infor")) {
+                                val event = Gson().fromJson<ScenesEntry>(jsonObject.getString("infor").toString(), ScenesEntry::class.java)
+                                EventBus.getDefault().post(SelfScenesEvent(event))
+                            }
+                        } else {
+                            NotifycationUtils.getInstance(this).systemNotify(msg, type)
+                        }
+
                     }
                 }
 

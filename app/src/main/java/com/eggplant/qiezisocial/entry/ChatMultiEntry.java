@@ -13,11 +13,15 @@ public class ChatMultiEntry<B> implements MultiItemEntity ,Serializable{
     public static final int CHAT_MINE_AUDIO=114;
     public static final int CHAT_MINE_VIDEO=115;
     public static final int CHAT_MINE_QUESTION=112;
+    public static final int CHAT_MINE_SHARE_SCENE=121;
+
 
     public static final int CHAT_OTHER=111;
     public static final int CHAT_OTHER_AUDIO=113;
     public static final int CHAT_OTHER_VIDEO=116;
     public static final int CHAT_OTHER_QUESTION =117;
+    public static final int CHAT_OTHER_SHARE_SCENE=122;
+
 
     public static final int CHAT_QUESTION_TITLE=118;
 //    public static final int CHAT_MINE_GIFT=117;

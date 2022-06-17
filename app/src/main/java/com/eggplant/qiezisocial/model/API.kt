@@ -168,55 +168,57 @@ interface API {
         //动态评论
         val DYNAMIC_COMMENT: String? = HOST + "/pubmomentcomment.php"
         //获取视频直播信息  /getmovie.php
-        val GET_MOVIE: String?= HOST+"/getmedia.php"
+        val GET_MOVIE: String? = HOST + "/getmedia.php"
         //获取地图动态
-        val GET_MAP_DYNAMIC: String?= HOST+"/getmapmoment.php"
+        val GET_MAP_DYNAMIC: String? = HOST + "/getmapmoment.php"
         //发布地图动态
-        val PUB_MAP_DYNAMIC: String?= HOST+"/pubmapmoment.php"
+        val PUB_MAP_DYNAMIC: String? = HOST + "/pubmapmoment.php"
         //访客列表
-        val GET_VISIT= HOST+"/getvisit.php"
+        val GET_VISIT = HOST + "/getvisit.php"
 
-        val GET_SPACE: String?= HOST+"/getspace.php"
-        val SECRET_LOVE: String?= HOST+"/secretlove.php"
+        val GET_SPACE: String? = HOST + "/getspace.php"
+        val SECRET_LOVE: String? = HOST + "/secretlove.php"
         //收藏场景
-        val COLLECT_SCENE: String?= HOST+"/favscene.php"
+        val COLLECT_SCENE: String? = HOST + "/favscene.php"
         //收藏场景列表
-        val GET_COLLECT_SCENE: String?= HOST+"/favscenelist.php"
-        val VISIT_QUESTION: String?= HOST+"/visitquestion.php"
+        val GET_COLLECT_SCENE: String? = HOST + "/favscenelist.php"
+        val VISIT_QUESTION: String? = HOST + "/visitquestion.php"
         //注销账号
-        val DIS_USER = HOST+"/disuser.php"
+        val DIS_USER = HOST + "/disuser.php"
         //举报 动态moment  动态评论comment 聊天im
-        val REPORT: String?= HOST+"/report.php"
+        val REPORT: String? = HOST + "/report.php"
         //获取我抢注的场景
-        val GET_MYSCENE: String?= HOST+"/getmyscense.php"
+        val GET_MYSCENE: String? = HOST + "/getmyscense.php"
         //获取明星场景列表
-        val GET_STAR: String?= HOST+"/getstar.php"
+        val GET_STAR: String? = HOST + "/getstar.php"
         //获取大厂场景列表
-        val GET_FACTORY: String?= HOST+"/getfactory.php"
+        val GET_FACTORY: String? = HOST + "/getfactory.php"
         //获取完整大学数据
-        val GET_COLLEGE: String?= HOST+"/getcollege.php"
+        val GET_COLLEGE: String? = HOST + "/getcollege.php"
         //设置抢注场景
-        val SET_MYSCENE: String?= HOST+"/setmyscense.php"
-        val GET_MX: String?= HOST+"/jindouget.php"
+        val SET_MYSCENE: String? = HOST + "/setmyscense.php"
+        val GET_MX: String? = HOST + "/jindouget.php"
         //获取红包雨计划
-        val GET_RED_PACKET: String?= HOST+"/gethongbao.php"
+        val GET_RED_PACKET: String? = HOST + "/gethongbao.php"
         //汇报红包
-        val REPORT_RED_PACKET: String?= HOST+"/reporthongbao.php"
+        val REPORT_RED_PACKET: String? = HOST + "/reporthongbao.php"
         //浏览过的场景
-        val GET_BROWSE_SCENE: String?= HOST+"/getvisitscenes.php"
+        val GET_BROWSE_SCENE: String? = HOST + "/getvisitscenes.php"
         //我的自建场景
-        val GET_SELF_SCENES: String?= HOST+"/myselfscenes.php"
+        val GET_SELF_SCENES: String? = HOST + "/myselfscenes.php"
         //好友的自建场景
-        val GET_FRIEND_SCENES: String?= HOST+"/myfriendscenes.php"
+        val GET_FRIEND_SCENES: String? = HOST + "/myfriendscenes.php"
         //创建场景
-        val CREATE_SCENES: String?= HOST+"/createscenes.php"
+        val CREATE_SCENES: String? = HOST + "/createscenes.php"
         //修改场景
-        val MODIFY_SCENES: String?= HOST+"/modifyscenes.php"
-        val GET_JINDOU: String?= HOST+"/gettodayjindou.php"
+        val MODIFY_SCENES: String? = HOST + "/modifyscenes.php"
+        val GET_JINDOU: String? = HOST + "/gettodayjindou.php"
         //获取他人动态
-        val GET_OTHER_DYNAMIC: String?= HOST+"/othermoment.php"
+        val GET_OTHER_DYNAMIC: String? = HOST + "/othermoment.php"
         //查询用户
-        val FIND_USER: String?= HOST+"/finduser.php"
+        val FIND_USER: String? = HOST + "/finduser.php"
+        //通过sid获取场景
+        val GET_SCENE: String? = HOST + "/getscense.php"
 
 
     }

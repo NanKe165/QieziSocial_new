@@ -48,14 +48,23 @@ public class ChatEntryDao extends AbstractDao<ChatEntry, Long> {
         public final static Property MsgStat = new Property(21, int.class, "msgStat", false, "MSG_STAT");
         public final static Property Qsid = new Property(22, long.class, "qsid", false, "QSID");
         public final static Property Gsid = new Property(23, long.class, "gsid", false, "GSID");
-        public final static Property Question1 = new Property(24, String.class, "question1", false, "QUESTION1");
-        public final static Property Question2 = new Property(25, String.class, "question2", false, "QUESTION2");
-        public final static Property Question3 = new Property(26, String.class, "question3", false, "QUESTION3");
-        public final static Property Answer1 = new Property(27, String.class, "answer1", false, "ANSWER1");
-        public final static Property Answer2 = new Property(28, String.class, "answer2", false, "ANSWER2");
-        public final static Property Answer3 = new Property(29, String.class, "answer3", false, "ANSWER3");
-        public final static Property MsgRead = new Property(30, boolean.class, "msgRead", false, "MSG_READ");
-        public final static Property Id = new Property(31, Long.class, "id", true, "_id");
+        public final static Property Scene_sid = new Property(24, String.class, "scene_sid", false, "SCENE_SID");
+        public final static Property Scene_title = new Property(25, String.class, "scene_title", false, "SCENE_TITLE");
+        public final static Property Scene_des = new Property(26, String.class, "scene_des", false, "SCENE_DES");
+        public final static Property Scene_bg = new Property(27, String.class, "scene_bg", false, "SCENE_BG");
+        public final static Property Scene_pic = new Property(28, String.class, "scene_pic", false, "SCENE_PIC");
+        public final static Property Scene_moment = new Property(29, String.class, "scene_moment", false, "SCENE_MOMENT");
+        public final static Property Scene_type = new Property(30, String.class, "scene_type", false, "SCENE_TYPE");
+        public final static Property Scene_code = new Property(31, String.class, "scene_code", false, "SCENE_CODE");
+        public final static Property Scene_uid = new Property(32, String.class, "scene_uid", false, "SCENE_UID");
+        public final static Property Question1 = new Property(33, String.class, "question1", false, "QUESTION1");
+        public final static Property Question2 = new Property(34, String.class, "question2", false, "QUESTION2");
+        public final static Property Question3 = new Property(35, String.class, "question3", false, "QUESTION3");
+        public final static Property Answer1 = new Property(36, String.class, "answer1", false, "ANSWER1");
+        public final static Property Answer2 = new Property(37, String.class, "answer2", false, "ANSWER2");
+        public final static Property Answer3 = new Property(38, String.class, "answer3", false, "ANSWER3");
+        public final static Property MsgRead = new Property(39, boolean.class, "msgRead", false, "MSG_READ");
+        public final static Property Id = new Property(40, Long.class, "id", true, "_id");
     }
 
 
@@ -95,14 +104,23 @@ public class ChatEntryDao extends AbstractDao<ChatEntry, Long> {
                 "\"MSG_STAT\" INTEGER NOT NULL ," + // 21: msgStat
                 "\"QSID\" INTEGER NOT NULL ," + // 22: qsid
                 "\"GSID\" INTEGER NOT NULL ," + // 23: gsid
-                "\"QUESTION1\" TEXT," + // 24: question1
-                "\"QUESTION2\" TEXT," + // 25: question2
-                "\"QUESTION3\" TEXT," + // 26: question3
-                "\"ANSWER1\" TEXT," + // 27: answer1
-                "\"ANSWER2\" TEXT," + // 28: answer2
-                "\"ANSWER3\" TEXT," + // 29: answer3
-                "\"MSG_READ\" INTEGER NOT NULL ," + // 30: msgRead
-                "\"_id\" INTEGER PRIMARY KEY );"); // 31: id
+                "\"SCENE_SID\" TEXT," + // 24: scene_sid
+                "\"SCENE_TITLE\" TEXT," + // 25: scene_title
+                "\"SCENE_DES\" TEXT," + // 26: scene_des
+                "\"SCENE_BG\" TEXT," + // 27: scene_bg
+                "\"SCENE_PIC\" TEXT," + // 28: scene_pic
+                "\"SCENE_MOMENT\" TEXT," + // 29: scene_moment
+                "\"SCENE_TYPE\" TEXT," + // 30: scene_type
+                "\"SCENE_CODE\" TEXT," + // 31: scene_code
+                "\"SCENE_UID\" TEXT," + // 32: scene_uid
+                "\"QUESTION1\" TEXT," + // 33: question1
+                "\"QUESTION2\" TEXT," + // 34: question2
+                "\"QUESTION3\" TEXT," + // 35: question3
+                "\"ANSWER1\" TEXT," + // 36: answer1
+                "\"ANSWER2\" TEXT," + // 37: answer2
+                "\"ANSWER3\" TEXT," + // 38: answer3
+                "\"MSG_READ\" INTEGER NOT NULL ," + // 39: msgRead
+                "\"_id\" INTEGER PRIMARY KEY );"); // 40: id
     }
 
     /** Drops the underlying database table. */
@@ -203,40 +221,85 @@ public class ChatEntryDao extends AbstractDao<ChatEntry, Long> {
         stmt.bindLong(23, entity.getQsid());
         stmt.bindLong(24, entity.getGsid());
  
+        String scene_sid = entity.getScene_sid();
+        if (scene_sid != null) {
+            stmt.bindString(25, scene_sid);
+        }
+ 
+        String scene_title = entity.getScene_title();
+        if (scene_title != null) {
+            stmt.bindString(26, scene_title);
+        }
+ 
+        String scene_des = entity.getScene_des();
+        if (scene_des != null) {
+            stmt.bindString(27, scene_des);
+        }
+ 
+        String scene_bg = entity.getScene_bg();
+        if (scene_bg != null) {
+            stmt.bindString(28, scene_bg);
+        }
+ 
+        String scene_pic = entity.getScene_pic();
+        if (scene_pic != null) {
+            stmt.bindString(29, scene_pic);
+        }
+ 
+        String scene_moment = entity.getScene_moment();
+        if (scene_moment != null) {
+            stmt.bindString(30, scene_moment);
+        }
+ 
+        String scene_type = entity.getScene_type();
+        if (scene_type != null) {
+            stmt.bindString(31, scene_type);
+        }
+ 
+        String scene_code = entity.getScene_code();
+        if (scene_code != null) {
+            stmt.bindString(32, scene_code);
+        }
+ 
+        String scene_uid = entity.getScene_uid();
+        if (scene_uid != null) {
+            stmt.bindString(33, scene_uid);
+        }
+ 
         String question1 = entity.getQuestion1();
         if (question1 != null) {
-            stmt.bindString(25, question1);
+            stmt.bindString(34, question1);
         }
  
         String question2 = entity.getQuestion2();
         if (question2 != null) {
-            stmt.bindString(26, question2);
+            stmt.bindString(35, question2);
         }
  
         String question3 = entity.getQuestion3();
         if (question3 != null) {
-            stmt.bindString(27, question3);
+            stmt.bindString(36, question3);
         }
  
         String answer1 = entity.getAnswer1();
         if (answer1 != null) {
-            stmt.bindString(28, answer1);
+            stmt.bindString(37, answer1);
         }
  
         String answer2 = entity.getAnswer2();
         if (answer2 != null) {
-            stmt.bindString(29, answer2);
+            stmt.bindString(38, answer2);
         }
  
         String answer3 = entity.getAnswer3();
         if (answer3 != null) {
-            stmt.bindString(30, answer3);
+            stmt.bindString(39, answer3);
         }
-        stmt.bindLong(31, entity.getMsgRead() ? 1L: 0L);
+        stmt.bindLong(40, entity.getMsgRead() ? 1L: 0L);
  
         Long id = entity.getId();
         if (id != null) {
-            stmt.bindLong(32, id);
+            stmt.bindLong(41, id);
         }
     }
 
@@ -332,46 +395,91 @@ public class ChatEntryDao extends AbstractDao<ChatEntry, Long> {
         stmt.bindLong(23, entity.getQsid());
         stmt.bindLong(24, entity.getGsid());
  
+        String scene_sid = entity.getScene_sid();
+        if (scene_sid != null) {
+            stmt.bindString(25, scene_sid);
+        }
+ 
+        String scene_title = entity.getScene_title();
+        if (scene_title != null) {
+            stmt.bindString(26, scene_title);
+        }
+ 
+        String scene_des = entity.getScene_des();
+        if (scene_des != null) {
+            stmt.bindString(27, scene_des);
+        }
+ 
+        String scene_bg = entity.getScene_bg();
+        if (scene_bg != null) {
+            stmt.bindString(28, scene_bg);
+        }
+ 
+        String scene_pic = entity.getScene_pic();
+        if (scene_pic != null) {
+            stmt.bindString(29, scene_pic);
+        }
+ 
+        String scene_moment = entity.getScene_moment();
+        if (scene_moment != null) {
+            stmt.bindString(30, scene_moment);
+        }
+ 
+        String scene_type = entity.getScene_type();
+        if (scene_type != null) {
+            stmt.bindString(31, scene_type);
+        }
+ 
+        String scene_code = entity.getScene_code();
+        if (scene_code != null) {
+            stmt.bindString(32, scene_code);
+        }
+ 
+        String scene_uid = entity.getScene_uid();
+        if (scene_uid != null) {
+            stmt.bindString(33, scene_uid);
+        }
+ 
         String question1 = entity.getQuestion1();
         if (question1 != null) {
-            stmt.bindString(25, question1);
+            stmt.bindString(34, question1);
         }
  
         String question2 = entity.getQuestion2();
         if (question2 != null) {
-            stmt.bindString(26, question2);
+            stmt.bindString(35, question2);
         }
  
         String question3 = entity.getQuestion3();
         if (question3 != null) {
-            stmt.bindString(27, question3);
+            stmt.bindString(36, question3);
         }
  
         String answer1 = entity.getAnswer1();
         if (answer1 != null) {
-            stmt.bindString(28, answer1);
+            stmt.bindString(37, answer1);
         }
  
         String answer2 = entity.getAnswer2();
         if (answer2 != null) {
-            stmt.bindString(29, answer2);
+            stmt.bindString(38, answer2);
         }
  
         String answer3 = entity.getAnswer3();
         if (answer3 != null) {
-            stmt.bindString(30, answer3);
+            stmt.bindString(39, answer3);
         }
-        stmt.bindLong(31, entity.getMsgRead() ? 1L: 0L);
+        stmt.bindLong(40, entity.getMsgRead() ? 1L: 0L);
  
         Long id = entity.getId();
         if (id != null) {
-            stmt.bindLong(32, id);
+            stmt.bindLong(41, id);
         }
     }
 
     @Override
     public Long readKey(Cursor cursor, int offset) {
-        return cursor.isNull(offset + 31) ? null : cursor.getLong(offset + 31);
+        return cursor.isNull(offset + 40) ? null : cursor.getLong(offset + 40);
     }    
 
     @Override
@@ -401,14 +509,23 @@ public class ChatEntryDao extends AbstractDao<ChatEntry, Long> {
             cursor.getInt(offset + 21), // msgStat
             cursor.getLong(offset + 22), // qsid
             cursor.getLong(offset + 23), // gsid
-            cursor.isNull(offset + 24) ? null : cursor.getString(offset + 24), // question1
-            cursor.isNull(offset + 25) ? null : cursor.getString(offset + 25), // question2
-            cursor.isNull(offset + 26) ? null : cursor.getString(offset + 26), // question3
-            cursor.isNull(offset + 27) ? null : cursor.getString(offset + 27), // answer1
-            cursor.isNull(offset + 28) ? null : cursor.getString(offset + 28), // answer2
-            cursor.isNull(offset + 29) ? null : cursor.getString(offset + 29), // answer3
-            cursor.getShort(offset + 30) != 0, // msgRead
-            cursor.isNull(offset + 31) ? null : cursor.getLong(offset + 31) // id
+            cursor.isNull(offset + 24) ? null : cursor.getString(offset + 24), // scene_sid
+            cursor.isNull(offset + 25) ? null : cursor.getString(offset + 25), // scene_title
+            cursor.isNull(offset + 26) ? null : cursor.getString(offset + 26), // scene_des
+            cursor.isNull(offset + 27) ? null : cursor.getString(offset + 27), // scene_bg
+            cursor.isNull(offset + 28) ? null : cursor.getString(offset + 28), // scene_pic
+            cursor.isNull(offset + 29) ? null : cursor.getString(offset + 29), // scene_moment
+            cursor.isNull(offset + 30) ? null : cursor.getString(offset + 30), // scene_type
+            cursor.isNull(offset + 31) ? null : cursor.getString(offset + 31), // scene_code
+            cursor.isNull(offset + 32) ? null : cursor.getString(offset + 32), // scene_uid
+            cursor.isNull(offset + 33) ? null : cursor.getString(offset + 33), // question1
+            cursor.isNull(offset + 34) ? null : cursor.getString(offset + 34), // question2
+            cursor.isNull(offset + 35) ? null : cursor.getString(offset + 35), // question3
+            cursor.isNull(offset + 36) ? null : cursor.getString(offset + 36), // answer1
+            cursor.isNull(offset + 37) ? null : cursor.getString(offset + 37), // answer2
+            cursor.isNull(offset + 38) ? null : cursor.getString(offset + 38), // answer3
+            cursor.getShort(offset + 39) != 0, // msgRead
+            cursor.isNull(offset + 40) ? null : cursor.getLong(offset + 40) // id
         );
         return entity;
     }
@@ -439,14 +556,23 @@ public class ChatEntryDao extends AbstractDao<ChatEntry, Long> {
         entity.setMsgStat(cursor.getInt(offset + 21));
         entity.setQsid(cursor.getLong(offset + 22));
         entity.setGsid(cursor.getLong(offset + 23));
-        entity.setQuestion1(cursor.isNull(offset + 24) ? null : cursor.getString(offset + 24));
-        entity.setQuestion2(cursor.isNull(offset + 25) ? null : cursor.getString(offset + 25));
-        entity.setQuestion3(cursor.isNull(offset + 26) ? null : cursor.getString(offset + 26));
-        entity.setAnswer1(cursor.isNull(offset + 27) ? null : cursor.getString(offset + 27));
-        entity.setAnswer2(cursor.isNull(offset + 28) ? null : cursor.getString(offset + 28));
-        entity.setAnswer3(cursor.isNull(offset + 29) ? null : cursor.getString(offset + 29));
-        entity.setMsgRead(cursor.getShort(offset + 30) != 0);
-        entity.setId(cursor.isNull(offset + 31) ? null : cursor.getLong(offset + 31));
+        entity.setScene_sid(cursor.isNull(offset + 24) ? null : cursor.getString(offset + 24));
+        entity.setScene_title(cursor.isNull(offset + 25) ? null : cursor.getString(offset + 25));
+        entity.setScene_des(cursor.isNull(offset + 26) ? null : cursor.getString(offset + 26));
+        entity.setScene_bg(cursor.isNull(offset + 27) ? null : cursor.getString(offset + 27));
+        entity.setScene_pic(cursor.isNull(offset + 28) ? null : cursor.getString(offset + 28));
+        entity.setScene_moment(cursor.isNull(offset + 29) ? null : cursor.getString(offset + 29));
+        entity.setScene_type(cursor.isNull(offset + 30) ? null : cursor.getString(offset + 30));
+        entity.setScene_code(cursor.isNull(offset + 31) ? null : cursor.getString(offset + 31));
+        entity.setScene_uid(cursor.isNull(offset + 32) ? null : cursor.getString(offset + 32));
+        entity.setQuestion1(cursor.isNull(offset + 33) ? null : cursor.getString(offset + 33));
+        entity.setQuestion2(cursor.isNull(offset + 34) ? null : cursor.getString(offset + 34));
+        entity.setQuestion3(cursor.isNull(offset + 35) ? null : cursor.getString(offset + 35));
+        entity.setAnswer1(cursor.isNull(offset + 36) ? null : cursor.getString(offset + 36));
+        entity.setAnswer2(cursor.isNull(offset + 37) ? null : cursor.getString(offset + 37));
+        entity.setAnswer3(cursor.isNull(offset + 38) ? null : cursor.getString(offset + 38));
+        entity.setMsgRead(cursor.getShort(offset + 39) != 0);
+        entity.setId(cursor.isNull(offset + 40) ? null : cursor.getLong(offset + 40));
      }
     
     @Override

@@ -58,17 +58,18 @@ class HomePresenter : BasePresenter<HomeContract.View>(), HomeContract.Presenter
     }
 
     override fun getRedPacket(sid: String) {
-        model.getRedPacket(sid,object : JsonCallback<BaseEntry<RedPacketEntry>>(){
+        model.getRedPacket(sid, object : JsonCallback<BaseEntry<RedPacketEntry>>() {
             override fun onSuccess(response: Response<BaseEntry<RedPacketEntry>>?) {
-                if (response!!.isSuccessful){
+                if (response!!.isSuccessful) {
                     val list = response.body().list
-                    if (list!=null&&list.isNotEmpty()){
+                    if (list != null && list.isNotEmpty()) {
                         mView?.setRedPacket(list[0])
                     }
                 }
             }
         })
     }
+
     override fun initData(itemSize: Int, scenes: String, sid: String, type: String) {
         homeDataController.getData(itemSize, scenes, sid, type) { data -> mView?.setNewData(data) }
     }
@@ -462,5 +463,22 @@ class HomePresenter : BasePresenter<HomeContract.View>(), HomeContract.Presenter
         super.detachView()
         stopTimer()
         homeDataController.desroyController()
+    }
+
+    fun getFilterType(activity: Activity, sid: String) {
+        mView?.setSceneUser(null)
+        model.getFilterType(activity, sid, object : JsonCallback<BaseEntry<ScenesEntry>>() {
+            override fun onSuccess(response: Response<BaseEntry<ScenesEntry>>?) {
+                if (response!!.isSuccessful) {
+                    if (response.body().infor?.userinfor != null) {
+                        val user = response.body().infor!!.userinfor
+                        if (user.uid!=0&&user.uid != QzApplication.get().infoBean?.uid) {
+                            mView?.setSceneUser(user)
+                            return
+                        }
+                    }
+                }
+            }
+        })
     }
 }

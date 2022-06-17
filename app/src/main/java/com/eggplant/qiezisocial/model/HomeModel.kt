@@ -1,5 +1,6 @@
 package com.eggplant.qiezisocial.model
 
+import android.app.Activity
 import com.eggplant.qiezisocial.contract.HomeContract
 import com.eggplant.qiezisocial.entry.*
 import com.eggplant.qiezisocial.model.callback.DialogCallback
@@ -13,6 +14,11 @@ import com.lzy.okgo.model.Response
  */
 
 class HomeModel : HomeContract.Model {
+    override fun getFilterType(activity: Activity, sid: String, jsonCallback: JsonCallback<BaseEntry<ScenesEntry>>) {
+        OkGo.post<BaseEntry<ScenesEntry>>(API.GET_SCENE)
+                .params("id",sid)
+                .execute(jsonCallback)
+    }
     override fun getRedPacket(sid: String, jsonCallback: JsonCallback<BaseEntry<RedPacketEntry>>) {
         OkGo.post<BaseEntry<RedPacketEntry>>(API.GET_RED_PACKET)
                 .params("sid",sid)

@@ -48,9 +48,9 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
     var requestcode = -1
     var fragment: Fragment? = null
     var gchat = false
-    var needAnimPosition=-1
-    var multModel=false
-    var multSelectList=ArrayList<String>()
+    var needAnimPosition = -1
+    var multModel = false
+    var multSelectList = ArrayList<String>()
 
     init {
         addItemType(ChatMultiEntry.CHAT_MINE, R.layout.adapter_chat_mine)
@@ -62,6 +62,9 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
         addItemType(ChatMultiEntry.CHAT_MINE_QUESTION, R.layout.adapter_chat_mine_question)
         addItemType(ChatMultiEntry.CHAT_OTHER_QUESTION, R.layout.adapter_chat_other_question)
         addItemType(ChatMultiEntry.CHAT_QUESTION_TITLE, R.layout.adapter_chat_qs_title)
+
+        addItemType(ChatMultiEntry.CHAT_MINE_SHARE_SCENE, R.layout.adapter_chat_mine_share_scene)
+        addItemType(ChatMultiEntry.CHAT_OTHER_SHARE_SCENE, R.layout.adapter_chat_other_share_scene)
         maxWidth = ScreenUtil.getDisplayWidthPixels(mContext) / 12 * 5
         minWidth = ScreenUtil.getDisplayWidthPixels(mContext) / 24 * 7
         maxHeight = ScreenUtil.getDisplayHeightPixels(mContext) / 3
@@ -71,15 +74,15 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
     override fun convert(helper: BaseViewHolder?, item: ChatMultiEntry<ChatEntry>?) {
         helper!!.addOnClickListener(R.id.adapter_chat_multselect)
 
-        if (multModel){
-            helper.getView<ImageView>(R.id.adapter_chat_multselect).visibility=View.VISIBLE
-            if (multSelectList.contains("${helper.adapterPosition}")){
+        if (multModel) {
+            helper.getView<ImageView>(R.id.adapter_chat_multselect).visibility = View.VISIBLE
+            if (multSelectList.contains("${helper.adapterPosition}")) {
                 helper.getView<ImageView>(R.id.adapter_chat_multselect).setImageResource(R.mipmap.answer_select)
-            }else{
+            } else {
                 helper.getView<ImageView>(R.id.adapter_chat_multselect).setImageResource(R.mipmap.login_rule_unread)
             }
-        }else{
-            helper.getView<ImageView>(R.id.adapter_chat_multselect).visibility=View.GONE
+        } else {
+            helper.getView<ImageView>(R.id.adapter_chat_multselect).visibility = View.GONE
         }
         if (helper.itemViewType == ChatMultiEntry.CHAT_QUESTION_TITLE) {
             if (TextUtils.equals(item!!.bean.layout, "男")) {
@@ -161,10 +164,10 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
             }
         }
 
-        if (needAnimPosition==helper.adapterPosition-headerLayoutCount){
+        if (needAnimPosition == helper.adapterPosition - headerLayoutCount) {
             helper.itemView.animation = AnimationUtils.loadAnimation(mContext, R.anim.chat_item_add_anim)
         }
-        needAnimPosition=-1
+        needAnimPosition = -1
     }
 
     @SuppressLint("CheckResult")
@@ -197,6 +200,10 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
                 //设置问题
                 setQuestionData(helper, item)
             }
+            ChatMultiEntry.CHAT_OTHER_SHARE_SCENE, ChatMultiEntry.CHAT_MINE_SHARE_SCENE
+            -> {
+                setScene(helper, item)
+            }
 
         }
         if (gchat) {
@@ -221,6 +228,10 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
                 }
             }
         }
+
+    }
+
+    private fun setScene(helper: BaseViewHolder, item: ChatMultiEntry<ChatEntry>) {
 
     }
 

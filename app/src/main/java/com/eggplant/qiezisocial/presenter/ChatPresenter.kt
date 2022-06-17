@@ -995,6 +995,9 @@ class ChatPresenter : BasePresenter<ChatContract.View>(), ChatContract.Presenter
                             }
                         }
                     }
+                    TextUtils.equals(type, "gsharescenes") -> {
+                        mainInfoBean!!.msg = "[场景分享]"
+                    }
                     else -> mainInfoBean!!.msg = content
                 }
 
@@ -1012,6 +1015,8 @@ class ChatPresenter : BasePresenter<ChatContract.View>(), ChatContract.Presenter
                     chatMultiBeans.add(ChatMultiEntry<ChatEntry>(ChatMultiEntry.CHAT_OTHER_VIDEO, chatEntry))
                 } else if (TextUtils.equals(type, "boxquestion")) {
                     chatMultiBeans.add(ChatMultiEntry<ChatEntry>(ChatMultiEntry.CHAT_OTHER_QUESTION, chatEntry))
+                } else if (TextUtils.equals(type, "gsharescenes")) {
+                    chatMultiBeans.add(ChatMultiEntry<ChatEntry>(ChatMultiEntry.CHAT_OTHER_SHARE_SCENE, chatEntry))
                 }
             } else {
                 if (TextUtils.equals(type, "gtxt") || TextUtils.equals(type, "gpic") || TextUtils.equals(type, "boxanswer")) {
@@ -1022,6 +1027,8 @@ class ChatPresenter : BasePresenter<ChatContract.View>(), ChatContract.Presenter
                     chatMultiBeans.add(ChatMultiEntry<ChatEntry>(ChatMultiEntry.CHAT_MINE_VIDEO, chatEntry))
                 } else if (TextUtils.equals(type, "boxquestion")) {
                     chatMultiBeans.add(ChatMultiEntry<ChatEntry>(ChatMultiEntry.CHAT_MINE_QUESTION, chatEntry))
+                } else if (TextUtils.equals(type, "gsharescenes")) {
+                    chatMultiBeans.add(ChatMultiEntry<ChatEntry>(ChatMultiEntry.CHAT_MINE_SHARE_SCENE, chatEntry))
                 }
             }
         }

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/selfscene_success_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/translate_black" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/qb_px_20"
+        android:layout_marginRight="@dimen/qb_px_20"
+        android:background="@drawable/pub_dialog_bg"
+        android:paddingBottom="@dimen/qb_px_20">
+
+        <ImageView
+            android:id="@+id/selfscene_success_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/qb_px_15"
+            android:layout_marginTop="@dimen/qb_px_15"
+            android:padding="@dimen/qb_px_5"
+            android:src="@mipmap/close_black" />
+
+        <FrameLayout
+            android:layout_width="@dimen/qb_px_143"
+            android:layout_height="@dimen/qb_px_70"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/qb_px_70"
+            android:background="@drawable/filter_objitem_bg7">
+
+            <ImageView
+                android:id="@+id/selfscene_success_img"
+                android:layout_width="@dimen/qb_px_70"
+                android:layout_height="@dimen/qb_px_70"
+                android:layout_gravity="right|bottom"
+                android:src="@drawable/filter_obj_bg1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/qb_px_11"
+                android:orientation="vertical">
+
+                <com.eggplant.qiezisocial.widget.QzTextView
+                    android:id="@+id/selfscene_success_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="交朋友"
+                    android:textColor="@color/tv_black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <com.eggplant.qiezisocial.widget.QzTextView
+                    android:id="@+id/selfscene_success_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/qb_px_64"
+                    android:layout_marginTop="@dimen/qb_px_6"
+                    android:text="想交好朋友"
+                    android:textColor="@color/tv_black"
+                    android:textSize="8sp" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/qb_px_160"
+            android:text="审核通过"
+            android:textColor="@color/tv_black2"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/qb_px_207"
+            android:gravity="center"
+            android:text="@string/selfscens_success"
+            android:textColor="@color/tv_black2"
+            android:textSize="15sp" />
+
+        <com.eggplant.qiezisocial.widget.QzTextView
+            android:id="@+id/selfscene_success_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/qb_px_20"
+            android:layout_marginTop="@dimen/qb_px_275"
+            android:text="进入场景 ->"
+            android:textColor="@color/tv_gray4"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_20"
+            android:layout_marginRight="@dimen/qb_px_20"
+            android:layout_marginTop="@dimen/qb_px_310"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_weight="1"
+                android:background="@color/line_color6" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_5"
+                android:layout_marginRight="@dimen/qb_px_5"
+                android:text="邀请好友参与互动"
+                android:textColor="@color/tv_gray2"
+                android:textSize="12sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_weight="1"
+                android:background="@color/line_color6" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/selfscene_success_ry"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_33"
+            android:layout_marginTop="@dimen/qb_px_345" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/qb_px_405"
+            android:orientation="horizontal">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/selfscene_success_share_wechat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/icon_scene_wechat"
+                android:gravity="center"
+                android:padding="@dimen/qb_px_5"
+                android:text="微信"
+                android:textColor="@color/tv_gray2"
+                android:textSize="9sp" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/selfscene_success_share_friendcircle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_45"
+                android:drawableTop="@mipmap/icon_scene_friendcircle"
+                android:gravity="center"
+                android:padding="@dimen/qb_px_5"
+                android:src="@mipmap/icon_scene_friendcircle"
+                android:text="朋友圈"
+                android:textColor="@color/tv_gray2"
+                android:textSize="9sp" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/selfscene_success_share_qq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_45"
+                android:drawableTop="@mipmap/icon_scene_qq"
+                android:gravity="center"
+                android:padding="@dimen/qb_px_5"
+                android:src="@mipmap/icon_scene_qq"
+                android:text="QQ"
+                android:textColor="@color/tv_gray2"
+                android:textSize="9sp" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/selfscene_success_share_sina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_45"
+                android:drawableTop="@mipmap/icon_scene_sina"
+                android:gravity="center"
+                android:padding="@dimen/qb_px_5"
+                android:src="@mipmap/icon_scene_sina"
+                android:text="微博"
+                android:textColor="@color/tv_gray2"
+                android:textSize="9sp" />
+
+
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

@@ -13,7 +13,6 @@ import android.text.Editable
 import android.text.InputFilter
 import android.text.TextUtils
 import android.text.TextWatcher
-import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -72,6 +71,7 @@ class PubTxtActivity2 : BaseMvpActivity<PubTxtPresenter>(), PubTxtContract.View,
     var qs=""
     var pubQuestionSuccess=false
     var needFinish=false
+    var hasUser=false
     /**
      * 当edittext设置最大输入限制时，在此处进行监听，以便在删除emoji时调整最大限制数
      *
@@ -111,6 +111,7 @@ class PubTxtActivity2 : BaseMvpActivity<PubTxtPresenter>(), PubTxtContract.View,
         pub2_txt_emojikeyboard.setEmojiContent(pub2_edit)
         imgIndex = intent.getIntExtra("index", -1)
         qs=intent.getStringExtra("question")
+        hasUser=intent.getBooleanExtra("hasUser",false)
         if (qs!=null&&qs.isNotEmpty())
             pub2_edit.setHint(qs)
         setImageRes()
@@ -202,15 +203,20 @@ class PubTxtActivity2 : BaseMvpActivity<PubTxtPresenter>(), PubTxtContract.View,
 //        height = pub2_pubgp.height
 //        width = pub2_pubgp.width
         if (height == 0) {
-            height = ScreenUtil.dip2px(mContext, 60)
+            height = ScreenUtil.dip2px(mContext, 45)
         }
         if (width == 0) {
             width = ScreenUtil.getDisplayWidthPixels(mContext) - ScreenUtil.dip2px(mContext, 30)
         }
         val fbtm = ScreenUtil.getDisplayHeightPixels(mContext) / 2
-        val startHeight = ScreenUtil.dip2px(mContext, 60)
+        val startHeight = ScreenUtil.dip2px(mContext, 45)
         val startWidht = ScreenUtil.dip2px(mContext, 210)
         val translateAnim = ValueAnimator.ofFloat(0f, 1.0f)
+        var rightMargin=0
+        if (hasUser){
+            rightMargin=ScreenUtil.dip2px(mContext, 55)
+        }
+
         translateAnim.addUpdateListener {
             val animatedValue = it.animatedValue as Float
 //            val params = FrameLayout.LayoutParams((startWidht + (width - startWidht) * animatedValue).toInt(), (startHeight + (height - startHeight) * animatedValue).toInt())
@@ -219,7 +225,7 @@ class PubTxtActivity2 : BaseMvpActivity<PubTxtPresenter>(), PubTxtContract.View,
             params.gravity = Gravity.BOTTOM
             pub2_pubgp.layoutParams = params
             val gpParams = FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT)
-            gpParams.setMargins(0, 0, 0, (bottomMargin + (fbtm - bottomMargin) * animatedValue).toInt())
+            gpParams.setMargins(0, 0, (rightMargin* (1.0f-animatedValue)).toInt(), (bottomMargin + (fbtm - bottomMargin) * animatedValue).toInt())
             gpParams.gravity = Gravity.BOTTOM
             pub2_decorate_gp.layoutParams = gpParams
         }
@@ -259,8 +265,8 @@ class PubTxtActivity2 : BaseMvpActivity<PubTxtPresenter>(), PubTxtContract.View,
                 scale = 0.9f / 2.0f
             }
             pub2_decorate2.post {
-                var startBm = ScreenUtil.dip2px(mContext, 55)
-                var finishBm = ScreenUtil.dip2px(mContext, 55)
+                var startBm = ScreenUtil.dip2px(mContext, 40)
+                var finishBm = ScreenUtil.dip2px(mContext, 40)
 
                 val params1 = FrameLayout.LayoutParams((scale * pub2_decorate2.width).toInt(), (scale * pub2_decorate2.height).toInt())
                 params1.setMargins(0, 0, 0, startBm)
@@ -297,15 +303,19 @@ class PubTxtActivity2 : BaseMvpActivity<PubTxtPresenter>(), PubTxtContract.View,
         height = pub2_pubgp.height
         width = pub2_pubgp.width
         if (height == 0) {
-            height = ScreenUtil.dip2px(mContext, 60)
+            height = ScreenUtil.dip2px(mContext, 45)
         }
         if (width == 0) {
             width = ScreenUtil.getDisplayWidthPixels(mContext) - ScreenUtil.dip2px(mContext, 30)
         }
         val fbtm = ScreenUtil.getDisplayHeightPixels(mContext) / 2
-        val startHeight = ScreenUtil.dip2px(mContext, 60)
+        val startHeight = ScreenUtil.dip2px(mContext, 45)
         val startWidht = ScreenUtil.dip2px(mContext, 210)
         val translateAnim = ValueAnimator.ofFloat(1.0f, 0f)
+        var rightMargin=0
+        if (hasUser){
+            rightMargin=ScreenUtil.dip2px(mContext, 55)
+        }
         translateAnim.addUpdateListener {
             val animatedValue = it.animatedValue as Float
 //            val params = FrameLayout.LayoutParams((startWidht + (width - startWidht) * animatedValue).toInt(), (startHeight + (height - startHeight) * animatedValue).toInt())
@@ -315,7 +325,7 @@ class PubTxtActivity2 : BaseMvpActivity<PubTxtPresenter>(), PubTxtContract.View,
             pub2_pubgp.layoutParams = params
 
             val gpParams = FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT)
-            gpParams.setMargins(0, 0, 0, (bottomMargin + (fbtm - bottomMargin) * animatedValue).toInt())
+            gpParams.setMargins(0, 0, (rightMargin*(1.0f-animatedValue)).toInt(), (bottomMargin + (fbtm - bottomMargin) * animatedValue).toInt())
             gpParams.gravity = Gravity.BOTTOM
             pub2_decorate_gp.layoutParams = gpParams
         }
@@ -353,8 +363,8 @@ class PubTxtActivity2 : BaseMvpActivity<PubTxtPresenter>(), PubTxtContract.View,
                 scale = 0.9f / 2.0f
             }
             pub2_decorate2.post {
-                var startBm = ScreenUtil.dip2px(mContext, 55)
-                var finishBm = ScreenUtil.dip2px(mContext, 55)
+                var startBm = ScreenUtil.dip2px(mContext, 40)
+                var finishBm = ScreenUtil.dip2px(mContext, 40)
                 dectorAnim = ValueAnimator.ofFloat(1.0f, 0.0f)
                 dectorAnim!!.addUpdateListener {
                     val animatedValue = it.animatedValue as Float

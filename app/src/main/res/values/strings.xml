@@ -375,4 +375,7 @@ Cookie和同类技术是互联网中的通用常用技术。当你使用“交�
     <string name="set_scenen_rule">
        场景设置完成后将自动出现在“更换场景”页面
     </string>
+    <string name="selfscens_success" >
+        赶快邀请朋友进入场景吧\n场景活跃度高就会就会进入推荐场景
+    </string>
 </resources>

@@ -15,11 +15,13 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.FrameLayout
 import android.widget.LinearLayout.VERTICAL
+import com.bumptech.glide.Glide
 import com.eggplant.qiezisocial.R
 import com.eggplant.qiezisocial.base.BaseMvpFragment
 import com.eggplant.qiezisocial.contract.HomeContract
 import com.eggplant.qiezisocial.entry.*
 import com.eggplant.qiezisocial.event.*
+import com.eggplant.qiezisocial.model.API
 import com.eggplant.qiezisocial.presenter.HomePresenter
 import com.eggplant.qiezisocial.ui.extend.dialog.ShareDialog
 import com.eggplant.qiezisocial.ui.login.LoginActivity2
@@ -78,12 +80,12 @@ class HomeFragment2 : BaseMvpFragment<HomePresenter>(), HomeContract.View {
         val time = startTime - System.currentTimeMillis()
         if (time > 10 * 60 * 1000) {
             home2_jd.postDelayed({
-                home2_jd.visibility=View.VISIBLE
-                home2_progress.setProgressNum(110.0f, 10*60*1000)
-            },time-10*60*1000)
+                home2_jd.visibility = View.VISIBLE
+                home2_progress.setProgressNum(110.0f, 10 * 60 * 1000)
+            }, time - 10 * 60 * 1000)
 
-        }else if (time>0){
-            home2_jd.visibility=View.VISIBLE
+        } else if (time > 0) {
+            home2_jd.visibility = View.VISIBLE
             home2_progress.setProgressNum(110.0f, time)
         }
 
@@ -118,9 +120,9 @@ class HomeFragment2 : BaseMvpFragment<HomePresenter>(), HomeContract.View {
                     val layoutManager = home2_ry.layoutManager as LinearLayoutManager
 //                    val firstCvPosition = layoutManager.findFirstVisibleItemPosition()
                     var lastCvPosition = layoutManager.findLastVisibleItemPosition() - adapter.headerLayoutCount
-                    if (lastCvPosition>=adapter.data.size){
-                        adapter.addData( data)
-                    }else{
+                    if (lastCvPosition >= adapter.data.size) {
+                        adapter.addData(data)
+                    } else {
                         adapter.addData(lastCvPosition, data)
                     }
 //                    Log.i("homeFt2", "firstCvP---$firstCvPosition")
@@ -165,7 +167,16 @@ class HomeFragment2 : BaseMvpFragment<HomePresenter>(), HomeContract.View {
 
     }
 
+    override fun setSceneUser(user: UserEntry?) {
+        this.sceUser = user
+        changeHomeBg()
+        home2_topictxt.text ="点击发布新消息"
+        home2_text_swicher.setText("点击发布新消息")
+    }
+
+
     lateinit var adapter: CardAdapter
+    var sceUser: UserEntry? = null
     var ry_offsetY = 0F
     var ry_lastY = 0F
     private var itemSize = 10
@@ -196,8 +207,8 @@ class HomeFragment2 : BaseMvpFragment<HomePresenter>(), HomeContract.View {
         val footView = LayoutInflater.from(mContext).inflate(R.layout.layout_test_head_foot, null, false)
         adapter.setHeaderView(headView)
         adapter.setFooterView(footView)
-    val   layoutManager=  LinearLayoutManager(mContext,VERTICAL,true)
-         layoutManager.stackFromEnd = true
+        val layoutManager = LinearLayoutManager(mContext, VERTICAL, true)
+        layoutManager.stackFromEnd = true
         home2_ry.layoutManager = layoutManager
 
         home2_ry.itemAnimator = HomeRyAnimator()
@@ -213,6 +224,12 @@ class HomeFragment2 : BaseMvpFragment<HomePresenter>(), HomeContract.View {
     }
 
     override fun initEvent() {
+        home2_scene_user_img.setOnClickListener {
+            if (sceUser!=null){
+                startActivity(Intent(mContext,OtherSpaceActivity::class.java).putExtra("bean", sceUser))
+                activity?.overridePendingTransition(R.anim.open_enter, R.anim.open_exit)
+            }
+        }
         home2_progress.setOnAnimationListener(object : WaveProgressView.OnAnimationListener {
             override fun howToChangeText(interpolatedTime: Float, updateNum: Float, maxNum: Float, time: Long): String {
 //                val time = (time/1000 * (1.0f - interpolatedTime)).toLong()
@@ -303,7 +320,7 @@ class HomeFragment2 : BaseMvpFragment<HomePresenter>(), HomeContract.View {
             }
         })
         adapter.setOnItemChildClickListener { _, view, position ->
-            if (view.id==R.id.ap_card_gp){
+            if (view.id == R.id.ap_card_gp) {
                 if (ClickUtil.isNotFastClick()) {
                     var bean = adapter.data[position]
                     if (bean.uid.toInt() == application.infoBean?.uid) {
@@ -373,6 +390,7 @@ class HomeFragment2 : BaseMvpFragment<HomePresenter>(), HomeContract.View {
             } else {
                 intent.putExtra("index", 0)
             }
+            intent.putExtra("hasUser", sceUser != null)
             startActivityForResult(intent, REQUEST_PUB_BOX)
             activity?.overridePendingTransition(0, 0)
         }
@@ -444,6 +462,7 @@ class HomeFragment2 : BaseMvpFragment<HomePresenter>(), HomeContract.View {
         mPresenter.initData(itemSize, scenes, sid, type)
         mPresenter.continueToAddData(5000)
         mPresenter.setTopic(activity!!, scenes, sid)
+        mPresenter.getFilterType(activity!!, sid)
         mPresenter.getRedPacket(sid)
     }
 
@@ -545,6 +564,7 @@ class HomeFragment2 : BaseMvpFragment<HomePresenter>(), HomeContract.View {
         adapter.notifyDataSetChanged()
         mPresenter.initData(itemSize, goal, sid, type)
         mPresenter.setTopic(activity!!, goal, sid)
+        mPresenter.getFilterType(activity!!, sid)
         setBgWithGoal(goal, moment)
     }
 
@@ -649,6 +669,14 @@ class HomeFragment2 : BaseMvpFragment<HomePresenter>(), HomeContract.View {
         }
     }
 
+    //场景审核通过
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun selfSceneSuccess(event: SelfScenesEvent) {
+        startActivity(Intent(mContext,SelfSceneSuccessActivity::class.java).putExtra("user",event.entry))
+        activity?.overridePendingTransition(R.anim.open_enter2,R.anim.open_exit)
+    }
+
+
     //封号
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun seal(event: SealEvent) {
@@ -720,19 +748,19 @@ class HomeFragment2 : BaseMvpFragment<HomePresenter>(), HomeContract.View {
         } else {
             home2_decorate2.setImageResource(imageSource)
             home2_decorate.setImageResource(imageSource)
-//            home2_decorate2.postDelayed({
-//                //                Log.i("homeFt2", "dector-----width:${home2_decorate2.width}    height;${home2_decorate2.height}")
-//                var scale: Float = 1.3f / 2.0f
-//                if (imageSource == R.drawable.icon_home_dector7) {
-//                    scale = 0.9f / 2.0f
-//                }
-//                scale=1.0f
-//                val params = FrameLayout.LayoutParams((scale * home2_decorate2.width).toInt(), (scale * home2_decorate2.height).toInt())
-//                params.setMargins(0, 0, 0, ScreenUtil.dip2px(mContext, 55))
-//                params.gravity = Gravity.CENTER_HORIZONTAL
-//                home2_decorate.layoutParams = params
-//                home2_decorate.setImageResource(imageSource)
-//            }, 500)
+            val params = home2_pub_gp.layoutParams as FrameLayout.LayoutParams
+            var dp15 = ScreenUtil.dip2px(mContext, 15)
+            var dp20 = ScreenUtil.dip2px(mContext, 20)
+            var dp65 = ScreenUtil.dip2px(mContext, 70)
+            if (sceUser != null) {
+                params.setMargins(dp15, 0, dp65, dp20)
+                home2_scene_user_gp.visibility = View.VISIBLE
+                Glide.with(mContext!!).load(API.PIC_PREFIX + sceUser!!.face).into(home2_scene_user_img)
+            } else {
+                params.setMargins(dp15, 0, dp15, dp20)
+                home2_scene_user_gp.visibility = View.GONE
+            }
+            home2_pub_gp.layoutParams = params
         }
 
 

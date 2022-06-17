@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingTop="2dp">
+
+    <TextView
+        android:id="@+id/chat_hint_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/qb_px_10"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:paddingBottom="@dimen/qb_px_3"
+        android:paddingLeft="@dimen/qb_px_5"
+        android:paddingRight="@dimen/qb_px_5"
+        android:paddingTop="@dimen/qb_px_3"
+        android:text="昨天 20:04"
+        android:textColor="@color/tv_gray2"
+        android:textSize="12sp"
+        android:visibility="gone" />
+    <!-- headview-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/adapter_chat_multselect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/qb_px_5"
+            android:layout_marginTop="@dimen/qb_px_18"
+            android:padding="@dimen/qb_px_5"
+            android:src="@mipmap/login_rule_unread"
+            android:visibility="gone" />
+
+        <com.eggplant.qiezisocial.widget.image.CircleImageView
+            android:id="@+id/adapter_chat_head"
+            android:layout_width="@dimen/qb_px_40"
+            android:layout_height="@dimen/qb_px_40"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/qb_px_5"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:layout_marginTop="@dimen/qb_px_7"
+            android:src="@mipmap/normal_head" />
+        <!-- contentTv-->
+
+        <FrameLayout
+            android:id="@+id/center"
+            android:layout_width="@dimen/qb_px_247"
+            android:layout_height="@dimen/qb_px_132"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/qb_px_7"
+            android:layout_marginRight="@dimen/qb_px_7"
+            android:layout_marginTop="@dimen/qb_px_7"
+            android:layout_toLeftOf="@id/adapter_chat_head"
+            android:background="@drawable/msg_chat_share_scene_bg"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_15"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="邀请你加入我的场景"
+                android:textColor="@color/tv_black2"
+                android:textSize="13sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/qb_px_35"
+                android:background="@color/line_color6" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/adapter_chat_scene_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_15"
+                android:layout_marginTop="@dimen/qb_px_50"
+                android:text="起床打工"
+                android:textColor="@color/tv_black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:id="@+id/adapter_chat_scene_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_15"
+                android:layout_marginTop="@dimen/qb_px_78"
+                android:text="吐槽"
+                android:textColor="@color/tv_black"
+                android:textSize="12sp" />
+
+            <com.eggplant.qiezisocial.widget.QzTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/qb_px_13"
+                android:layout_marginLeft="@dimen/qb_px_15"
+                android:text="点击进入此场景"
+                android:textColor="#ffaaaaaa"
+                android:textSize="11sp" />
+
+            <ImageView
+                android:id="@+id/adapter_chat_scene_img"
+                android:layout_width="@dimen/qb_px_80"
+                android:layout_height="@dimen/qb_px_80"
+                android:layout_gravity="bottom|right"
+
+                />
+        </FrameLayout>
+
+
+        <ImageView
+            android:id="@+id/adapter_chat_ununited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/qb_px_30"
+            android:layout_marginRight="@dimen/qb_px_10"
+            android:layout_toLeftOf="@id/center"
+            android:src="@mipmap/chat_ununited"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

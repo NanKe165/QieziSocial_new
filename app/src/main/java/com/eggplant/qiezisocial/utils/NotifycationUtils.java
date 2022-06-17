@@ -126,9 +126,12 @@ public class NotifycationUtils {
         isVoice = (boolean) StorageUtil.getParam(context, "voice", true);
 
         Intent mintent=new Intent(context, EmptyActivity.class);
+        //secretlove
         if (type=="apply"){
             mintent=  new Intent(context, FriendActivity.class);
             mintent.putExtra("from","apply");
+        }else {
+
         }
         int requestID = (int) System.currentTimeMillis();
         PendingIntent pintent = PendingIntent.getActivity(context, requestID, mintent, PendingIntent.FLAG_UPDATE_CURRENT);
