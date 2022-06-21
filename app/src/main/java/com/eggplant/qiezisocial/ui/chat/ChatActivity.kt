@@ -78,7 +78,7 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
     lateinit var delDlg: ChatDelDialog
     lateinit var optionView: View
     lateinit var itemOptionView: View
-    private  var itemOptionSelectPos=-1
+    private var itemOptionSelectPos = -1
     private val REQUEST_PHOTO_ALBUM = 112
     private val REQUEST_ADD_VIDEO = 113
     private val REQUEST_TAKE_PHOTO = 114
@@ -217,21 +217,21 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
         itemOptionView.tv_line.visibility = View.GONE
         itemOptionWindow.contentView = itemOptionView
         itemOptionWindow.setOnDismissListener {
-            itemOptionSelectPos=-1
+            itemOptionSelectPos = -1
         }
         itemOptionView.tv_note.setOnClickListener {
             adapter.multModel = true
             adapter.multSelectList.add("${itemOptionSelectPos + adapter.headerLayoutCount}")
             adapter.notifyDataSetChanged()
             setMultSelectModel(true)
-            itemOptionSelectPos=-1
+            itemOptionSelectPos = -1
             itemOptionWindow.dismiss()
         }
         itemOptionView.tv_del.setOnClickListener {
             adapter.multSelectList.add("${itemOptionSelectPos + adapter.headerLayoutCount}")
             chat_keyboard.reset()
             delDlg.show()
-            itemOptionSelectPos=-1
+            itemOptionSelectPos = -1
             itemOptionWindow.dismiss()
         }
 
@@ -464,6 +464,10 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
 ////                    startActivity(Intent(mContext, OthersSpaceActivity::class.java).putExtra("uid", entry.bean.chatId.toString()))
 //                    //TODO
 //                }
+            } else if (view.id == R.id.center) {
+                if (entry.itemType == ChatMultiEntry.CHAT_MINE_SHARE_SCENE || entry.itemType == ChatMultiEntry.CHAT_OTHER_SHARE_SCENE) {
+                    mPresenter.setScenes(entry)
+                }
             }
         }
 
@@ -501,8 +505,8 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
 //                } else {
 //                    0
 //                }
-                itemOptionSelectPos=position
-                itemOptionWindow.showAtLocation(view, Gravity.NO_GRAVITY,  loca[0], loca[1] - showHeight)
+                itemOptionSelectPos = position
+                itemOptionWindow.showAtLocation(view, Gravity.NO_GRAVITY, loca[0], loca[1] - showHeight)
 
             } else if (view.id == R.id.adapter_chat_content) {
                 if (mSelectableTextHelper != null) {
@@ -598,11 +602,12 @@ class ChatActivity : BaseWebSocketActivity<ChatPresenter>(), ChatContract.View, 
 //        scrollToBottom()
 
     }
-   override fun smoothScrollBottom(){
+
+    override fun smoothScrollBottom() {
         val lastPosition = layoutManager.findLastVisibleItemPosition()
-        if (lastPosition==adapter.data.size-1){
+        if (lastPosition == adapter.data.size - 1) {
             chat_ry.smoothScrollToPosition(adapter.data.size)
-        }else{
+        } else {
             scrollToBottom()
         }
 

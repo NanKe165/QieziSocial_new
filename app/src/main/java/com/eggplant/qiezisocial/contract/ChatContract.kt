@@ -50,5 +50,6 @@ interface ChatContract
         fun deleteChat(mContext: Context, bean: ChatEntry)
         fun createQsTitle(qsTxt: String):ChatMultiEntry<ChatEntry>
         fun toOtherActivity(activity: AppCompatActivity, uid: Long)
+        fun setScenes(entry: ChatMultiEntry<ChatEntry>)
     }
 }

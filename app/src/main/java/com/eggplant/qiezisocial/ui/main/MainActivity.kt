@@ -647,7 +647,7 @@ class MainActivity : BaseWebSocketActivity<MainPresenter>(), MainContract.View, 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun socketMsg(event: SocketMsgEvent) {
         if (event.msg != null) {
-//            Log.i("socketMsg","${event.msg}")
+            Log.i("socketMsg","${event.msg}")
             sendSocketMessage(event.msg)
         }
     }

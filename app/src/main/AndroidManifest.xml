@@ -57,7 +57,7 @@
     <application
         android:name=".QzApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/box_ic"
+        android:icon="@mipmap/box_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"

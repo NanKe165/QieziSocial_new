@@ -30,8 +30,10 @@ import com.eggplant.qiezisocial.widget.ninegridImage.ImageInfo
 import com.luck.picture.lib.tools.MediaUtils
 import com.xiao.nicevideoplayer.NiceVideoPlayer
 import com.xiao.nicevideoplayer.TxVideoPlayerController
+import kotlinx.android.synthetic.main.adapter_chat_mine_share_scene.view.*
 import kotlinx.android.synthetic.main.adapter_chat_other.view.*
 import kotlinx.android.synthetic.main.adapter_chat_qs_title.view.*
+import kotlinx.android.synthetic.main.ap_fresh_select_object.view.*
 
 /**
  * Created by Administrator on 2020/4/16.
@@ -51,7 +53,7 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
     var needAnimPosition = -1
     var multModel = false
     var multSelectList = ArrayList<String>()
-
+    private var imgs = java.util.ArrayList<Int>()
     init {
         addItemType(ChatMultiEntry.CHAT_MINE, R.layout.adapter_chat_mine)
         addItemType(ChatMultiEntry.CHAT_OTHER, R.layout.adapter_chat_other)
@@ -68,6 +70,35 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
         maxWidth = ScreenUtil.getDisplayWidthPixels(mContext) / 12 * 5
         minWidth = ScreenUtil.getDisplayWidthPixels(mContext) / 24 * 7
         maxHeight = ScreenUtil.getDisplayHeightPixels(mContext) / 3
+
+        imgs.add(R.drawable.icon_scene_img1)
+        imgs.add(R.drawable.icon_scene_img2)
+        imgs.add(R.drawable.icon_scene_img3)
+        imgs.add(R.drawable.icon_scene_img4)
+        imgs.add(R.drawable.icon_scene_img5)
+        imgs.add(R.drawable.icon_scene_img6)
+        imgs.add(R.drawable.icon_scene_img7)
+        imgs.add(R.drawable.icon_scene_img8)
+        imgs.add(R.drawable.icon_scene_img9)
+        imgs.add(R.drawable.icon_scene_img10)
+        imgs.add(R.drawable.icon_scene_img11)
+        imgs.add(R.drawable.icon_scene_img12)
+        imgs.add(R.drawable.icon_scene_img13)
+        imgs.add(R.drawable.icon_scene_img14)
+        imgs.add(R.drawable.icon_scene_img15)
+        imgs.add(R.drawable.icon_scene_img16)
+        imgs.add(R.drawable.icon_scene_img17)
+        imgs.add(R.drawable.icon_scene_img18)
+        imgs.add(R.drawable.icon_scene_img19)
+        imgs.add(R.drawable.icon_scene_img20)
+        imgs.add(R.drawable.icon_scene_img21)
+        imgs.add(R.drawable.icon_scene_img22)
+        imgs.add(R.drawable.icon_scene_img23)
+        imgs.add(R.drawable.icon_scene_img24)
+        imgs.add(R.drawable.icon_scene_img25)
+        imgs.add(R.drawable.icon_scene_img26)
+        imgs.add(R.drawable.icon_scene_img27)
+        imgs.add(R.drawable.icon_scene_img28)
     }
 
 
@@ -202,6 +233,9 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
             }
             ChatMultiEntry.CHAT_OTHER_SHARE_SCENE, ChatMultiEntry.CHAT_MINE_SHARE_SCENE
             -> {
+                //场景分享
+                helper.addOnLongClickListener(R.id.center)
+                helper.addOnClickListener(R.id.center)
                 setScene(helper, item)
             }
 
@@ -232,6 +266,20 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
     }
 
     private fun setScene(helper: BaseViewHolder, item: ChatMultiEntry<ChatEntry>) {
+        helper.itemView.adapter_chat_scene_title.text="${item.bean.scene_title}"
+        helper.itemView.adapter_chat_scene_des.text="${item.bean.scene_des}"
+        if (item.bean.scene_bg != null && item.bean.scene_bg .isNotEmpty()) {
+            helper.itemView.ap_f_selectobj_img.visibility = View.VISIBLE
+            Glide.with(mContext).load(item.bean.scene_bg).into(helper.itemView.ap_f_selectobj_img)
+        } else if (item.bean.scene_pic!= null) {
+            helper.itemView.adapter_chat_scene_img.visibility = View.VISIBLE
+            val pic = item.bean.scene_pic.toInt()
+            if (pic < imgs.size) {
+                helper.itemView.adapter_chat_scene_img.setImageResource(imgs[pic])
+            } else {
+                helper.itemView.adapter_chat_scene_img.setImageDrawable(null)
+            }
+        }
 
     }
 
@@ -523,7 +571,8 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
         val media3 = item.bean.question3
         //movie ---set  note
         if (layout == "movie") {
-            Glide.with(mContext).load(R.mipmap.icon_movie_head).into(helper.itemView.adapter_chat_head)
+            val head = helper.getView<ImageView>(R.id.adapter_chat_head)
+            Glide.with(mContext).load(R.mipmap.icon_movie_head).into(head)
         }
 
         if (gchat) {

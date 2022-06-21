@@ -160,11 +160,12 @@ class WebSocketService : AbsBaseWebSocketService() {
             chatEntry.created = result.getString("created")
 
             if (data != null) {
+
                 var content = ""
-                if (!TextUtils.equals("gquestion", act) && !TextUtils.equals("gnewquestion", act) && !TextUtils.equals("boxanswer", act)) {
+                if (!TextUtils.equals("gquestion", act) && !TextUtils.equals("gnewquestion", act) && !TextUtils.equals("boxanswer", act) && !TextUtils.equals("gsharescenes", act)) {
                     content = data.getString("content")
                 }
-                //                        chatEntry.setLayout(result.getString("layout"));
+
                 if (TextUtils.equals(act, "gtxt")) {
                     val txtByXmlStr = XmlUtils.getTxtByXmlStr(content)
                     if (txtByXmlStr != null) {
@@ -308,6 +309,16 @@ class WebSocketService : AbsBaseWebSocketService() {
                 } else if (TextUtils.equals(act, "ggreet") || TextUtils.equals(act, "gbutter")
                         || TextUtils.equals(act, "gcomfort") || TextUtils.equals(act, "greplytxt") || TextUtils.equals(act, "greplyaudio")) {
                     needStore = false
+                }else if (act=="gsharescenes"){
+                    chatEntry.scene_bg=data.getString("scene_bg")
+                    chatEntry.scene_title=data.getString("scene_title")
+                    chatEntry.scene_uid=data.getString("scene_uid")
+                    chatEntry.scene_sid=data.getString("scene_sid")
+                    chatEntry.scene_type=data.getString("scene_type")
+                    chatEntry.scene_pic=data.getString("scene_pic")
+                    chatEntry.scene_code=data.getString("scene_code")
+                    chatEntry.scene_des=data.getString("scene_des")
+                    chatEntry.scene_moment=data.getString("scene_moment")
                 }
             }
 
@@ -324,7 +335,6 @@ class WebSocketService : AbsBaseWebSocketService() {
                     }
                 }
                 val b = ChatDBManager.getInstance(this).insertUser(chatEntry)
-
                 var queryMainUser: MainInfoBean? = null
                 queryMainUser = when {
                     chatEntry.gsid != 0L -> MainDBManager.getInstance(this).queryMainUserWithGsId(chatEntry.gsid)
@@ -475,7 +485,14 @@ class WebSocketService : AbsBaseWebSocketService() {
                         bean.`object` = mainBeanQues
                         if (!(TextUtils.equals(activityName, "com.eggplant.qiezisocial.ui.chat.ChatActivity") && (QzApplication.get().chatUid == result.getLong("from") || QzApplication.get().chatGsId == chatEntry.gsid)))
                             NotifycationUtils.getInstance(this).addChatMsgNotify("[互动回答]", bean)
-                    } else {
+                    }else if (TextUtils.equals(act, "gsharescenes")) {
+                        bean.msg = "[场景分享]"
+                        bean.`object` = mainBeanQues
+                        if (!(TextUtils.equals(activityName, "com.eggplant.qiezisocial.ui.chat.ChatActivity") && (QzApplication.get().chatUid == result.getLong("from") || QzApplication.get().chatGsId == chatEntry.gsid)))
+                            NotifycationUtils.getInstance(this).addChatMsgNotify("[场景分享]", bean)
+                    }
+
+                    else {
                         bean.msg = data!!.getString("content")
                         if (!(TextUtils.equals(activityName, "com.eggplant.qiezisocial.ui.chat.ChatActivity") && (QzApplication.get().chatUid == result.getLong("from") || QzApplication.get().chatGsId == chatEntry.gsid)))
                             NotifycationUtils.getInstance(this).addChatMsgNotify(data.getString("content"), bean)

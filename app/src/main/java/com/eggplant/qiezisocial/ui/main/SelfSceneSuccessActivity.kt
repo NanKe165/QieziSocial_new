@@ -1,23 +1,35 @@
 package com.eggplant.qiezisocial.ui.main
 
 import android.content.Intent
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.text.TextUtils
 import android.widget.LinearLayout
 import com.bumptech.glide.Glide
+import com.eggplant.qiezisocial.QzApplication
 import com.eggplant.qiezisocial.R
 import com.eggplant.qiezisocial.base.BaseActivity
 import com.eggplant.qiezisocial.entry.FilterEntry
 import com.eggplant.qiezisocial.entry.ScenesEntry
 import com.eggplant.qiezisocial.event.RefresHomeEvent
+import com.eggplant.qiezisocial.event.SocketMsgEvent
 import com.eggplant.qiezisocial.greendao.entry.ChatEntry
 import com.eggplant.qiezisocial.greendao.entry.MainInfoBean
 import com.eggplant.qiezisocial.greendao.utils.ChatDBManager
 import com.eggplant.qiezisocial.greendao.utils.MainDBManager
+import com.eggplant.qiezisocial.model.API
 import com.eggplant.qiezisocial.ui.chat.ChatActivity
 import com.eggplant.qiezisocial.ui.main.adapter.MainInfoHeadAdapter
+import com.lzy.okgo.OkGo
+import com.lzy.okgo.callback.StringCallback
+import com.lzy.okgo.model.Response
+import com.umeng.socialize.ShareAction
+import com.umeng.socialize.bean.SHARE_MEDIA
+import com.umeng.socialize.media.UMImage
 import kotlinx.android.synthetic.main.activity_selfscene_success.*
 import org.greenrobot.eventbus.EventBus
+import org.json.JSONException
+import org.json.JSONObject
 import java.util.*
 
 /**
@@ -128,26 +140,107 @@ class SelfSceneSuccessActivity : BaseActivity() {
 
             startActivity(Intent(mContext, ChatActivity::class.java).putExtra("bean", adapter.data[position]))
         }
+        selfscene_success_share_wechat.setOnClickListener {
+            shareImg("wechat")
+        }
+        selfscene_success_share_friendcircle.setOnClickListener {
+            shareImg("pyq")
+        }
+        selfscene_success_share_qq.setOnClickListener {
+            shareImg("qq")
+        }
+        selfscene_success_share_sina.setOnClickListener {
+            shareImg("sina")
+        }
+    }
+    private fun shareImg(type:String){
+        val image = UMImage(activity, R.mipmap.share_img)
+
+        //UMLog_Social
+        val thumb = UMImage(activity, R.mipmap.share_img)
+        val shareAction = ShareAction(activity).withText("交个朋友").withMedia(image)
+        when(type){
+            "wechat"->{
+                shareAction.platform = SHARE_MEDIA.WEIXIN
+                shareAction.share()
+            }
+            "pyq"->{
+                shareAction.platform = SHARE_MEDIA.WEIXIN_CIRCLE
+                shareAction.share()
+            }
+            "sina"->{
+                shareAction.platform = SHARE_MEDIA.SINA
+                shareAction.share()
+            }
+            "qq" -> {
+                shareAction.platform = SHARE_MEDIA.QQ
+                shareAction.share()
+            }
+        }
+
     }
 
     private fun shareScene(mainInfoBean: MainInfoBean) {
         createShareSceneEntry(mainInfoBean)
+        sendSceneData(mainInfoBean)
     }
+
+    private fun getMsgId(activity: AppCompatActivity) {
+        OkGo.post<String>(API.GET_ID)
+                .tag(activity)
+                .execute(object : StringCallback() {
+                    override fun onSuccess(response: Response<String>) {
+                        if (response.isSuccessful) {
+                            try {
+                                val `object` = JSONObject(response.body())
+                                val stat = `object`.getString("stat")
+                                if (TextUtils.equals(stat, "ok")) {
+                                    QzApplication.get().msgUUID = `object`.getString("id")
+                                }
+                            } catch (e: JSONException) {
+                                e.printStackTrace()
+                            }
+
+                        }
+                    }
+
+                    override fun onError(response: Response<String>?) {
+                        super.onError(response)
+                    }
+                })
+    }
+
+    private fun sendSceneData(mainInfoBean: MainInfoBean) {
+        val id = application.msgUUID
+        application.msgUUID = "0"
+        getMsgId(activity)
+        val obj = JSONObject()
+        obj.put("act", "gsharescenes")
+        obj.put("type", "message")
+        obj.put("created", "${System.currentTimeMillis()}")
+        obj.put("from", "${application.infoBean!!.uid.toLong()}")
+        obj.put("to", "${mainInfoBean.uid}")
+        obj.put("range", "private")
+        obj.put("id", id)
+        val data = JSONObject()
+        data.put("scene_bg", sceneEntry!!.background)
+        data.put("scene_pic", sceneEntry!!.pic)
+        data.put("scene_code", sceneEntry!!.code)
+        data.put("scene_des", sceneEntry!!.des)
+        data.put("scene_title", sceneEntry!!.title)
+        data.put("scene_type", sceneEntry!!.type)
+        data.put("scene_sid", sceneEntry!!.sid)
+        data.put("scene_uid", sceneEntry!!.user)
+        data.put("scene_moment",sceneEntry!!.moment)
+        obj.put("data",data)
+        EventBus.getDefault().post(SocketMsgEvent(obj.toString()))
+
+    }
+
 
     private fun createShareSceneEntry(mainInfoBean: MainInfoBean) {
 
 
-//        chatEntry.content = filePath
-//        chatEntry.extra = dura.toString()
-//        chatEntry.created = System.currentTimeMillis().toString()
-//        chatEntry.from = myid
-//        chatEntry.to = uid
-//        chatEntry.face = myface
-//        chatEntry.type = "gaudio"
-//        chatEntry.msgId = System.currentTimeMillis().toString()
-//        chatEntry.chatId = uid
-//        chatEntry.msgStat = 2
-//        chatEntry.userId = myid
         val entry = ChatEntry()
         entry.from = application.infoBean!!.uid.toLong()
         entry.to = mainInfoBean.uid
@@ -155,6 +248,7 @@ class SelfSceneSuccessActivity : BaseActivity() {
         entry.msgId = System.currentTimeMillis().toString()
         entry.face = application.infoBean!!.face
         entry.type = "gsharescenes"
+        entry.chatId = mainInfoBean.uid
         entry.userId = application.infoBean!!.uid.toLong()
         entry.scene_bg = sceneEntry!!.background
         entry.scene_pic = sceneEntry!!.pic
@@ -164,6 +258,7 @@ class SelfSceneSuccessActivity : BaseActivity() {
         entry.scene_type = sceneEntry!!.type
         entry.scene_sid = sceneEntry!!.sid
         entry.scene_uid = sceneEntry!!.user
+        entry.scene_moment=sceneEntry!!.moment
         ChatDBManager.getInstance(mContext).insertUser(entry)
     }
 
@@ -181,11 +276,8 @@ class SelfSceneSuccessActivity : BaseActivity() {
         data.type = sceneEntry!!.type
         data.moment = sceneEntry!!.moment
         data.scenes = sceneEntry
-
         if (data.goal != null && data.goal.isNotEmpty()) {
-
             EventBus.getDefault().post(RefresHomeEvent(data))
-
         }
 
     }
