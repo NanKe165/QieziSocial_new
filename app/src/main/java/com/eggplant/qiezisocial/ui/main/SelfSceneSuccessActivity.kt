@@ -232,6 +232,7 @@ class SelfSceneSuccessActivity : BaseActivity() {
         data.put("scene_sid", sceneEntry!!.sid)
         data.put("scene_uid", sceneEntry!!.user)
         data.put("scene_moment",sceneEntry!!.moment)
+        data.put("created","${System.currentTimeMillis()}")
         obj.put("data",data)
         EventBus.getDefault().post(SocketMsgEvent(obj.toString()))
 

@@ -5,7 +5,7 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import com.eggplant.qiezisocial.R
 import com.eggplant.qiezisocial.base.BaseActivity
-import com.eggplant.qiezisocial.entry.JindouEntry
+import com.eggplant.qiezisocial.entry.TodayJdGpEntry
 import com.eggplant.qiezisocial.model.API
 import com.eggplant.qiezisocial.model.callback.JsonCallback
 import com.eggplant.qiezisocial.utils.TipsUtil
@@ -19,11 +19,11 @@ import kotlinx.android.synthetic.main.activity_jindou.*
  */
 
 class JindouActivity : BaseActivity() {
-    lateinit var adapter: JindouAdapter
-    var imgs = intArrayOf(R.mipmap.icon_gz1, R.mipmap.icon_gz2, R.mipmap.icon_gz3, R.mipmap.icon_gz4, R.mipmap.icon_gz5, R.mipmap.icon_gz6
-            , R.mipmap.icon_gz7, R.mipmap.icon_gz8)
-    var titles = arrayListOf<String>("完成注册", "完善资料", "一个提问", "一个回复", "一篇日志或动态", "获得1个点赞", "为别人点赞", "成功交友一人")
-    var jdc = intArrayOf(50, 20, 5, 5, 5, 5, 1, 20)
+    lateinit var adapter: TodayJindouAdapter
+    //    var imgs = intArrayOf(R.mipmap.icon_gz1, R.mipmap.icon_gz2, R.mipmap.icon_gz3, R.mipmap.icon_gz4, R.mipmap.icon_gz5, R.mipmap.icon_gz6
+//            , R.mipmap.icon_gz7, R.mipmap.icon_gz8)
+//    var titles = arrayListOf<String>("完成注册", "完善资料", "一个提问", "一个回复", "一篇日志或动态", "获得1个点赞", "为别人点赞", "成功交友一人")
+//    var jdc = intArrayOf(50, 20, 5, 5, 5, 5, 1, 20)
     var bgs = arrayListOf<Int>(R.drawable.homebg1, R.drawable.homebg2, R.drawable.homebg3, R.drawable.homebg4, R.drawable.homebg5,
             R.drawable.homebg6, R.drawable.homebg7, R.drawable.homebg8, R.drawable.homebg9, R.drawable.homebg10, R.drawable.homebg11, R.drawable.homebg12)
     var spaceback: String = ""
@@ -36,22 +36,17 @@ class JindouActivity : BaseActivity() {
         val count = intent.getIntExtra("count", 0)
         jd_count.text = "$count"
         jd_ry.layoutManager = LinearLayoutManager(mContext)
-        adapter = JindouAdapter(null)
+        adapter = TodayJindouAdapter(null)
         jd_ry.adapter = adapter
 
     }
 
     override fun initData() {
-        imgs.forEachIndexed { index, i ->
-            var entry = JindouEntry()
-            entry.locaImg = i
-            entry.title = titles[index]
-            entry.jdcount = "${jdc[index]}"
-            adapter.addData(entry)
-        }
+
         getData()
 
     }
+
     private fun changeHomeBg() {
         if (application.infoBean != null) {
             spaceback = application.infoBean!!.spaceback
@@ -62,11 +57,15 @@ class JindouActivity : BaseActivity() {
             setBackGround(0)
         }
     }
-    private fun getData() {
-        OkGo.post<JindouEntry>(API.GET_JINDOU)
-                .execute(object :JsonCallback<JindouEntry>(){
-                    override fun onSuccess(response: Response<JindouEntry>?) {
 
+    private fun getData() {
+        OkGo.post<TodayJdGpEntry>(API.GET_JINDOU)
+                .execute(object : JsonCallback<TodayJdGpEntry>() {
+                    override fun onSuccess(response: Response<TodayJdGpEntry>?) {
+                        if (response!!.isSuccessful) {
+                            adapter.setNewData(response.body().list)
+                            jd_todaynumb.text="今日已获得 ${response.body().todayjdsum} 金豆"
+                        }
                     }
                 })
     }
@@ -80,16 +79,16 @@ class JindouActivity : BaseActivity() {
             }
         })
         jd_award1.setOnClickListener {
-            TipsUtil.showToast(mContext,"该功能将于2月15日开启")
+            TipsUtil.showToast(mContext, "该功能将于2月15日开启")
         }
         jd_award2.setOnClickListener {
-            TipsUtil.showToast(mContext,"该功能将于2月15日开启")
+            TipsUtil.showToast(mContext, "该功能将于2月15日开启")
         }
         jd_mx.setOnClickListener {
             startActivity(Intent(mContext, MingxiActivity::class.java))
         }
         jd_guize.setOnClickListener {
-            startActivity(Intent(mContext,JindouRuleActivity::class.java))
+            startActivity(Intent(mContext, JindouRuleActivity::class.java))
         }
     }
 

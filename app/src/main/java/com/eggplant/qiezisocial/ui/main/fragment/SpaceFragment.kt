@@ -230,6 +230,19 @@ class SpaceFragment : BaseFragment() {
         }
         if (user!!.uid != application.infoBean!!.uid&&body.selfscenes!=null&&body.selfscenes!!.isNotEmpty()) {
             sceneAdapter.setNewData(body.selfscenes!!)
+        }else{
+            ft_space_appbar.post {
+                if (ViewCompat.isLaidOut(ft_space_appbar)) {
+                    val params = ft_space_appbar.layoutParams as CoordinatorLayout.LayoutParams
+                    val behavior = params.behavior as AppBarLayout.Behavior
+                    behavior.setDragCallback(object : AppBarLayout.Behavior.DragCallback() {
+                        override fun canDrag(appBarLayout: AppBarLayout): Boolean {
+                            return false
+                        }
+                    })
+                }
+            }
+            ft_space_scene_gp.visibility=View.GONE
         }
         val newdiarycount = body.newdiarycount
         val newvisitcount = body.newvisitcount
@@ -496,6 +509,7 @@ class SpaceFragment : BaseFragment() {
                     var gallerType = PictureMimeType.ofAll()
                     PictureSelector.create(this@SpaceFragment)
                             .openGallery(gallerType)
+                            .compress(true)// 是否压缩 true or false
                             .loadImageEngine(GlideEngine.createGlideEngine())
                             .isCamera(false)
                             .maxSelectNum(9)

@@ -113,6 +113,7 @@ class PubDiaryFragment : BaseFragment() {
                     PictureSelector.create(this@PubDiaryFragment)
                             .openGallery(gallerType)
                             .loadImageEngine(GlideEngine.createGlideEngine())
+                            .compress(true)
                             .isCamera(false)
                             .maxSelectNum(9 - pubMedia.size)
                             .maxVideoSelectNum(1)

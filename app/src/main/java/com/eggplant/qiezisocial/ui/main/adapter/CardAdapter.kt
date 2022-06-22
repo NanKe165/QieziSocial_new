@@ -26,6 +26,7 @@ class CardAdapter(data: List<BoxEntry>?) : BaseQuickAdapter<BoxEntry, BaseViewHo
     var ryWidth = 0
     var roleBgIndex = 0
     var roleBg = intArrayOf(R.drawable.role_bg1, R.drawable.role_bg2, R.drawable.role_bg3, R.drawable.role_bg4)
+    var lastWidth = 0
     override fun convert(helper: BaseViewHolder, item: BoxEntry) {
         helper.itemView.ap_card_nick.text = item.userinfor.nick
         helper.itemView.ap_card_content.text = item.text
@@ -51,7 +52,6 @@ class CardAdapter(data: List<BoxEntry>?) : BaseQuickAdapter<BoxEntry, BaseViewHo
 
         if (gpWidth == 0)
             gpWidth = ScreenUtil.getDisplayWidthPixels(mContext)
-//        Log.i("cardAp", "gpWidth :$gpWidth")
         val x0 = gpWidth / 2
         val we1 = random.nextFloat() * (0.9f - 0.7f) + 0.7f
         val we2 = random.nextFloat() * (1 - 0.1f) + 0.1f
@@ -61,13 +61,55 @@ class CardAdapter(data: List<BoxEntry>?) : BaseQuickAdapter<BoxEntry, BaseViewHo
         if (fw >= 1) {
             fw = 1.0f
         }
+        val minWidth = ScreenUtil.dip2px(mContext, 200)
         var width = (fw * gpWidth).toInt()
-//        Log.i("cardAp", "width--- :$width   fw$fw ")
-        if (width < ScreenUtil.dip2px(mContext, 200)) {
-//            Log.i("cardAp", "width <200dp")
-            width = ScreenUtil.dip2px(mContext, 200)
+        var addWidth = gpWidth
+        when {
+            lastWidth==0->{
+                addWidth=1
+            }
+            lastWidth >= gpWidth * 2 / 3 -> {
+                addWidth = gpWidth / 6
+            }
+            lastWidth > x0 -> {
+                addWidth = gpWidth / 3 * 2
+            }
+            lastWidth < x0 / 2 -> {
+                addWidth = gpWidth / 2
+            }
+            else -> {
+                addWidth = gpWidth - minWidth
+            }
+
+        }
+        if (width < minWidth) {
+            width = minWidth + random.nextInt(addWidth)
+            lastWidth = width
         }
 
+//        when{
+//            lastWidth>=gpWidth  * 2 / 3 ->{
+//                addWidth=gpWidth/5
+//                width=minWidth+random.nextInt(addWidth)
+//                lastWidth=width
+//            }
+//            lastWidth>x0->{
+//                addWidth=gpWidth/3*2
+//                width=minWidth+random.nextInt(addWidth)
+//                lastWidth=width
+//            }
+//            lastWidth<x0/2->{
+//                addWidth=gpWidth/2
+//                width=minWidth+random.nextInt(addWidth)
+//                lastWidth=width
+//            }
+//            else ->{
+//                addWidth=gpWidth-minWidth
+//                width=minWidth+random.nextInt(addWidth)
+//                lastWidth=width
+//            }
+//
+//        }
         var r = random.nextInt(2)
 
         if (r == lastR) {

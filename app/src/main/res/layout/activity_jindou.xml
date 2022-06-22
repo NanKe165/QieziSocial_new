@@ -162,6 +162,7 @@
             android:textSize="11sp"
             android:layout_gravity="right"
             android:layout_marginTop="@dimen/qb_px_23"
+            android:id="@+id/jd_todaynumb"
             />
         <android.support.v7.widget.RecyclerView
             android:layout_marginTop="@dimen/qb_px_50"

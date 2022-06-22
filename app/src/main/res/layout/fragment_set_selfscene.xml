@@ -47,7 +47,7 @@
             android:layout_height="@dimen/qb_px_55"
             android:background="@drawable/edit_bg"
             android:gravity="center_vertical"
-            android:maxLength="5"
+            android:maxLength="6"
             android:paddingLeft="@dimen/qb_px_17"
             android:text=""
             android:textColor="@color/tv_black2"
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|right"
             android:layout_marginRight="@dimen/qb_px_20"
-            android:text="(0/5)"
+            android:text="(0/6)"
             android:textColor="@color/tv_gray2"
             android:textSize="12sp" />
     </FrameLayout>

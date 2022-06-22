@@ -153,7 +153,7 @@ class ChatAdapter(mContext: Context, data: List<ChatMultiEntry<ChatEntry>>?) : B
             val face = item.bean.face
             val head = helper.getView<ImageView>(R.id.adapter_chat_head)
             if (item.itemType == ChatMultiEntry.CHAT_MINE || item.itemType == ChatMultiEntry.CHAT_MINE_AUDIO
-                    || item.itemType == ChatMultiEntry.CHAT_MINE_VIDEO || item.itemType == ChatMultiEntry.CHAT_MINE_QUESTION) {
+                    || item.itemType == ChatMultiEntry.CHAT_MINE_VIDEO || item.itemType == ChatMultiEntry.CHAT_MINE_QUESTION|| item.itemType ==ChatMultiEntry.CHAT_MINE_SHARE_SCENE) {
                 if (mineheadPic.isNotEmpty()) {
                     Glide.with(context).load(API.PIC_PREFIX + mineheadPic).into(head!!)
                 } else if (!TextUtils.isEmpty(face)) {

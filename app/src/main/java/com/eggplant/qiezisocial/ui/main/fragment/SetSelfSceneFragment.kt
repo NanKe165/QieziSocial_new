@@ -98,9 +98,9 @@ class SetSelfSceneFragment : BaseFragment() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s != null)
-                    set_selfscene_title_numb.text = "(${s.length}/5)"
+                    set_selfscene_title_numb.text = "(${s.length}/6)"
                 else
-                    set_selfscene_title_numb.text = "(0/5)"
+                    set_selfscene_title_numb.text = "(0/6)"
             }
         }
         txtWatcher2 = object : TextWatcher {
